@@ -1,24 +1,35 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_BASE_HREF, CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HomeView } from './home/home-view.component';
-import { TransferHttpModule } from '../modules/transfer-http/transfer-http.module';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeroService } from './hero.service';
+import { DashboardComponent } from './dashboard.component';
+import { HeroesComponent } from './heroes.component';
+import { HeroDetailComponent } from './hero-detail.component';
+import { HeroSearchComponent } from './hero-search.component';
 
 @NgModule({
-	imports: [
-    CommonModule,
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
     HttpModule,
-    TransferHttpModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeView, pathMatch: 'full'},
-      { path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}
-    ])
-	],
-	declarations: [ AppComponent, HomeView ],
-  exports: [ AppComponent ]
+    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 })
+  ],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    HeroSearchComponent,
+    HeroesComponent,
+    HeroDetailComponent,
+  ],
+  providers: [HeroService],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
