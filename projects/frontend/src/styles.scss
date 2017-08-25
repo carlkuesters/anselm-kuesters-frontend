@@ -1,11 +1,17 @@
-body {
-  background-color: #FFFFDD;
+html {
+  box-sizing: border-box;
 }
 
-/* You can add global styles to this file, and also import other style files */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-h2 { color: #444; font-weight: lighter; }
-body { margin: 2em; }
-body, input[text], button { color: #888; font-family: Cambria, Georgia; }
-button { padding: 0.2em; font-size: 14px}
-* { font-family: Arial; }
+body {
+  background-color: #FFFFDD;
+  font-family: 'Open Sans', Tahoma, sans-serif;
+}
+
+// TODO: Here?
+p {
+  margin: 0;
+}

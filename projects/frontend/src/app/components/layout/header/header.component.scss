@@ -1,5 +1,8 @@
+@import '../../../../styles/sizes';
+
 header {
-  margin-bottom: 10px;
+  margin-top: $baseline-4;
+  margin-bottom: $baseline;
 }
 
 nav {

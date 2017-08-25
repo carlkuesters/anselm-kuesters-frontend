@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 
-import { SectionBoxComponent } from './sectionBox/sectionBox.component';
+import { BoxComponent } from './box/box.component';
+import { GridColumnComponent } from '../items/grid/gridColumn/gridColumn.component';
+import { GridRowComponent } from '../items/grid/gridRow/gridRow.component';
 
 @NgModule({
   imports: [],
   declarations: [
-    SectionBoxComponent,
+    BoxComponent,
+    GridColumnComponent,
+    GridRowComponent,
   ],
   exports: [
-    SectionBoxComponent,
+    BoxComponent,
+    GridColumnComponent,
+    GridRowComponent,
   ]
 })
 export class ItemsModule { }

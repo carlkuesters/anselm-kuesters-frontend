@@ -1,0 +1,17 @@
+@import '../../../../../styles/sizes';
+
+
+:host {
+  display: block;
+  flex: 1 0 0;
+}
+
+:host(:not(:first-child)) {
+  margin-top: $baseline-2;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
