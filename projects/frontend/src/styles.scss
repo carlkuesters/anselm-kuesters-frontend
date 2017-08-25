@@ -1,3 +1,5 @@
+@import './styles/variables';
+
 html {
   box-sizing: border-box;
 }
@@ -9,9 +11,35 @@ html {
 body {
   background-color: #FFFFDD;
   font-family: 'Open Sans', Tahoma, sans-serif;
+  font-size: 16px;
+  color: $color-dark-grey;
+}
+
+a {
+  &, &:visited {
+    color: $color-link;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
 }
 
 // TODO: Here?
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: $baseline;
+  font-size: 24px;
+  font-weight: normal;
+}
+
 p {
+  margin: 0;
+}
+
+blockquote {
   margin: 0;
 }

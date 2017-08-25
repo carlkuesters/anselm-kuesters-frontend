@@ -1,0 +1,10 @@
+@import '../../../../../styles/sizes';
+
+:host {
+  height: 100%;
+}
+
+.text-box {
+  height: 100%;
+  padding: $baseline-2;
+}

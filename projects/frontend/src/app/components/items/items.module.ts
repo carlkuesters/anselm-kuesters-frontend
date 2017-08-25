@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { BoxComponent } from './box/box.component';
+import { BoxComponent } from './boxes/box/box.component';
+import { ImageBoxComponent } from './boxes/imageBox/imageBox.component';
+import { TextBoxComponent } from './boxes/textBox/textBox.component';
+
 import { GridColumnComponent } from '../items/grid/gridColumn/gridColumn.component';
 import { GridRowComponent } from '../items/grid/gridRow/gridRow.component';
 
@@ -8,11 +11,17 @@ import { GridRowComponent } from '../items/grid/gridRow/gridRow.component';
   imports: [],
   declarations: [
     BoxComponent,
+    ImageBoxComponent,
+    TextBoxComponent,
+
     GridColumnComponent,
     GridRowComponent,
   ],
   exports: [
     BoxComponent,
+    ImageBoxComponent,
+    TextBoxComponent,
+
     GridColumnComponent,
     GridRowComponent,
   ]
