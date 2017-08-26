@@ -12,7 +12,7 @@ import { HeroesComponent } from '../../heroes.component';
 import { HeroDetailComponent } from '../../hero-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'texts', component: TextsPageComponent },
   { path: 'about-me', component: AboutMePageComponent },
