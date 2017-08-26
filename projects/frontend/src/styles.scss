@@ -9,11 +9,13 @@ html {
 }
 
 body {
-  background-color: #FFFFDD;
+  background-color: #F5F5F5;//#FFFFDD;
   font-family: 'Open Sans', Tahoma, sans-serif;
   font-size: 16px;
   color: $color-dark-grey;
 }
+
+// TODO: Here?
 
 a {
   &, &:visited {
@@ -27,8 +29,6 @@ a {
   }
 }
 
-// TODO: Here?
-
 h1 {
   margin-top: 0px;
   margin-bottom: $baseline;
@@ -37,6 +37,26 @@ h1 {
 }
 
 p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin-bottom: $baseline / 2;
+
+  &:before {
+    content: '●';
+    margin-right: $baseline;
+    color: $color-link;
+  }
+}
+
+figure {
   margin: 0;
 }
 

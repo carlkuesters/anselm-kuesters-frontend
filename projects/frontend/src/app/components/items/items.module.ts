@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { BoxComponent } from './boxes/box/box.component';
 import { ImageBoxComponent } from './boxes/imageBox/imageBox.component';
@@ -8,7 +9,9 @@ import { GridColumnComponent } from '../items/grid/gridColumn/gridColumn.compone
 import { GridRowComponent } from '../items/grid/gridRow/gridRow.component';
 
 @NgModule({
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   declarations: [
     BoxComponent,
     ImageBoxComponent,

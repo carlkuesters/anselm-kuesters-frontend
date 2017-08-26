@@ -1,0 +1,15 @@
+blockquote {
+  p {
+    &:before {
+      content: '„';
+    }
+
+    &:after {
+      content: '“';
+    }
+  }
+}
+
+figcaption {
+ float: right;
+}

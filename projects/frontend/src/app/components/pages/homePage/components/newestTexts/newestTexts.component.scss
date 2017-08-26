@@ -1,0 +1,11 @@
+@import '../../../../../../styles/colors';
+
+.welcome {
+  height: 400px;
+  background-image: url('../../../../../../assets/images/anselm/stadion_800.png');
+  padding: 30px 20px 20px 420px;
+
+  p {
+    color: $color-white;
+  }
+}

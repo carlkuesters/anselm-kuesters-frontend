@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { LayoutModule } from '../layout/layout.module';
 import { ItemsModule } from '../items/items.module';
 
-import { HomePageComponent } from './homePage/homePage.component';
+import { HomePageModule } from './homePage/homePageModule.module';
 import { TextsPageComponent } from './textsPage/textsPage.component';
 import { AboutMePageComponent } from './aboutMePage/aboutMePage.component';
 import { ContactPageComponent } from './contactPage/contactPage.component';
@@ -15,17 +15,17 @@ import { InfoPageComponent } from './infoPage/infoPage.component';
     RouterModule,
 
     LayoutModule,
-    ItemsModule
+    ItemsModule,
+
+    HomePageModule
   ],
   declarations: [
-    HomePageComponent,
     TextsPageComponent,
     AboutMePageComponent,
     ContactPageComponent,
     InfoPageComponent,
   ],
   exports: [
-    HomePageComponent,
     TextsPageComponent,
     AboutMePageComponent,
     ContactPageComponent,

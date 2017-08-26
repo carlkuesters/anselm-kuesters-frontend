@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'text-box-component',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./textBox.component.scss']
 })
 export class TextBoxComponent {
-
+  @Input() backgroundImagePath: string;
 }

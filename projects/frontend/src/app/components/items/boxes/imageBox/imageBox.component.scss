@@ -6,7 +6,10 @@
 
 .image-box {
   height: 100%;
-  padding: $baseline / 2;
+
+  &.hasPadding {
+    padding: $baseline / 2;
+  }
 
   img {
     width: 100%;

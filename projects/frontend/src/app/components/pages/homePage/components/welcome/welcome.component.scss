@@ -1,0 +1,18 @@
+@import '../../../../../../styles/variables';
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  background-image: url('../../../../../../assets/images/anselm/stadion_800.png');
+  padding-left: 420px;
+  padding-right: $baseline-2;
+
+  p {
+    color: $color-white;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    line-height: 27px;
+  }
+}

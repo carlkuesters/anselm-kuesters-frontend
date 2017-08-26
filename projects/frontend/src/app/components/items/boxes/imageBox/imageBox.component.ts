@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ImageBoxComponent {
   @Input() imagePath: string;
+  @Input() hasPadding: false;
 }
