@@ -4,9 +4,9 @@ import { RouterModule } from '@angular/router';
 import { LayoutModule } from '../layout/layout.module';
 import { ItemsModule } from '../items/items.module';
 
-import { HomePageModule } from './homePage/homePageModule.module';
+import { HomePageModule } from './homePage/homePage.module';
 import { TextsPageComponent } from './textsPage/textsPage.component';
-import { AboutMePageComponent } from './aboutMePage/aboutMePage.component';
+import { AboutMePageModule } from './aboutMePage/aboutMePage.module';
 import { ContactPageComponent } from './contactPage/contactPage.component';
 import { InfoPageComponent } from './infoPage/infoPage.component';
 
@@ -17,17 +17,16 @@ import { InfoPageComponent } from './infoPage/infoPage.component';
     LayoutModule,
     ItemsModule,
 
-    HomePageModule
+    HomePageModule,
+    AboutMePageModule,
   ],
   declarations: [
     TextsPageComponent,
-    AboutMePageComponent,
     ContactPageComponent,
     InfoPageComponent,
   ],
   exports: [
     TextsPageComponent,
-    AboutMePageComponent,
     ContactPageComponent,
     InfoPageComponent,
   ]

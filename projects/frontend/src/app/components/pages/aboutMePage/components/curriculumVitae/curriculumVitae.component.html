@@ -1,0 +1,8 @@
+<div class="separator"></div>
+<ul>
+  <li *ngFor="let event of events"
+      [ngClass]="{ 'major' : event.major }">
+    <!--Needs to be oneliner to avoid gap in between-->
+    <time>{{event.date}}</time><span class="event-text">{{event.text}}</span>
+  </li>
+</ul>
