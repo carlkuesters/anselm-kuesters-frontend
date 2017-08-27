@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { LayoutModule } from '../layout/layout.module';
 import { ItemsModule } from '../items/items.module';
 
@@ -13,6 +15,8 @@ import { InfoPageComponent } from './infoPage/infoPage.component';
 @NgModule({
   imports: [
     RouterModule,
+
+    TranslateModule,
 
     LayoutModule,
     ItemsModule,

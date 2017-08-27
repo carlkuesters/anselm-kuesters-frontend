@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { ItemsModule } from '../../items/items.module';
 
 import { HomePageComponent } from './homePage.component';
@@ -11,6 +13,9 @@ import { QuoteComponent } from './components/quote/quote.component';
 @NgModule({
   imports: [
     RouterModule,
+
+    TranslateModule,
+
     ItemsModule,
   ],
   declarations: [

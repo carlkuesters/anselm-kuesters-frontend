@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { ItemsModule } from '../../items/items.module';
 
 import { AboutMePageComponent } from './aboutMePage.component';
@@ -9,6 +11,8 @@ import { CurriculumVitaeComponent } from './components/curriculumVitae/curriculu
 @NgModule({
   imports: [
     CommonModule,
+
+    TranslateModule,
 
     ItemsModule,
   ],

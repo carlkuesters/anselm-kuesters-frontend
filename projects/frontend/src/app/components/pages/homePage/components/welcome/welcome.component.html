@@ -1,3 +1,10 @@
 <div class="welcome">
-  <p>Willkommen auf meiner Website, auf<br/>der ich eine Auswahl eigener <a routerLink="/texts">Texte</a> präsentiere, die ich im Laufe der letzten Jahre zu verschiedenen Anlässen verfasst habe. Um mein Schreiben weiter zu verbessern, freue ich mich über konstruktive Kommentare zu Schreibstil und Inhalt. Außerdem ist es mir ein besonderes Anliegen, über diese Website <a routerLink="/contact">Kontakt</a> zu anderen Veröffentlichungsmedien herzustellen.<br/>Viel Vergnügen beim Lesen!</p>
+  <p>
+    <!--TODO: Is this possible in a cleaner way?-->
+    <span [innerHTML]="'PAGE.HOME.WELCOME.0' | translate"></span>
+    <a routerLink="/texts" translate="TEXTS"></a>
+    <span [innerHTML]="'PAGE.HOME.WELCOME.1' | translate"></span>
+    <a routerLink="/contact" translate="CONTACT"></a>
+    <span [innerHTML]="'PAGE.HOME.WELCOME.2' | translate"></span>
+  </p>
 </div>

@@ -1,0 +1,28 @@
+{
+  "ABOUT_ME": "Über mich",
+  "ADMINISTRATION": "Administration",
+  "AWARDS": "Auszeichnungen",
+  "CONTACT": "Kontakt",
+  "CONTACT_INFORMATION": "Kontakt-Informationen",
+  "COPYRIGHT": "Copyright",
+  "FURTHER_DEVELOPMENTS": "Weiterbildungen",
+  "HOME": "Home",
+  "IMPRESSUM": "Impressum",
+  "IN_THE_PRESS": "In der Presse",
+  "MY_NEWEST_TEXTS": "Meine neuesten Texte",
+  "MY_TEXTS": "Meine Texte",
+  "TEXTS": "Texte",
+
+  "PAGE": {
+    "CONTACT": {
+      "CONTENT": "Falls Sie Fragen oder Interesse an einer Kooperation haben, senden Sie mir gerne eine Nachricht über das bereitgestellte Kontaktformular. Über Meinungen zu meinen Texten freue ich mich jederzeit."
+    },
+    "HOME": {
+      "WELCOME": {
+        "0": "Willkommen auf meiner Website, auf<br/>der ich eine Auswahl eigener ",
+        "1": " präsentiere, die ich im Laufe der letzten Jahre zu verschiedenen Anlässen verfasst habe. Um mein Schreiben weiter zu verbessern, freue ich mich über konstruktive Kommentare zu Schreibstil und Inhalt. Außerdem ist es mir ein besonderes Anliegen, über diese Website ",
+        "2": " zu anderen Veröffentlichungsmedien herzustellen.<br/>Viel Vergnügen beim Lesen!"
+      }
+    }
+  }
+}
