@@ -2,8 +2,8 @@
 
 
 :host {
-  display: block;
-  flex: 1 0 0;
+  flex: 1 0 auto;
+  display: flex;
 }
 
 :host(:not(:first-child)) {
@@ -11,7 +11,7 @@
 }
 
 .grid-row {
+  flex: 1 0 0;
   display: flex;
   flex-direction: row;
-  height: 100%;
 }

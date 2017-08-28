@@ -1,7 +1,8 @@
 @import '../../../../../styles/sizes';
+@import '../box/box';
 
 :host {
-  height: 100%;
+  flex: 1 0 0;
 }
 
 .image-box {

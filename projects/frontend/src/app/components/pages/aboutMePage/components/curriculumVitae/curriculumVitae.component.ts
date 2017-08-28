@@ -10,10 +10,10 @@ import { AboutMeEvent } from '../../classes/aboutMeEvent';
 export class CurriculumVitaeComponent {
   // TODO: Receive from backend
   events: AboutMeEvent[] = [
-    <AboutMeEvent>{date: '2017', text: 'abc'},
-    <AboutMeEvent>{date: '2014', text: 'Dasd dasdas', major: true},
-    <AboutMeEvent>{date: 'Juni 2004', text: 'def'},
-    <AboutMeEvent>{date: 'Feburar 2003', text: '123 dw'},
-    <AboutMeEvent>{date: '1992', text: 'Lorem Ipsum', major: true}
+    <AboutMeEvent>{date: '2017', text: 'Lorem Ipsum'},
+    <AboutMeEvent>{date: '2014', text: 'Dolor Sit', major: true},
+    <AboutMeEvent>{date: 'Juni 2004', text: 'Amet'},
+    <AboutMeEvent>{date: 'Feburar 2003', text: '123 Test'},
+    <AboutMeEvent>{date: '1992', text: 'Something', major: true}
   ];
 }
