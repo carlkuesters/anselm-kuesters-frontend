@@ -2,6 +2,15 @@
   <grid-column-component>
     <text-box-component>
       <h1 translate="MY_TEXTS"></h1>
+      <p [innerHTML]="'PAGE.TEXTS.CONTENT' | translate"></p>
+      <p translate="PAGE.TEXTS.DISCLAIMER"></p>
     </text-box-component>
+  </grid-column-component>
+</grid-row-component>
+<grid-row-component>
+  <grid-column-component>
+    <box-component>
+      <texts-component></texts-component>
+    </box-component>
   </grid-column-component>
 </grid-row-component>

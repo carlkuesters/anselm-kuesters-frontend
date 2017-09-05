@@ -1,0 +1,13 @@
+@import '../../../../../../styles/colors';
+
+a {
+  color: $color-dark-grey;
+}
+
+.texts-entry-title {
+  display: inline-block;
+}
+
+.texts-entry-info {
+  float: right;
+}

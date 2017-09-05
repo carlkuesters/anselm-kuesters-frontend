@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let textsOfYear of textsByYear">
+    <div class="texts-separator">{{textsOfYear.year}}</div>
+    <ul>
+      <li *ngFor="let text of textsOfYear.texts">
+        <texts-entry-component [text]="text"></texts-entry-component>
+      </li>
+    </ul>
+  </li>
+</ul>
