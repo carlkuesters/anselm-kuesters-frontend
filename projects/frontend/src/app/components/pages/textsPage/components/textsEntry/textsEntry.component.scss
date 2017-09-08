@@ -1,4 +1,6 @@
 @import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts/font-awesome';
 
 a {
   color: $color-dark-grey;
@@ -10,4 +12,17 @@ a {
 
 .texts-entry-info {
   float: right;
+
+  a:not(:last-child) {
+    margin-right: $baseline;
+  }
+
+  .fa {
+    margin-right: $baseline / 4;
+  }
+
+  // TODO: Center vertically correctly
+  .fa-comment-o {
+    font-size: 18px;
+  }
 }

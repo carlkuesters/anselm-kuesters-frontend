@@ -14,15 +14,13 @@ import { LayoutModule } from '../layout/layout.module';
 import { ItemsModule } from '../items/items.module';
 import { PagesModule } from '../pages/pages.module';
 
+import { BackendInformationService } from '../../services/backendInformation.service';
+
 // TODO: Remove
-import { HeroService } from '../../hero.service';
 import { DashboardComponent } from '../../dashboard.component';
 import { HeroesComponent } from '../../heroes.component';
 import { HeroDetailComponent } from '../../hero-detail.component';
 import { HeroSearchComponent } from '../../hero-search.component';
-
-import { InMemoryWebApiModule, InMemoryBackendConfigArgs } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from '../../in-memory-data.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -48,7 +46,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     LayoutModule,
     ItemsModule,
     PagesModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, <InMemoryBackendConfigArgs>{delay: 600})
   ],
   declarations: [
     AppComponent,
@@ -58,7 +55,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeroesComponent,
     HeroDetailComponent,
   ],
-  providers: [HeroService],
-  bootstrap: [AppComponent]
+  providers: [
+    BackendInformationService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
