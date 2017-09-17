@@ -2,12 +2,12 @@
   <h2>{{text.title}}</h2>
 </a>
 <div class="texts-entry-info">
-  <a routerLink="/text">
+  <a *ngIf="text.commentsCount > 0" routerLink="/text/{{text.id}}/comments">
     <i class="fa fa-comment-o"></i>
-    <span>422</span>
+    <span>{{text.commentsCount}}</span>
   </a>
-  <a routerLink="/text">
+  <a *ngIf="text.publicationsCount > 0" routerLink="/text/{{text.id}}/publications">
     <i class="fa fa-link"></i>
-    <span>7</span>
+    <span>{{text.publicationsCount}}</span>
   </a>
 </div>

@@ -9,7 +9,7 @@
 }
 
 :host > ul {
-  padding: $baseline-2 0;
+  padding: $baseline-3 0;
 
   & > li {
     &:not(:last-child) {
@@ -21,7 +21,7 @@
     }
 
     li:not(:last-child) {
-      margin-bottom: $baseline;
+      margin-bottom: $baseline-2;
     }
   }
 }

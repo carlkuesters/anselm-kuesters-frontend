@@ -16,9 +16,9 @@ export class TextsPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /*const self = this;
+    const self = this;
     this.backendInformationService.getTexts().then(function (texts) {
       self.texts = texts;
-    });*/
+    });
   }
 }

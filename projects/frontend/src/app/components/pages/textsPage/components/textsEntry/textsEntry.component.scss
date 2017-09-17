@@ -2,16 +2,25 @@
 @import '../../../../../../styles/sizes';
 @import '../../../../../../styles/fonts/font-awesome';
 
+:host {
+  display: flex;
+  flex-direction: row;
+}
+
 a {
   color: $color-dark-grey;
 }
 
 .texts-entry-title {
+  flex: 1 1 auto;
   display: inline-block;
 }
 
 .texts-entry-info {
-  float: right;
+  flex: 0 0 auto;
+  width: 120px;
+  margin-left: $baseline;
+  text-align: right;
 
   a:not(:last-child) {
     margin-right: $baseline;
