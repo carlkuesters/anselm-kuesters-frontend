@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Response } from "@angular/http/src/static_response";
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,8 +9,8 @@ import { Text } from '../components/pages/textsPage/classes/text';
 @Injectable()
 export class BackendInformationService {
 
-  private restEndpoint: string = 'http://localhost/anselm-kuesters/api/texts/index.php';
-  private cachedResponses_Get: {[key: string]: Promise;} = {};
+  private restEndpoint: string = 'http://anselm-kuesters.de/api/texts/index.php';
+  private cachedResponses_Get: {[key: string]: Promise<Response>} = {};
 
   constructor(private http: Http) { }
 
@@ -26,13 +27,13 @@ export class BackendInformationService {
     return this.http
       .get(this.restEndpoint + 'text?id=' + id)
       .toPromise()
-      .then((response) => {
+      .then((response: Response) => {
         return response.json() as Text;
       })
       .catch(this.handleError);
   }
 
-  getCached(url: string): Promise{
+  getCached(url: string): Promise<Response>{
     let cachedResponse = this.cachedResponses_Get[url];
     if (cachedResponse != undefined) {
       return cachedResponse;
@@ -40,7 +41,7 @@ export class BackendInformationService {
     return this.http
       .get(url)
       .toPromise()
-      .then((response) => {
+      .then((response: Response) => {
         this.cachedResponses_Get[url] = Promise.resolve(response);
         return response;
       })
