@@ -1,0 +1,8 @@
+<grid-row-component *ngIf="text">
+  <grid-column-component>
+    <text-box-component>
+      <h1>{{text.title}}</h1>
+      <p [innerHTML]="text.content"></p>
+    </text-box-component>
+  </grid-column-component>
+</grid-row-component>

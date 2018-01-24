@@ -9,13 +9,13 @@ import { Text } from '../components/pages/textsPage/classes/text';
 @Injectable()
 export class BackendInformationService {
 
-  private restEndpoint: string = 'http://anselm-kuesters.de/api/texts/index.php';
+  private restEndpoint: string = 'http://anselm-kuesters.de/api/';
   private cachedResponses_Get: {[key: string]: Promise<Response>} = {};
 
   constructor(private http: Http) { }
 
   getTexts(): Promise<Array<Text>> {
-    return this.getCached(this.restEndpoint)
+    return this.getCached(this.restEndpoint + 'texts/index.php')
       .then((response) => {
         return response.json().map(function (textJson) {
           return new Text().deserialize(textJson);
@@ -25,10 +25,10 @@ export class BackendInformationService {
 
   getText(id: number): Promise<Text> {
     return this.http
-      .get(this.restEndpoint + 'text?id=' + id)
+      .get(this.restEndpoint + 'text/index.php?id=' + id)
       .toPromise()
       .then((response: Response) => {
-        return response.json() as Text;
+        return new Text().deserialize(response.json());
       })
       .catch(this.handleError);
   }

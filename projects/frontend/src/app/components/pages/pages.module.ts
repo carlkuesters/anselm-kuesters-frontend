@@ -8,6 +8,7 @@ import { ItemsModule } from '../items/items.module';
 
 import { HomePageModule } from './homePage/homePage.module';
 import { TextsPageModule } from './textsPage/textsPage.module';
+import { TextPageModule } from './textPage/textPage.module';
 import { AboutMePageModule } from './aboutMePage/aboutMePage.module';
 import { ContactPageComponent } from './contactPage/contactPage.component';
 import { InfoPageComponent } from './infoPage/infoPage.component';
@@ -23,6 +24,7 @@ import { InfoPageComponent } from './infoPage/infoPage.component';
 
     HomePageModule,
     TextsPageModule,
+      TextPageModule,
     AboutMePageModule,
   ],
   declarations: [
