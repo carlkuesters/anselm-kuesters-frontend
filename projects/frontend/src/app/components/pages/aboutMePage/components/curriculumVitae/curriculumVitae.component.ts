@@ -10,10 +10,13 @@ import { AboutMeEvent } from '../../classes/aboutMeEvent';
 export class CurriculumVitaeComponent {
   // TODO: Receive from backend
   events: AboutMeEvent[] = [
-    <AboutMeEvent>{date: '2017', text: 'Lorem Ipsum'},
-    <AboutMeEvent>{date: '2014', text: 'Dolor Sit', major: true},
-    <AboutMeEvent>{date: 'Juni 2004', text: 'Amet'},
-    <AboutMeEvent>{date: 'Feburar 2003', text: '123 Test'},
-    <AboutMeEvent>{date: '1992', text: 'Something', major: true}
+    <AboutMeEvent>{date: '2018 :)', text: 'Master Economics', major: true},
+    <AboutMeEvent>{date: 'Okt. 2016', text: 'Einschreibung Oxford', major: false},
+    <AboutMeEvent>{date: 'WS 2015/16', text: 'Bachelor Economics', major: true},
+    <AboutMeEvent>{date: 'Jan. 2015', text: 'Bachelor Gesch./German.', major: true},
+    <AboutMeEvent>{date: 'WS 2011/12', text: 'Einschreibung Heidelberg', major: false},
+    <AboutMeEvent>{date: '2011', text: 'Abitur', major: true},
+    <AboutMeEvent>{date: '2008', text: '1. Preis Schreibwettbewerb', major: false},
+    <AboutMeEvent>{date: '1992', text: 'Geburt in Freiburg', major: true}
   ];
 }

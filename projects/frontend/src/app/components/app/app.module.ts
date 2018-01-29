@@ -15,6 +15,7 @@ import { ItemsModule } from '../items/items.module';
 import { PagesModule } from '../pages/pages.module';
 
 import { BackendInformationService } from '../../services/backendInformation.service';
+import { TextsService } from '../../services/texts.service';
 
 // TODO: Remove
 import { DashboardComponent } from '../../dashboard.component';
@@ -56,7 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeroDetailComponent,
   ],
   providers: [
-    BackendInformationService
+    BackendInformationService,
+    TextsService
   ],
   bootstrap: [
     AppComponent

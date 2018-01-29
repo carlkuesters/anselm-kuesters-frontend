@@ -12,6 +12,8 @@
   padding: $baseline-3 0;
 
   & > li {
+    flex-direction: column;
+
     &:not(:last-child) {
       margin-bottom: $baseline-4;
     }

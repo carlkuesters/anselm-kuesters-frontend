@@ -54,14 +54,17 @@ ul {
 }
 
 li {
+  display: flex;
+  flex-direction: row;
+
   &:not(:last-child) {
     margin-bottom: $baseline / 2;
   }
 
   &:before {
-    content: '●';
-    margin-right: $baseline;
-    color: $color-link;
+    content: '–';
+    margin-right: 5px + $baseline;
+    align-self: flex-start;
   }
 }
 

@@ -1,7 +1,6 @@
 <h1 translate="MY_NEWEST_TEXTS"></h1>
 <ul>
-  <li>The fall and rise of the British Labour Party</li>
-  <li>Could more have been done by the British government to halt regional economic polarisation in England between c.1950 and c.1997?</li>
-  <li>Von Rothaus Bier und badischem Wein – Ist Heimat nur eine kulinarische Erinnerung oder ein kommerzielles Produkt?</li>
-  <!--<li>Offene Türen für alle? – Zur Problematik des Freihandels in der politischen Praxis</li>-->
+  <li *ngFor="let text of texts">
+    <a routerLink="/texts/{{text.getSeoId()}}">{{text.title}}</a>
+  </li>
 </ul>

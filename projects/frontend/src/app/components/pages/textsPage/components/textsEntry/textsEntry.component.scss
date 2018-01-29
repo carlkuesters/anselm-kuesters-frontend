@@ -3,6 +3,7 @@
 @import '../../../../../../styles/fonts/font-awesome';
 
 :host {
+  flex-grow: 1;
   display: flex;
   flex-direction: row;
 }
@@ -12,12 +13,12 @@ a {
 }
 
 .texts-entry-title {
-  flex: 1 1 auto;
+  flex-grow: 1;
   display: inline-block;
 }
 
 .texts-entry-info {
-  flex: 0 0 auto;
+  flex-grow: 0;
   width: 120px;
   margin-left: $baseline;
   text-align: right;

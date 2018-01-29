@@ -17,11 +17,18 @@ $time-column-width: 140px;
 }
 
 ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: $box-padding;
 }
 
 li {
+  flex: 1 0 auto;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
   &:before {
     content: none;
@@ -44,9 +51,9 @@ li {
 
   &:not(.major) {
     .event-text:before {
-      top: 4px;
       width: $baseline * 1.5;
       height: $baseline * 1.5;
+      margin-top: 3px;
       margin-left: (-1.375 * $box-padding) - 0.5;
     }
   }
@@ -55,7 +62,6 @@ li {
     font-weight: 600;
 
     .event-text:before {
-      top: 1px;
       width: $baseline-2;
       height: $baseline-2;
       margin-left: (-1.5 * $box-padding) - 0.5;

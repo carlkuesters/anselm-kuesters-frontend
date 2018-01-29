@@ -1,12 +1,12 @@
-<a routerLink="/texts/{{text.id}}" class="texts-entry-title">
+<a routerLink="/texts/{{text.getSeoId()}}" class="texts-entry-title">
   <h2>{{text.title}}</h2>
 </a>
 <div class="texts-entry-info">
-  <a *ngIf="text.commentsCount > 0" routerLink="/texts/{{text.id}}/comments">
+  <a *ngIf="text.commentsCount > 0" routerLink="/texts/{{text.getSeoId()}}/comments">
     <i class="fa fa-comment-o"></i>
     <span>{{text.commentsCount}}</span>
   </a>
-  <a *ngIf="text.publicationsCount > 0" routerLink="/texts/{{text.id}}/publications">
+  <a *ngIf="text.publicationsCount > 0" routerLink="/texts/{{text.getSeoId()}}/publications">
     <i class="fa fa-link"></i>
     <span>{{text.publicationsCount}}</span>
   </a>

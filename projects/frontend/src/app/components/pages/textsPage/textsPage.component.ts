@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Text } from './classes/text';
 
-import { BackendInformationService } from '../../../services/backendInformation.service';
+import { TextsService } from '../../../services/texts.service';
 
 @Component({
   selector: 'texts-page-component',
@@ -12,12 +12,12 @@ import { BackendInformationService } from '../../../services/backendInformation.
 export class TextsPageComponent implements OnInit {
   texts: Text[];
 
-  constructor (private backendInformationService:BackendInformationService) {
+  constructor (private textsService: TextsService) {
   }
 
   ngOnInit(): void {
     const self = this;
-    this.backendInformationService.getTexts().then(function (texts) {
+    this.textsService.getTexts().then(function (texts) {
       self.texts = texts;
     });
   }

@@ -1,9 +1,11 @@
 <grid-row-component>
   <grid-column-component>
-    <grid-row-component>
+    <!--TODO: General css class or component-specific style?-->
+    <grid-row-component style="flex-grow: 0;">
       <grid-column-component>
         <text-box-component>
           <h1 translate="ABOUT_ME"></h1>
+          <p [innerHTML]="'PAGE.ABOUT_ME.CONTENT.0' | translate"></p>
         </text-box-component>
       </grid-column-component>
     </grid-row-component>
@@ -16,7 +18,18 @@
     </grid-row-component>
   </grid-column-component>
   <grid-column-component>
-    <image-box-component imagePath="assets/images/anselm/garden.jpg"></image-box-component>
+    <grid-row-component>
+      <grid-column-component>
+        <image-box-component imagePath="assets/images/anselm/garden.jpg"></image-box-component>
+      </grid-column-component>
+    </grid-row-component>
+    <grid-row-component>
+      <grid-column-component>
+        <text-box-component>
+          <p [innerHTML]="'PAGE.ABOUT_ME.CONTENT.1' | translate"></p>
+        </text-box-component>
+      </grid-column-component>
+    </grid-row-component>
   </grid-column-component>
 </grid-row-component>
 <grid-row-component>
