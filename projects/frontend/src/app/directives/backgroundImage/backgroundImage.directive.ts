@@ -1,4 +1,4 @@
-import {Directive, Input, ElementRef, OnInit } from '@angular/core';
+import {Directive, Input, ElementRef, OnInit} from '@angular/core';
 
 @Directive({
   selector: '[backgroundImage]',

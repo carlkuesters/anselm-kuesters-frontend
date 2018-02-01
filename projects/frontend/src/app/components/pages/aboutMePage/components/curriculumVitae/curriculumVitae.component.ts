@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { AboutMeEvent } from '../../classes/aboutMeEvent';
+import {AboutMeEvent} from '../../classes/aboutMeEvent';
 
 @Component({
   selector: 'curriculum-vitae-component',

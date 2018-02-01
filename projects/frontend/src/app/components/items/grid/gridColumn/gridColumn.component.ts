@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import {Component, Input, OnInit, ElementRef, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'grid-column-component',

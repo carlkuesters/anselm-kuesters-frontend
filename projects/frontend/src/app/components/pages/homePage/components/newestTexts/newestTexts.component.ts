@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { TextsService } from "../../../../../services/texts.service";
+import {Component, OnInit} from '@angular/core';
+import {TextsService} from "../../../../../services/texts.service";
 
-import { Text } from '../../../textsPage/classes/text';
+import {Text} from '../../../textsPage/classes/text';
 
 @Component({
   selector: 'newest-texts-component',

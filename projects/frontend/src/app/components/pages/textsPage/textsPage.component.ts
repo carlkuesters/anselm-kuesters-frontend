@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Text } from './classes/text';
+import {Text} from './classes/text';
 
-import { TextsService } from '../../../services/texts.service';
+import {TextsService} from '../../../services/texts.service';
 
 @Component({
   selector: 'texts-page-component',

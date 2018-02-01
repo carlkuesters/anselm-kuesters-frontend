@@ -1,4 +1,4 @@
-import { BlankPage } from './app.po';
+import {BlankPage} from './app.po';
 
 describe('blank App', () => {
   let page: BlankPage;

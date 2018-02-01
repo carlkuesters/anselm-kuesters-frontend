@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Quote } from './components/quote/classes/quote';
+import {Quote} from './components/quote/classes/quote';
 
 @Component({
   selector: 'home-page-component',

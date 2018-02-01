@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import { Text } from '../components/pages/textsPage/classes/text';
-import { BackendInformationService } from "./backendInformation.service";
+import {Text} from '../components/pages/textsPage/classes/text';
+import {BackendInformationService} from "./backendInformation.service";
 
 @Injectable()
 export class TextsService {

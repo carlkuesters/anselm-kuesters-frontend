@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { TranslateModule } from '@ngx-translate/core';
+import {TranslateModule} from '@ngx-translate/core';
 
-import { ItemsModule } from '../../items/items.module';
+import {ItemsModule} from '../../items/items.module';
 
-import { AboutMePageComponent } from './aboutMePage.component';
-import { CurriculumVitaeComponent } from './components/curriculumVitae/curriculumVitae.component';
+import {AboutMePageComponent} from './aboutMePage.component';
+import {CurriculumVitaeComponent} from './components/curriculumVitae/curriculumVitae.component';
 
 @NgModule({
   imports: [

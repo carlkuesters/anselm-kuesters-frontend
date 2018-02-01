@@ -1,7 +1,7 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 
-import { Text } from '../../classes/text';
-import { TextsOfYear } from '../../classes/textsOfYear';
+import {Text} from '../../classes/text';
+import {TextsOfYear} from '../../classes/textsOfYear';
 
 @Component({
   selector: 'texts-component',

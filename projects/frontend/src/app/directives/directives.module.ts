@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { BackgroundImageDirective } from './backgroundImage/backgroundImage.directive';
+import {BackgroundImageDirective} from './backgroundImage/backgroundImage.directive';
 
 @NgModule({
   imports: [],

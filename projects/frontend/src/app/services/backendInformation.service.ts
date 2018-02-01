@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Response } from "@angular/http/src/static_response";
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Response} from "@angular/http/src/static_response";
 
 import 'rxjs/add/operator/toPromise';
 
-import { Text } from '../components/pages/textsPage/classes/text';
+import {Text} from '../components/pages/textsPage/classes/text';
 
 @Injectable()
 export class BackendInformationService {
