@@ -22,7 +22,7 @@ export class TextPageComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     const self = this;
     this.activatedRoute.params.forEach((params: Params) => {
-        const textId: number = SeoService.extractId(params['seoTextId']);
+        let textId: number = SeoService.extractId(params['seoTextId']);
         this.textsService.getText(textId).then(function (text) {
           self.text = text;
           self.scrollToAnchor();

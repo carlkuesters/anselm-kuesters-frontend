@@ -22,7 +22,7 @@ export class SeoService {
 
   public static extractId(seoId: string): number {
     const seperator = '-';
-    const lastSeperatorIndex = seoId.lastIndexOf(seperator);
+    let lastSeperatorIndex = seoId.lastIndexOf(seperator);
     let idString: string;
     if (lastSeperatorIndex !== -1) {
       idString = seoId.substring(lastSeperatorIndex + seperator.length);
