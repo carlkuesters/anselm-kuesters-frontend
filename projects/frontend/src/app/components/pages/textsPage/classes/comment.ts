@@ -6,9 +6,6 @@ export class Comment implements Serializable<Comment> {
   text: string;
   date: number;
 
-  commentsCount: number;
-  publicationsCount: number;
-
   public deserialize(json): Comment {
     this.id = json.id;
     this.author = json.author;

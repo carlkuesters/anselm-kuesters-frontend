@@ -66,6 +66,12 @@ li {
     margin-right: 5px + $baseline;
     align-self: flex-start;
   }
+
+  a:not(:hover) {
+    &, &:visited {
+      color: $color-dark-grey;
+    }
+  }
 }
 
 figure {

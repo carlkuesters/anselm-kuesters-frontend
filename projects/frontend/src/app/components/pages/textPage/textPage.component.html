@@ -6,13 +6,21 @@
     </text-box-component>
   </grid-column-component>
 </grid-row-component>
+
 <a id="publications"></a>
-<!--TODO: Publications-->
-<a id="comments"></a>
-<grid-row-component *ngFor="let comment of (text ? text.comments : [])">
+<grid-row-component *ngIf="text && (text.publications.length > 0)">
   <grid-column-component>
     <text-box-component>
-      <comment-component [comment]="comment"></comment-component>
+      <publications-component [publications]="text.publications"></publications-component>
     </text-box-component>
+  </grid-column-component>
+</grid-row-component>
+
+<a id="comments"></a>
+<grid-row-component *ngIf="text && (text.comments.length > 0)">
+  <grid-column-component>
+    <box-component>
+      <comments-component [comments]="text.comments"></comments-component>
+    </box-component>
   </grid-column-component>
 </grid-row-component>
