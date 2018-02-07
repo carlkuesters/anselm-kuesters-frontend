@@ -1,0 +1,10 @@
+@import '../../../../styles/variables';
+
+p + h2 {
+  margin-top: $baseline-2;
+}
+
+h2 {
+  margin-bottom: $baseline;
+  font-weight: bold;
+}
