@@ -17,12 +17,6 @@ import {PagesModule} from '../pages/pages.module';
 import {BackendInformationService} from '../../services/backendInformation.service';
 import {TextsService} from '../../services/texts.service';
 
-// TODO: Remove
-import {DashboardComponent} from '../../dashboard.component';
-import {HeroesComponent} from '../../heroes.component';
-import {HeroDetailComponent} from '../../hero-detail.component';
-import {HeroSearchComponent} from '../../hero-search.component';
-
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/translations/', '.json');
@@ -50,11 +44,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   declarations: [
     AppComponent,
-
-    DashboardComponent,
-    HeroSearchComponent,
-    HeroesComponent,
-    HeroDetailComponent,
   ],
   providers: [
     BackendInformationService,
