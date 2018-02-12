@@ -1,7 +1,7 @@
 @import '../../../../../../styles/variables.scss';
 
 $box-padding: $baseline-2;
-$time-column-width: 140px;
+$time-column-width: 80px;
 
 :host {
   display: block;
@@ -29,6 +29,7 @@ li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 0px;
 
   &:before {
     content: none;
@@ -38,10 +39,9 @@ li {
     display: inline-block;
     width: $time-column-width - (2 * $box-padding);
     margin-right: $box-padding * 2;
-    text-align: right;
   }
 
-  .event-text:before {
+  .event-information:before {
     content: '';
     position: absolute;
     background: $color-white;
@@ -49,21 +49,29 @@ li {
     border-radius: 50%;
   }
 
+  .event-location {
+    font-size: 14px;
+    color: $color-grey;
+  }
+
   &:not(.major) {
-    .event-text:before {
+    .event-information:before {
       width: $baseline * 1.5;
       height: $baseline * 1.5;
-      margin-top: 3px;
+      margin-top: 14.5px;
       margin-left: (-1.375 * $box-padding) - 0.5;
     }
   }
 
   &.major {
-    font-weight: 600;
+    time, .event-text {
+      font-weight: 600;
+    }
 
-    .event-text:before {
+    .event-information:before {
       width: $baseline-2;
       height: $baseline-2;
+      margin-top: 12px;
       margin-left: (-1.5 * $box-padding) - 0.5;
       border-width: 2px;
       border-color: $color-dark-grey;

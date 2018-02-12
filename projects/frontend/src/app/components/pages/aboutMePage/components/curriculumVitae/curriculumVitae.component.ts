@@ -10,13 +10,11 @@ import {AboutMeEvent} from '../../classes/aboutMeEvent';
 export class CurriculumVitaeComponent {
   // TODO: Receive from backend
   events: AboutMeEvent[] = [
-    <AboutMeEvent>{date: '2018 :)', text: 'Master Economics', major: true},
-    <AboutMeEvent>{date: 'Okt. 2016', text: 'Einschreibung Oxford', major: false},
-    <AboutMeEvent>{date: 'WS 2015/16', text: 'Bachelor Economics', major: true},
-    <AboutMeEvent>{date: 'Jan. 2015', text: 'Bachelor Gesch./German.', major: true},
-    <AboutMeEvent>{date: 'WS 2011/12', text: 'Einschreibung Heidelberg', major: false},
-    <AboutMeEvent>{date: '2011', text: 'Abitur', major: true},
-    <AboutMeEvent>{date: '2008', text: '1. Preis Schreibwettbewerb', major: false},
-    <AboutMeEvent>{date: '1992', text: 'Geburt in Freiburg', major: true}
+    <AboutMeEvent>{date: '2018', text: 'M.Phil - Economic and Social History', location: 'University of Oxford', major: true},
+    <AboutMeEvent>{date: '2016', text: 'B.Sc. - Economics', location: 'Ruprecht-Karls-Universität, Heidelberg', major: true},
+    <AboutMeEvent>{date: '2015', text: 'Auslandssemester', location: 'University of Copenhagen', major: false},
+    <AboutMeEvent>{date: '2015', text: 'B.A. - Geschichte und Germanistik', location: 'Ruprecht-Karls-Universität, Heidelberg', major: true},
+    <AboutMeEvent>{date: '2011', text: 'Abitur', location: 'Faust-Gymnasium, Staufen im Breisgau', major: false},
+    <AboutMeEvent>{date: '1992', text: 'Geburt', location: 'Freiburg im Breisgau', major: true}
   ];
 }
