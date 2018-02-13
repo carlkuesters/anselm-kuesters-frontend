@@ -1,0 +1,5 @@
+<h1 [translate]="category"></h1>
+<div *ngFor="let achievement of achievements" class="achievement">
+  <div class="achievement-header"><time>{{achievement.date}}</time><span *ngIf="achievement.location" class="achievement-location">, {{achievement.location}}</span></div>
+  <div class="achievement-title">{{achievement.title}}</div>
+</div>

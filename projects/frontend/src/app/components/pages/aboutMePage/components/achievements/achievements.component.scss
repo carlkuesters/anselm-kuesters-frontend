@@ -1,0 +1,27 @@
+@import '../../../../../../styles/variables';
+
+h1 {
+  margin: 0px;
+  padding: $baseline-2 $baseline-2 $baseline $baseline-2;
+}
+
+.achievement {
+  margin-bottom: $baseline;
+  font-size: 14px;
+
+  & + .achievement {
+    margin-top: $baseline * 1.5;
+  }
+}
+
+.achievement-header, .achievement-title {
+  padding: 0px $baseline-2;
+}
+
+.achievement-header {
+  display: block;
+  margin-bottom: $baseline / 2;
+  padding-bottom: $baseline / 2;
+  border-bottom: 1px solid $color-shadow-border;
+  color: $color-grey;
+}

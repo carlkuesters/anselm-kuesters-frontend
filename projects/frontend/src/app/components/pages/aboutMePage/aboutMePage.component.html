@@ -34,18 +34,18 @@
 </grid-row-component>
 <grid-row-component>
   <grid-column-component>
-    <text-box-component>
-      <h1 translate="FURTHER_DEVELOPMENTS"></h1>
-    </text-box-component>
+    <box-component>
+      <achievements-component category="FURTHER_DEVELOPMENTS" [achievements]="furtherDevelopments"></achievements-component>
+    </box-component>
   </grid-column-component>
   <grid-column-component>
-    <text-box-component>
-      <h1 translate="AWARDS"></h1>
-    </text-box-component>
+    <box-component>
+      <achievements-component category="AWARDS" [achievements]="awards"></achievements-component>
+    </box-component>
   </grid-column-component>
   <grid-column-component>
-    <text-box-component>
-      <h1 translate="IN_THE_PRESS"></h1>
-    </text-box-component>
+    <box-component>
+      <achievements-component category="IN_THE_PRESS" [achievements]="inThePress"></achievements-component>
+    </box-component>
   </grid-column-component>
 </grid-row-component>

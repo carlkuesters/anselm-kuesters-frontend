@@ -6,6 +6,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {ItemsModule} from '../../items/items.module';
 
 import {AboutMePageComponent} from './aboutMePage.component';
+import {AchievementsComponent} from './components/achievements/achievements.component';
 import {CurriculumVitaeComponent} from './components/curriculumVitae/curriculumVitae.component';
 
 @NgModule({
@@ -19,10 +20,12 @@ import {CurriculumVitaeComponent} from './components/curriculumVitae/curriculumV
   declarations: [
     AboutMePageComponent,
     CurriculumVitaeComponent,
+    AchievementsComponent,
   ],
   exports: [
     AboutMePageComponent,
     CurriculumVitaeComponent,
+    AchievementsComponent,
   ]
 })
 export class AboutMePageModule { }
