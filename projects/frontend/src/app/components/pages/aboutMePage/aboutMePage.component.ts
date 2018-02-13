@@ -10,7 +10,7 @@ import {Achievement} from "../textsPage/classes/achievement";
 export class AboutMePageComponent implements OnInit{
   public furtherDevelopments: Achievement[];
   public awards: Achievement[];
-  public inThePress: Achievement[];
+  public inTheMedia: Achievement[];
 
   ngOnInit() {
     // TODO: Receive from backend
@@ -30,8 +30,11 @@ export class AboutMePageComponent implements OnInit{
       <Achievement>{date: '2011', title: 'Scheffel-Preis und Förderpreis im Fach Geschichte', location: ''},
       <Achievement>{date: '2008', title: 'Sieger beim Schreibwettbewerb "ich schlag nicht mehr im selben takt" des Literaturbüros Freiburg', location: ''},
     ];
-    this.inThePress = [
-      // TODO
+    this.inTheMedia = [
+      <Achievement>{date: '2015', title: 'Amnesty-Hochschulgruppe engagiert sich gegen Massenüberwachung', location: 'Rhein-Neckar-Zeitung'},
+      <Achievement>{date: '2014', title: 'Brasiliens Regierung die Gelbe Karte zeigen', location: 'Rhein-Neckar-Zeitung'},
+      <Achievement>{date: '2009', title: 'Junge Literatur in Freiburg (2)', location: 'fudder.de'},
+      <Achievement>{date: '2009', title: 'Zeitung gemacht, noch bevor er lesen konnte', location: 'Badische Zeitung'},
     ];
   }
 }

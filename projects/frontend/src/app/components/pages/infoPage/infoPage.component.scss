@@ -1,10 +1,22 @@
 @import '../../../../styles/variables';
 
-p + h2 {
-  margin-top: $baseline-2;
+h1 {
+  margin-bottom: 0px;
+  padding: $baseline-2;
+}
+
+p, h2 {
+  padding-left: $baseline-2;
+  padding-right: $baseline-2;
 }
 
 h2 {
   margin-bottom: $baseline;
-  font-weight: bold;
+  padding-bottom: $baseline / 2;
+  border-bottom: 1px solid $color-shadow-border;
+  color: $color-grey;
+}
+
+p {
+  margin-bottom: $baseline-2;
 }
