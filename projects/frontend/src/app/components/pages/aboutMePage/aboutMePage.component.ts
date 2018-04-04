@@ -18,8 +18,7 @@ export class AboutMePageComponent implements OnInit{
       <Achievement>{date: 'Juli 2017', title: 'Digital Humanities Oxford Summer School: Workshop in „Corpus and Computational Linguistics“', location: 'Oxford'},
       <Achievement>{date: 'Oktober 2015', title: 'Amnesty International Workshop: Lokale Pressearbeit', location: 'Augsburg'},
       <Achievement>{date: '2014', title: 'Heidelberg National Model United Nations Conference: Teilnahme General Assembly: Consequences of Climate Change', location: 'Heidelberg'},
-      <Achievement>{date: 'Juli 2017', title: 'Digital Humanities Oxford Summer School: Workshop in „Corpus and Computational Linguistics“', location: 'Stuttgart'},
-      <Achievement>{date: 'Oktober 2013', title: 'Zeitungsworkshop "Gemeinsam 23" zum Tag der Deutschen Einheit', location: ''},
+      <Achievement>{date: 'Oktober 2013', title: 'Zeitungsworkshop "Gemeinsam 23" zum Tag der Deutschen Einheit', location: 'Stuttgart'},
       <Achievement>{date: 'Juli 2011', title: 'Schreibwerkstatt "Süßes oder Saures!" mit der Schriftstellerin Jagoda Marinić', location: 'Bad Herrenalb'},
     ];
     this.awards = [
