@@ -9,7 +9,10 @@ html {
 }
 
 body {
-  background-color: #F5F5F5;//#FFFFDD;
+  background-color: #F5F5F5;
+}
+
+body, input, textarea, button {
   font-family: 'Open Sans', Tahoma, sans-serif;
   font-size: 16px;
   color: $color-dark-grey;
@@ -80,4 +83,39 @@ figure {
 
 blockquote {
   margin: 0;
+}
+
+input, textarea, button {
+  padding: $baseline;
+  border: 1px solid $color-grey;
+  margin-top: $baseline;
+}
+
+input, textarea {
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: #FC0;
+  }
+}
+
+textarea {
+  resize: none;
+  // https://stackoverflow.com/questions/47719919/how-to-remove-margin-from-the-text-area
+  vertical-align: bottom;
+}
+
+button {
+  padding-left: $baseline * 1.5;
+  padding-right: $baseline * 1.5;
+  background: #F5F5F5;
+  border-color: #AAA;
+  cursor: pointer;
+
+  &:hover {
+    background: #FBFBFB;
+    border-color: $color-link;
+    color: $color-link;
+  }
 }

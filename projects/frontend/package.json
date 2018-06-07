@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npm run build && node deployment/scripts/prepare.js && node deployment/scripts/upload.js"
+    "deploy": "npm run build && node deployment/scripts/upload.js"
   },
   "private": true,
   "dependencies": {

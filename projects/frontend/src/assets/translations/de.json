@@ -6,13 +6,17 @@
   "CONTACT": "Kontakt",
   "CONTACT_INFORMATION": "Kontakt-Informationen",
   "COPYRIGHT": "Copyright",
+  "EMAIL": "E-Mail",
   "FURTHER_DEVELOPMENTS": "Weiterbildungen",
   "HOME": "Home",
   "IMPRESSUM": "Impressum",
   "IN_THE_MEDIA": "In den Medien",
+  "MESSAGE": "Nachricht",
   "MY_NEWEST_TEXTS": "Meine neuesten Texte",
   "MY_TEXTS": "Meine Texte",
+  "NAME": "Name",
   "PUBLICATIONS": "Veröffentlichungen",
+  "SEND": "Senden",
   "TEXTS": "Texte",
 
   "PAGE": {
@@ -23,7 +27,10 @@
       }
     },
     "CONTACT": {
-      "CONTENT": "Falls Sie Fragen oder Interesse an einer Kooperation haben, senden Sie mir gerne eine Nachricht über das bereitgestellte Kontaktformular. Über Meinungen zu meinen Texten freue ich mich jederzeit."
+      "CONTENT": "Falls Sie Fragen oder Interesse an einer Kooperation haben, senden Sie mir gerne eine Nachricht über das bereitgestellte Kontaktformular. Über Meinungen zu meinen Texten freue ich mich jederzeit.",
+      "MESSAGE": {
+        "DISABLED": "Das Kontaktformular ist derzeit deaktiviert."
+      }
     },
     "HOME": {
       "ABOUT_ME": "Ich wurde 1992 in Freiburg im Breisgau geboren und wuchs im nahegelegenen Eschbach auf. Seit Oktober 2016 studiere ich im zweijährigen Masterstudiengang Economic and Social History an der Universität Oxford in England.",
@@ -52,10 +59,6 @@
           "CONTENT": "Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten (Emailadressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist - soweit technisch möglich und zumutbar - auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet."
         },
         "4": {
-          "TITLE": "Datenschutzerklärung für die Nutzung von Facebook-Plugins (Like-Button)",
-          "CONTENT": "Auf unseren Seiten sind Plugins des sozialen Netzwerks Facebook, 1601 South California Avenue, Palo Alto, CA 94304, USA integriert. Die Facebook-Plugins erkennen Sie an dem Facebook-Logo oder dem \"Like-Button\" (\"Gefällt mir\") auf unserer Seite. Eine Übersicht über die Facebook-Plugins finden Sie hier.<br/>Wenn Sie unsere Seiten besuchen, wird über das Plugin eine direkte Verbindung zwischen Ihrem Browser und dem Facebook-Server hergestellt. Facebook erhält dadurch die Information, dass Sie mit Ihrer IP-Adresse unsere Seite besucht haben. Wenn Sie den Facebook \"Like-Button\" anklicken während Sie in Ihrem Facebook-Account eingeloggt sind, können Sie die Inhalte unserer Seiten auf Ihrem Facebook-Profil verlinken. Dadurch kann Facebook den Besuch unserer Seiten Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch Facebook erhalten. Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von facebook.<br/>Wenn Sie nicht wünschen, dass Facebook den Besuch unserer Seiten Ihrem Facebook-Nutzerkonto zuordnen kann, loggen Sie sich bitte aus Ihrem Facebook-Benutzerkonto aus."
-        },
-        "5": {
           "TITLE": "Rechtswirksamkeit",
           "CONTENT": "Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt."
         }

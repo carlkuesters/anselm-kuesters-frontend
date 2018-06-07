@@ -1,0 +1,7 @@
+<form [formGroup]="contactForm">
+  <input formControlName="name" [placeholder]="'NAME' | translate">
+  <input formControlName="email" [placeholder]="'EMAIL' | translate">
+  <textarea formControlName="text" [placeholder]="'MESSAGE' | translate"></textarea>
+  <button translate="SEND"></button>
+</form>
+<div class="info" translate="PAGE.CONTACT.MESSAGE.DISABLED"></div>

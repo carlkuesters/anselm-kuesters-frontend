@@ -2,7 +2,7 @@
   <grid-column-component>
     <box-component>
       <h1 translate="IMPRESSUM"></h1>
-      <ng-container *ngFor="let index of [0,1,2,3,4,5]">
+      <ng-container *ngFor="let index of [0,1,2,3,4]">
         <h2 [innerHTML]="'PAGE.INFO.IMPRESSUM.' + index + '.TITLE' | translate"></h2>
         <p [innerHTML]="'PAGE.INFO.IMPRESSUM.' + index + '.CONTENT' | translate"></p>
       </ng-container>

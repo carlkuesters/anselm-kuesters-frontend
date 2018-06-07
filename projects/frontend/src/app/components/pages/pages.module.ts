@@ -10,7 +10,7 @@ import {HomePageModule} from './homePage/homePage.module';
 import {TextsPageModule} from './textsPage/textsPage.module';
 import {TextPageModule} from './textPage/textPage.module';
 import {AboutMePageModule} from './aboutMePage/aboutMePage.module';
-import {ContactPageComponent} from './contactPage/contactPage.component';
+import {ContactPageModule} from './contactPage/contactPage.module';
 import {InfoPageModule} from './infoPage/infoPage.module';
 
 @NgModule({
@@ -26,13 +26,10 @@ import {InfoPageModule} from './infoPage/infoPage.module';
     TextsPageModule,
       TextPageModule,
     AboutMePageModule,
+    ContactPageModule,
     InfoPageModule,
   ],
-  declarations: [
-    ContactPageComponent,
-  ],
-  exports: [
-    ContactPageComponent,
-  ]
+  declarations: [],
+  exports: []
 })
 export class PagesModule { }
