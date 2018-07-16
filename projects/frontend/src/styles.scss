@@ -1,3 +1,4 @@
+@import './styles/breakpoints';
 @import './styles/variables';
 
 html {
@@ -9,6 +10,7 @@ html {
 }
 
 body {
+  margin: $baseline;
   background-color: #F5F5F5;
 }
 

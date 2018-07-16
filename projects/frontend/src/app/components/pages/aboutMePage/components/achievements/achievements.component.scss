@@ -12,6 +12,10 @@ h1 {
   & + .achievement {
     margin-top: $baseline * 1.5;
   }
+
+  &:last-child {
+    margin-bottom: $baseline-2;
+  }
 }
 
 .achievement-header, .achievement-title {

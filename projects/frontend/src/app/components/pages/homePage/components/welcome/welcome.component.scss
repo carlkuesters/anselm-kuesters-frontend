@@ -1,3 +1,4 @@
+@import '../../../../../../styles/breakpoints';
 @import '../../../../../../styles/variables';
 
 .welcome {
@@ -8,6 +9,10 @@
   background-image: url('../../../../../../assets/images/anselm/stadion_800.png');
   padding-left: 420px;
   padding-right: $baseline-2;
+
+  @include bp-sm-max {
+    padding-left: $baseline-2;
+  }
 
   p {
     color: $color-white;

@@ -1,3 +1,5 @@
+@import '../../../../../../styles/breakpoints';
+
 button {
   float: right;
 }
@@ -5,5 +7,12 @@ button {
 .info {
   margin-top: 90px;
   text-align: center;
-  color: #999;
+
+  @include bp-sm-max {
+    margin-top: 70px;
+  }
+
+  &, & a {
+    color: #999;
+  }
 }

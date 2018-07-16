@@ -1,13 +1,22 @@
+@import '../../../../styles/breakpoints';
 @import '../../../../styles/variables';
 
 header {
   margin-top: $baseline-4;
   margin-bottom: $baseline;
+
+  @include bp-sm-max {
+    margin-top: $baseline;
+    margin-bottom: $baseline-2;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
 }
 
 nav {
-  float: right;
-
   a {
     display: inline-block;
     background: #FFF;
@@ -27,6 +36,20 @@ nav {
 
     & + a {
       margin-left: 10px;
+    }
+  }
+
+  @include bp-md {
+    float: right;
+  }
+
+  @include bp-sm-max {
+    display: flex;
+    flex-direction: row;
+    margin-top: $baseline;
+
+    a {
+      flex-grow: 1;
     }
   }
 }

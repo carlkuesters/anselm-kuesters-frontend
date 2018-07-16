@@ -1,4 +1,8 @@
-#page-wrapper {
-  width: 800px;
-  margin: 0 auto;
+@import '../../../../styles/breakpoints';
+
+@include bp-md {
+  #page-wrapper {
+    width: 800px;
+    margin: 0 auto;
+  }
 }

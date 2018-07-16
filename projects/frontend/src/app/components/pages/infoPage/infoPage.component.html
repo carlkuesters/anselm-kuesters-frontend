@@ -2,6 +2,13 @@
   <grid-column-component>
     <box-component>
       <h1 translate="IMPRESSUM"></h1>
+      <h2 translate="PAGE.INFO.DISCLAIMER"></h2>
+      <p>
+        Anselm Küsters<br/>
+        Gallenweiler Weg 1<br/>
+        79427 Eschbach<br/>
+        <a href="mailto:info@anselm-kuesters.de">info@anselm-kuesters.de</a>
+      </p>
       <ng-container *ngFor="let index of [0,1,2,3,4]">
         <h2 [innerHTML]="'PAGE.INFO.IMPRESSUM.' + index + '.TITLE' | translate"></h2>
         <p [innerHTML]="'PAGE.INFO.IMPRESSUM.' + index + '.CONTENT' | translate"></p>
