@@ -1,40 +1,55 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {Response} from "@angular/http/src/static_response";
+import {Response} from '@angular/http/src/static_response';
 
 import 'rxjs/add/operator/toPromise';
 
+import {AchievementsMap} from '../components/pages/aboutMePage/classes/achievementsMap';
+import {Quote} from '../components/pages/homePage/components/quote/classes/quote';
+import {Serializable} from '../components/pages/textsPage/classes/serializable';
 import {Text} from '../components/pages/textsPage/classes/text';
 
 @Injectable()
 export class BackendInformationService {
 
-  private restEndpoint: string = 'http://anselm-kuesters.de/api/';
-  private cachedResponses_Get: {[key: string]: Promise<Response>} = {};
+  private restEndpointBase: string = 'http://anselm-kuesters.de/api/';
+  private cachedMappedResponses_Get: {[key: string]: Promise<any>} = {};
 
   constructor(private http: Http) { }
 
-  getTexts(): Promise<Array<Text>> {
-    return this.getCached(this.restEndpoint + 'texts/index.php')
-      .then((response) => {
-        return response.json().map(function (textJson) {
-          return new Text().deserialize(textJson);
-        });
-      });
+  getQuotes(): Promise<Quote[]> {
+    return this.getArray('quotes/index.php', Quote);
+  }
+
+  getTexts(): Promise<Text[]> {
+    return this.getArray('texts/index.php', Text);
   }
 
   getText(id: number): Promise<Text> {
-    return this.http
-      .get(this.restEndpoint + 'text/index.php?id=' + id)
-      .toPromise()
-      .then((response: Response) => {
-        return new Text().deserialize(response.json());
-      })
-      .catch(this.handleError);
+    return this.getObject('text/index.php?id=' + id, Text);
   }
 
-  getCached(url: string): Promise<Response>{
-    let cachedResponse = this.cachedResponses_Get[url];
+  getAchievements(): Promise<AchievementsMap> {
+    return this.getObject('achievements/index.php', AchievementsMap);
+  }
+
+  private getArray<T extends Serializable<T>>(endpointPath: string, resultClass: new () => T): Promise<T[]>{
+    return this.getCachedMapped(endpointPath, responseJson => {
+      return responseJson.map(function (textJson) {
+        return new resultClass().deserialize(textJson);
+      });
+    });
+  }
+
+  private getObject<T extends Serializable<T>>(endpointPath: string, resultClass: new () => T): Promise<T>{
+    return this.getCachedMapped(endpointPath, responseJson => {
+      return new resultClass().deserialize(responseJson);
+    });
+  }
+
+  private getCachedMapped<T>(endpointPath: string, mapResponse: (responseJson) => T): Promise<T>{
+    const url = this.restEndpointBase + endpointPath;
+    let cachedResponse = this.cachedMappedResponses_Get[url];
     if (cachedResponse != undefined) {
       return cachedResponse;
     }
@@ -42,8 +57,9 @@ export class BackendInformationService {
       .get(url)
       .toPromise()
       .then((response: Response) => {
-        this.cachedResponses_Get[url] = Promise.resolve(response);
-        return response;
+        const mappedResult = mapResponse(response.json());
+        this.cachedMappedResponses_Get[url] = Promise.resolve(mappedResult);
+        return mappedResult;
       })
       .catch(this.handleError);
 }

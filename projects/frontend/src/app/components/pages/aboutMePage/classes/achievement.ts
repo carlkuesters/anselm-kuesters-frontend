@@ -1,4 +1,4 @@
-import {Serializable} from "./serializable";
+import {Serializable} from '../../textsPage/classes/serializable';
 
 export class Achievement implements Serializable<Achievement> {
   id: number;
@@ -6,7 +6,7 @@ export class Achievement implements Serializable<Achievement> {
   title: string;
   location: string;
 
-  public deserialize(json): Achievement {
+  deserialize(json): Achievement {
     this.id = json.id;
     this.date = json.date;
     this.title = json.title;

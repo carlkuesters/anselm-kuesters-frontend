@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {TextsService} from "../../../../../services/texts.service";
 
+import {TextsService} from '../../../../../services/texts.service';
 import {Text} from '../../../textsPage/classes/text';
 
 @Component({

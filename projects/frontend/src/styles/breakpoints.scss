@@ -1,4 +1,11 @@
+$breakpoint-small: 420px;
 $breakpoint-medium: 830px;
+
+@mixin bp-xs-max {
+  @media (max-width: ($breakpoint-small - 1)) {
+    @content;
+  }
+}
 
 @mixin bp-sm-max {
   @media (max-width: ($breakpoint-medium - 1)) {

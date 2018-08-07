@@ -35,17 +35,17 @@
 <grid-row-component>
   <grid-column-component>
     <box-component>
-      <achievements-component category="FURTHER_DEVELOPMENTS" [achievements]="furtherDevelopments"></achievements-component>
+      <achievements-component category="FURTHER_DEVELOPMENTS" [achievements]="furtherDevelopments | async"></achievements-component>
     </box-component>
   </grid-column-component>
   <grid-column-component>
     <box-component>
-      <achievements-component category="AWARDS" [achievements]="awards"></achievements-component>
+      <achievements-component category="AWARDS" [achievements]="awards | async"></achievements-component>
     </box-component>
   </grid-column-component>
   <grid-column-component>
     <box-component>
-      <achievements-component category="IN_THE_MEDIA" [achievements]="inTheMedia"></achievements-component>
+      <achievements-component category="IN_THE_MEDIA" [achievements]="inTheMedia | async"></achievements-component>
     </box-component>
   </grid-column-component>
 </grid-row-component>

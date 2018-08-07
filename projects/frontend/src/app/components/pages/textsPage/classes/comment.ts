@@ -1,4 +1,4 @@
-import {Serializable} from "./serializable";
+import {Serializable} from './serializable';
 
 export class Comment implements Serializable<Comment> {
   id: number;
@@ -6,7 +6,7 @@ export class Comment implements Serializable<Comment> {
   text: string;
   date: number;
 
-  public deserialize(json): Comment {
+  deserialize(json): Comment {
     this.id = json.id;
     this.author = json.author;
     this.text = json.text;

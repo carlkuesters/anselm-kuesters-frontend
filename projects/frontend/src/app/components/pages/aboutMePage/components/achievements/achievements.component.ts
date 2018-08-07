@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {Achievement} from "../../../textsPage/classes/achievement";
+import {Achievement} from '../../classes/achievement';
 
 @Component({
   selector: 'achievements-component',

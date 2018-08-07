@@ -53,4 +53,16 @@ nav {
       flex-grow: 1;
     }
   }
+
+  @include bp-xs-max {
+    flex-wrap: wrap;
+
+    a {
+      flex: 0 0 50%;
+
+      & + a {
+        margin-left: 0px;
+      }
+    }
+  }
 }

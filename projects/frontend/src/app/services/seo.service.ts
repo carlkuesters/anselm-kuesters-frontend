@@ -3,7 +3,7 @@ export class SeoService {
   private static slugSeperator: string = '-';
   private static slugMaxLength: number = 50;
 
-  public static generateSeoId(id: number, title: string): string {
+  static generateSeoId(id: number, title: string): string {
     return this.sluggify(title) + this.slugSeperator + id;
   }
 
@@ -20,7 +20,7 @@ export class SeoService {
       .replace(new RegExp('/^' + this.slugSeperator + '|' + this.slugSeperator + '$/g'), '');
   }
 
-  public static extractId(seoId: string): number {
+  static extractId(seoId: string): number {
     const seperator = '-';
     let lastSeperatorIndex = seoId.lastIndexOf(seperator);
     let idString: string;

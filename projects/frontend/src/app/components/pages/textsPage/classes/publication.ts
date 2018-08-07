@@ -1,4 +1,4 @@
-import {Serializable} from "./serializable";
+import {Serializable} from './serializable';
 
 export class Publication implements Serializable<Publication> {
   id: number;
@@ -7,7 +7,7 @@ export class Publication implements Serializable<Publication> {
   url: string;
   date: number;
 
-  public deserialize(json): Publication {
+  deserialize(json): Publication {
     this.id = json.id;
     this.location = json.location;
     this.title = json.title;

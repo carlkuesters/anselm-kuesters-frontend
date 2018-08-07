@@ -1,10 +1,9 @@
 import {Component, OnInit, AfterViewInit} from '@angular/core';
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params} from '@angular/router';
 
+import {SeoService} from '../../../services/seo.service';
+import {TextsService} from '../../../services/texts.service';
 import {Text} from '../textsPage/classes/text';
-
-import {SeoService} from "../../../services/seo.service";
-import {TextsService} from "../../../services/texts.service";
 
 @Component({
   selector: 'text-page-component',

@@ -1,7 +1,7 @@
-import {Comment} from "./comment";
-import {Publication} from "./publication";
+import {SeoService} from '../../../../services/seo.service';
+import {Comment} from './comment';
+import {Publication} from './publication';
 import {Serializable} from './serializable';
-import {SeoService} from "../../../../services/seo.service";
 
 export class Text implements Serializable<Text> {
   id: number;
@@ -12,10 +12,10 @@ export class Text implements Serializable<Text> {
   commentsCount: number;
   publicationsCount: number;
 
-  publications: Array<Publication>;
-  comments: Array<Comment>;
+  publications: Publication[];
+  comments: Comment[];
 
-  public deserialize(json): Text {
+  deserialize(json): Text {
     this.id = json.id;
     this.title = json.title;
     this.content = json.content;
@@ -32,7 +32,7 @@ export class Text implements Serializable<Text> {
     return this;
   }
 
-  public getSeoId() {
+  getSeoId() {
     return SeoService.generateSeoId(this.id, this.title);
   }
 }

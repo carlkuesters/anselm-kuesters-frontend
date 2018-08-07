@@ -8,5 +8,5 @@ import {Comment} from '../../../textsPage/classes/comment';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent {
-  @Input() comments: Array<Comment>;
+  @Input() comments: Comment[];
 }

@@ -14,8 +14,10 @@ import {LayoutModule} from '../layout/layout.module';
 import {ItemsModule} from '../items/items.module';
 import {PagesModule} from '../pages/pages.module';
 
+import {AchievementsService} from '../../services/achievements.service';
 import {BackendInformationService} from '../../services/backendInformation.service';
 import {TextsService} from '../../services/texts.service';
+import {QuotesService} from '../../services/quotes.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -46,8 +48,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
   ],
   providers: [
+    AchievementsService,
     BackendInformationService,
-    TextsService
+    TextsService,
+    QuotesService
   ],
   bootstrap: [
     AppComponent

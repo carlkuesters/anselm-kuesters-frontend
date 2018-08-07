@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {Publication} from "../../../textsPage/classes/publication";
+import {Publication} from '../../../textsPage/classes/publication';
 
 @Component({
   selector: 'publications-component',
@@ -8,5 +8,5 @@ import {Publication} from "../../../textsPage/classes/publication";
   styleUrls: ['./publications.component.scss']
 })
 export class PublicationsComponent {
-  @Input() publications: Array<Publication>;
+  @Input() publications: Publication[];
 }
