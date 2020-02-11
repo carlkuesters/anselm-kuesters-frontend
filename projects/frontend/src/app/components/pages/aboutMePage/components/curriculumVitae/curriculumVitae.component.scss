@@ -49,6 +49,10 @@ li {
     border-radius: 50%;
   }
 
+  .event-text {
+    letter-spacing: -0.1px;
+  }
+
   .event-location {
     font-size: 14px;
     color: $color-grey;
