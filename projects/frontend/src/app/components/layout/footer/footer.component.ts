@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'footer-component',
+  selector: 'anselm-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })

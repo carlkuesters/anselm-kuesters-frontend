@@ -3,7 +3,7 @@ import {Component, Input} from '@angular/core';
 import {Quote} from './classes/quote';
 
 @Component({
-  selector: 'quote-component',
+  selector: 'anselm-quote',
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.scss']
 })

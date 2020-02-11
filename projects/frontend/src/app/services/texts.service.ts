@@ -6,7 +6,7 @@ import {BackendInformationService} from './backendInformation.service';
 @Injectable()
 export class TextsService {
 
-  constructor(private backendInformationService:BackendInformationService) {
+  constructor(private backendInformationService: BackendInformationService) {
   }
 
   getNewestTexts(count: number): Promise<Text[]> {

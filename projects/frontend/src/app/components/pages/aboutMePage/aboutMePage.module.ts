@@ -4,7 +4,6 @@ import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
 
 import {ItemsModule} from '../../items/items.module';
-
 import {AboutMePageComponent} from './aboutMePage.component';
 import {AchievementsComponent} from './components/achievements/achievements.component';
 import {CurriculumVitaeComponent} from './components/curriculumVitae/curriculumVitae.component';

@@ -4,9 +4,8 @@ import {CommonModule} from '@angular/common';
 import {BoxComponent} from './boxes/box/box.component';
 import {ImageBoxComponent} from './boxes/imageBox/imageBox.component';
 import {TextBoxComponent} from './boxes/textBox/textBox.component';
-
-import {GridColumnComponent} from '../items/grid/gridColumn/gridColumn.component';
-import {GridRowComponent} from '../items/grid/gridRow/gridRow.component';
+import {GridColumnComponent} from './grid/gridColumn/gridColumn.component';
+import {GridRowComponent} from './grid/gridRow/gridRow.component';
 
 @NgModule({
   imports: [

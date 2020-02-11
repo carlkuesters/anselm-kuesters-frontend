@@ -1,51 +1,51 @@
-<grid-row-component>
-  <grid-column-component>
+<anselm-grid-row>
+  <anselm-grid-column>
     <!--TODO: General css class or component-specific style?-->
-    <grid-row-component style="flex-grow: 0;">
-      <grid-column-component>
-        <text-box-component>
+    <anselm-grid-row style="flex-grow: 0;">
+      <anselm-grid-column>
+        <anselm-text-box>
           <h1 translate="ABOUT_ME"></h1>
           <p [innerHTML]="'PAGE.ABOUT_ME.CONTENT.0' | translate"></p>
-        </text-box-component>
-      </grid-column-component>
-    </grid-row-component>
-    <grid-row-component>
-      <grid-column-component>
-        <box-component>
-          <curriculum-vitae-component></curriculum-vitae-component>
-        </box-component>
-      </grid-column-component>
-    </grid-row-component>
-  </grid-column-component>
-  <grid-column-component>
-    <grid-row-component>
-      <grid-column-component>
-        <image-box-component imagePath="assets/images/anselm/garden.jpg"></image-box-component>
-      </grid-column-component>
-    </grid-row-component>
-    <grid-row-component>
-      <grid-column-component>
-        <text-box-component>
+        </anselm-text-box>
+      </anselm-grid-column>
+    </anselm-grid-row>
+    <anselm-grid-row>
+      <anselm-grid-column>
+        <anselm-box>
+          <anselm-curriculum-vitae></anselm-curriculum-vitae>
+        </anselm-box>
+      </anselm-grid-column>
+    </anselm-grid-row>
+  </anselm-grid-column>
+  <anselm-grid-column>
+    <anselm-grid-row>
+      <anselm-grid-column>
+        <anselm-image-box imagePath="assets/images/anselm/garden.jpg"></anselm-image-box>
+      </anselm-grid-column>
+    </anselm-grid-row>
+    <anselm-grid-row>
+      <anselm-grid-column>
+        <anselm-text-box>
           <p [innerHTML]="'PAGE.ABOUT_ME.CONTENT.1' | translate"></p>
-        </text-box-component>
-      </grid-column-component>
-    </grid-row-component>
-  </grid-column-component>
-</grid-row-component>
-<grid-row-component>
-  <grid-column-component>
-    <box-component>
-      <achievements-component category="FURTHER_DEVELOPMENTS" [achievements]="furtherDevelopments | async"></achievements-component>
-    </box-component>
-  </grid-column-component>
-  <grid-column-component>
-    <box-component>
-      <achievements-component category="AWARDS" [achievements]="awards | async"></achievements-component>
-    </box-component>
-  </grid-column-component>
-  <grid-column-component>
-    <box-component>
-      <achievements-component category="IN_THE_MEDIA" [achievements]="inTheMedia | async"></achievements-component>
-    </box-component>
-  </grid-column-component>
-</grid-row-component>
+        </anselm-text-box>
+      </anselm-grid-column>
+    </anselm-grid-row>
+  </anselm-grid-column>
+</anselm-grid-row>
+<anselm-grid-row>
+  <anselm-grid-column>
+    <anselm-box>
+      <anselm-achievements category="FURTHER_DEVELOPMENTS" [achievements]="furtherDevelopments | async"></anselm-achievements>
+    </anselm-box>
+  </anselm-grid-column>
+  <anselm-grid-column>
+    <anselm-box>
+      <anselm-achievements category="AWARDS" [achievements]="awards | async"></anselm-achievements>
+    </anselm-box>
+  </anselm-grid-column>
+  <anselm-grid-column>
+    <anselm-box>
+      <anselm-achievements category="IN_THE_MEDIA" [achievements]="inTheMedia | async"></anselm-achievements>
+    </anselm-box>
+  </anselm-grid-column>
+</anselm-grid-row>

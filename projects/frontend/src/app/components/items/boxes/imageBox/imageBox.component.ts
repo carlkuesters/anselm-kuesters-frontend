@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'image-box-component',
+  selector: 'anselm-image-box',
   templateUrl: './imageBox.component.html',
   styleUrls: ['./imageBox.component.scss']
 })

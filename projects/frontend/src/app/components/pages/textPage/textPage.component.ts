@@ -6,7 +6,7 @@ import {TextsService} from '../../../services/texts.service';
 import {Text} from '../textsPage/classes/text';
 
 @Component({
-  selector: 'text-page-component',
+  selector: 'anselm-text-page',
   templateUrl: './textPage.component.html',
   styleUrls: ['./textPage.component.scss']
 })
@@ -14,15 +14,15 @@ export class TextPageComponent implements OnInit, AfterViewInit {
   text: Text;
   private routeFragment: string;
 
-  constructor (private textsService: TextsService,
-               private activatedRoute: ActivatedRoute) {
+  constructor(private textsService: TextsService,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     const self = this;
     this.activatedRoute.params.forEach((params: Params) => {
-        let textId: number = SeoService.extractId(params['seoTextId']);
-        this.textsService.getText(textId).then(function (text) {
+        const textId: number = SeoService.extractId(params.seoTextId);
+        this.textsService.getText(textId).then(text => {
           self.text = text;
           self.scrollToAnchor();
         });
@@ -39,7 +39,7 @@ export class TextPageComponent implements OnInit, AfterViewInit {
   private scrollToAnchor(): void {
     setTimeout(() => {
       if (this.routeFragment) {
-        let anchorElement = document.getElementById(this.routeFragment);
+        const anchorElement = document.getElementById(this.routeFragment);
         if (anchorElement !== null) {
           anchorElement.scrollIntoView();
         }

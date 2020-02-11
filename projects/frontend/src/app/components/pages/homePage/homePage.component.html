@@ -1,32 +1,32 @@
-<grid-row-component>
-  <grid-column-component>
-    <box-component>
-      <welcome-component></welcome-component>
-    </box-component>
-  </grid-column-component>
-</grid-row-component>
+<anselm-grid-row>
+  <anselm-grid-column>
+    <anselm-box>
+      <anselm-welcome></anselm-welcome>
+    </anselm-box>
+  </anselm-grid-column>
+</anselm-grid-row>
 
-<grid-row-component>
-  <grid-column-component>
-    <text-box-component>
-      <newest-texts-component></newest-texts-component>
-    </text-box-component>
-  </grid-column-component>
-  <grid-column-component>
-    <grid-row-component>
-      <grid-column-component>
-        <text-box-component>
+<anselm-grid-row>
+  <anselm-grid-column>
+    <anselm-text-box>
+      <anselm-newest-texts></anselm-newest-texts>
+    </anselm-text-box>
+  </anselm-grid-column>
+  <anselm-grid-column>
+    <anselm-grid-row>
+      <anselm-grid-column>
+        <anselm-text-box>
           <h1 translate="ABOUT_ME"></h1>
           <p translate="PAGE.HOME.ABOUT_ME"></p>
-        </text-box-component>
-      </grid-column-component>
-    </grid-row-component>
-    <grid-row-component>
-      <grid-column-component>
-        <text-box-component>
-          <quote-component *ngIf="quote" [quote]="quote"></quote-component>
-        </text-box-component>
-      </grid-column-component>
-    </grid-row-component>
-  </grid-column-component>
-</grid-row-component>
+        </anselm-text-box>
+      </anselm-grid-column>
+    </anselm-grid-row>
+    <anselm-grid-row>
+      <anselm-grid-column>
+        <anselm-text-box>
+          <anselm-quote *ngIf="quote" [quote]="quote"></anselm-quote>
+        </anselm-text-box>
+      </anselm-grid-column>
+    </anselm-grid-row>
+  </anselm-grid-column>
+</anselm-grid-row>

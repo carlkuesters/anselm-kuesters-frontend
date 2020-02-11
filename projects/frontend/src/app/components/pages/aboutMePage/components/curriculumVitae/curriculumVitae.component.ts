@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {AboutMeEvent} from '../../classes/aboutMeEvent';
 
 @Component({
-  selector: 'curriculum-vitae-component',
+  selector: 'anselm-curriculum-vitae',
   templateUrl: './curriculumVitae.component.html',
   styleUrls: ['./curriculumVitae.component.scss']
 })

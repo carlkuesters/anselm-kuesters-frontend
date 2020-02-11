@@ -6,7 +6,6 @@ import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 
 import {ItemsModule} from '../../items/items.module';
-
 import {ContactPageComponent} from './contactPage.component';
 import {ContactFormComponent} from './components/contactForm/contactForm.component';
 

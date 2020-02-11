@@ -1,7 +1,7 @@
 export class SeoService {
 
-  private static slugSeperator: string = '-';
-  private static slugMaxLength: number = 50;
+  private static slugSeperator = '-';
+  private static slugMaxLength = 50;
 
   static generateSeoId(id: number, title: string): string {
     return this.sluggify(title) + this.slugSeperator + id;
@@ -22,12 +22,11 @@ export class SeoService {
 
   static extractId(seoId: string): number {
     const seperator = '-';
-    let lastSeperatorIndex = seoId.lastIndexOf(seperator);
+    const lastSeperatorIndex = seoId.lastIndexOf(seperator);
     let idString: string;
     if (lastSeperatorIndex !== -1) {
       idString = seoId.substring(lastSeperatorIndex + seperator.length);
-    }
-    else {
+    } else {
       idString = seoId;
     }
     return +idString;

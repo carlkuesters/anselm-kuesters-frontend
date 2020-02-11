@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'page-wrapper-component',
+  selector: 'anselm-page-wrapper',
   templateUrl: './pageWrapper.component.html',
   styleUrls: ['./pageWrapper.component.scss']
 })

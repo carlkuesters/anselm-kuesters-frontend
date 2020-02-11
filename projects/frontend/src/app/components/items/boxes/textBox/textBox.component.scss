@@ -2,7 +2,7 @@
 @import '../box/box';
 
 :host {
-  flex: 1 0 0;
+  @include box;
 }
 
 .text-box {

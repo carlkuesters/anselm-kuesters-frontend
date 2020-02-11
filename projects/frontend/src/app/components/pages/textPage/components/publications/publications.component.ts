@@ -3,7 +3,7 @@ import {Component, Input} from '@angular/core';
 import {Publication} from '../../../textsPage/classes/publication';
 
 @Component({
-  selector: 'publications-component',
+  selector: 'anselm-publications',
   templateUrl: './publications.component.html',
   styleUrls: ['./publications.component.scss']
 })

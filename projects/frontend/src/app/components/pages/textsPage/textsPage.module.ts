@@ -5,7 +5,6 @@ import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 
 import {ItemsModule} from '../../items/items.module';
-
 import {TextsPageComponent} from './textsPage.component';
 import {TextsComponent} from './components/texts/texts.component';
 import {TextsEntryComponent} from './components/textsEntry/textsEntry.component';

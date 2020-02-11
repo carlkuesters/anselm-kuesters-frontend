@@ -1,10 +1,10 @@
-<grid-row-component>
-  <grid-column-component class="author">
+<anselm-grid-row>
+  <anselm-grid-column class="author">
     <img src="assets/images/standard_user_image.png"/>
     <time>{{formattedDate}}</time>
-  </grid-column-component>
-  <grid-column-component>
+  </anselm-grid-column>
+  <anselm-grid-column>
     <h2>{{comment.author}}</h2>
     <p [innerHTML]="comment.text"></p>
-  </grid-column-component>
-</grid-row-component>
+  </anselm-grid-column>
+</anselm-grid-row>

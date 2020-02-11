@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
-  selector: 'contact-form-component',
+  selector: 'anselm-contact-form',
   templateUrl: './contactForm.component.html',
   styleUrls: ['./contactForm.component.scss']
 })

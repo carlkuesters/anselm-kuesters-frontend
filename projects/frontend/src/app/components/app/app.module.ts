@@ -1,8 +1,7 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {BrowserModule} from '@angular/platform-browser';
 
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -20,15 +19,14 @@ import {TextsService} from '../../services/texts.service';
 import {QuotesService} from '../../services/quotes.service';
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/translations/', '.json');
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, './assets/translations/', '.json');
 }
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     HttpClientModule,
 
     TranslateModule.forRoot({

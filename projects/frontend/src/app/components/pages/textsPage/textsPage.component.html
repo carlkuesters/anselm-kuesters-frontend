@@ -1,16 +1,16 @@
-<grid-row-component>
-  <grid-column-component>
-    <text-box-component>
+<anselm-grid-row>
+  <anselm-grid-column>
+    <anselm-text-box>
       <h1 translate="MY_TEXTS"></h1>
       <p [innerHTML]="'PAGE.TEXTS.CONTENT' | translate"></p>
       <p translate="PAGE.TEXTS.DISCLAIMER"></p>
-    </text-box-component>
-  </grid-column-component>
-</grid-row-component>
-<grid-row-component>
-  <grid-column-component>
-    <box-component>
-      <texts-component [texts]="texts"></texts-component>
-    </box-component>
-  </grid-column-component>
-</grid-row-component>
+    </anselm-text-box>
+  </anselm-grid-column>
+</anselm-grid-row>
+<anselm-grid-row>
+  <anselm-grid-column>
+    <anselm-box>
+      <anselm-texts [texts]="texts"></anselm-texts>
+    </anselm-box>
+  </anselm-grid-column>
+</anselm-grid-row>

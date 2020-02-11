@@ -5,7 +5,6 @@ import {TranslateModule} from '@ngx-translate/core';
 
 import {LayoutModule} from '../layout/layout.module';
 import {ItemsModule} from '../items/items.module';
-
 import {HomePageModule} from './homePage/homePage.module';
 import {TextsPageModule} from './textsPage/textsPage.module';
 import {TextPageModule} from './textPage/textPage.module';

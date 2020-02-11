@@ -12,7 +12,7 @@ export class QuotesService {
   getRandomQuote(): Promise<Quote> {
     return this.getQuotes().then(quotes => {
       return quotes[Math.floor(Math.random() * quotes.length)];
-    })
+    });
   }
 
   getQuotes(): Promise<Quote[]> {

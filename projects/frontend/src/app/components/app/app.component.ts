@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-component',
+  selector: 'anselm-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

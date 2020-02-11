@@ -1,8 +1,5 @@
+import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import {Response} from '@angular/http/src/static_response';
-
-import 'rxjs/add/operator/toPromise';
 
 import {AchievementsMap} from '../components/pages/aboutMePage/classes/achievementsMap';
 import {Quote} from '../components/pages/homePage/components/quote/classes/quote';
@@ -12,10 +9,10 @@ import {Text} from '../components/pages/textsPage/classes/text';
 @Injectable()
 export class BackendInformationService {
 
-  private restEndpointBase: string = 'http://anselm-kuesters.de/api/';
-  private cachedMappedResponses_Get: {[key: string]: Promise<any>} = {};
+  private restEndpointBase = '/api/';
+  private cachedMappedResponsesGet: {[key: string]: Promise<any>} = {};
 
-  constructor(private http: Http) { }
+  constructor(private httpClient: HttpClient) { }
 
   getQuotes(): Promise<Quote[]> {
     return this.getArray('quotes/index.php', Quote);
@@ -33,32 +30,32 @@ export class BackendInformationService {
     return this.getObject('achievements/index.php', AchievementsMap);
   }
 
-  private getArray<T extends Serializable<T>>(endpointPath: string, resultClass: new () => T): Promise<T[]>{
+  private getArray<T extends Serializable<T>>(endpointPath: string, resultClass: new () => T): Promise<T[]> {
     return this.getCachedMapped(endpointPath, responseJson => {
-      return responseJson.map(function (textJson) {
+      return responseJson.map(textJson => {
         return new resultClass().deserialize(textJson);
       });
     });
   }
 
-  private getObject<T extends Serializable<T>>(endpointPath: string, resultClass: new () => T): Promise<T>{
+  private getObject<T extends Serializable<T>>(endpointPath: string, resultClass: new () => T): Promise<T> {
     return this.getCachedMapped(endpointPath, responseJson => {
       return new resultClass().deserialize(responseJson);
     });
   }
 
-  private getCachedMapped<T>(endpointPath: string, mapResponse: (responseJson) => T): Promise<T>{
+  private getCachedMapped<T>(endpointPath: string, mapResponse: (responseJson) => T): Promise<T> {
     const url = this.restEndpointBase + endpointPath;
-    let cachedResponse = this.cachedMappedResponses_Get[url];
-    if (cachedResponse != undefined) {
+    const cachedResponse = this.cachedMappedResponsesGet[url];
+    if (cachedResponse !== undefined) {
       return cachedResponse;
     }
-    return this.http
+    return this.httpClient
       .get(url)
       .toPromise()
-      .then((response: Response) => {
-        const mappedResult = mapResponse(response.json());
-        this.cachedMappedResponses_Get[url] = Promise.resolve(mappedResult);
+      .then(response => {
+        const mappedResult = mapResponse(response);
+        this.cachedMappedResponsesGet[url] = Promise.resolve(mappedResult);
         return mappedResult;
       })
       .catch(this.handleError);

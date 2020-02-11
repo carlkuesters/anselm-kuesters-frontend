@@ -4,7 +4,7 @@ import {Text} from '../../classes/text';
 import {TextsOfYear} from '../../classes/textsOfYear';
 
 @Component({
-  selector: 'texts-component',
+  selector: 'anselm-texts',
   templateUrl: './texts.component.html',
   styleUrls: ['./texts.component.scss']
 })
@@ -14,17 +14,17 @@ export class TextsComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.texts) {
-      let textsByYear = [];
+      const textsByYear = [];
       // Group texts by year
-      this.texts.forEach(function (text) {
-        let year = new Date(text.date * 1000).getFullYear();
+      this.texts.forEach(text => {
+        const year = new Date(text.date * 1000).getFullYear();
 
-        let textsOfYear: TextsOfYear = textsByYear.find(function (textsOfYear) {
-          return textsOfYear.year == year;
+        let textsOfYear: TextsOfYear = textsByYear.find(textsOfCurrentYear => {
+          return textsOfCurrentYear.year === year;
         });
         if (textsOfYear == null) {
-          textsOfYear = <TextsOfYear>{
-            year: year,
+          textsOfYear = {
+            year,
             texts: [],
           };
           textsByYear.push(textsOfYear);
@@ -32,13 +32,13 @@ export class TextsComponent implements OnChanges {
         textsOfYear.texts.push(text);
       });
       // Sort each years group internally by text date
-      textsByYear.forEach(function (textsOfYear) {
-        textsOfYear.texts.sort(function (text1, text2) {
+      textsByYear.forEach(textsOfYear => {
+        textsOfYear.texts.sort((text1, text2) => {
           return (text2.date - text1.date);
         });
       });
       // Sort the groups themselves by their year
-      textsByYear.sort(function (textsOfYear1, textsOfYear2) {
+      textsByYear.sort((textsOfYear1, textsOfYear2) => {
         return (textsOfYear2.year - textsOfYear1.year);
       });
       this.textsByYear = textsByYear;

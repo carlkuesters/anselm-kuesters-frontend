@@ -6,15 +6,15 @@ h1 {
 }
 
 .achievement {
-  margin-bottom: $baseline;
+  padding-bottom: $baseline;
   font-size: 14px;
 
   & + .achievement {
-    margin-top: $baseline * 1.5;
+    padding-top: $baseline * 1.5;
   }
 
   &:last-child {
-    margin-bottom: $baseline-2;
+    padding-bottom: $baseline-2;
   }
 }
 

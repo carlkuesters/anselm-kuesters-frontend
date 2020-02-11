@@ -1,7 +1,7 @@
 import {Directive, Input, ElementRef, OnInit} from '@angular/core';
 
 @Directive({
-  selector: '[backgroundImage]',
+  selector: '[anselmBackgroundImage]',
 })
 export class BackgroundImageDirective implements OnInit {
   @Input() backgroundImage: string;
