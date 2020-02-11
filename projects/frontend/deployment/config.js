@@ -4,5 +4,5 @@ module.exports.serverCredentials = {
   username: 'username',
   password: 'password'
 };
-module.exports.localDirectory = './dist/';
+module.exports.localDirectory = './dist/anselm-kuesters/';
 module.exports.remoteDirectory = 'remoteDirectory/';
