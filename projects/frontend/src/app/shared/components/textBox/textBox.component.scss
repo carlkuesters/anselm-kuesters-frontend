@@ -1,0 +1,10 @@
+@import '../../../../styles/sizes';
+@import '../box/box';
+
+:host {
+  @include box;
+}
+
+.text-box {
+  padding: $baseline-2;
+}

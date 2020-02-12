@@ -1,0 +1,5 @@
+@import 'box';
+
+:host {
+  @include box;
+}

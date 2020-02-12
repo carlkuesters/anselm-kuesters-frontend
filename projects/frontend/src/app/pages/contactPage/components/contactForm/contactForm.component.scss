@@ -1,0 +1,18 @@
+@import '../../../../../styles/breakpoints';
+
+button {
+  float: right;
+}
+
+.info {
+  margin-top: 90px;
+  text-align: center;
+
+  @include bp-sm-max {
+    margin-top: 70px;
+  }
+
+  &, & a {
+    color: #999;
+  }
+}
