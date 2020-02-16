@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {Publication} from '../../../textsPage/classes/publication';
+import {Publication} from '../../../../model/publication';
 
 @Component({
   selector: 'anselm-publications',

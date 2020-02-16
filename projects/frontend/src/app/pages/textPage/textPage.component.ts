@@ -1,9 +1,11 @@
 import {Component, OnInit, AfterViewInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
-import {SeoService} from '../../core/services/seo.service';
-import {TextsService} from '../../core/services/texts.service';
-import {Text} from '../textsPage/classes/text';
+import {Observable} from 'rxjs';
+import {first} from 'rxjs/operators';
+
+import {TextStoreFacadeService} from '../../core/services/text-store-facade/text-store-facade.service';
+import {Text} from '../../model/text';
 
 @Component({
   selector: 'anselm-text-page',
@@ -11,39 +13,35 @@ import {Text} from '../textsPage/classes/text';
   styleUrls: ['./textPage.component.scss']
 })
 export class TextPageComponent implements OnInit, AfterViewInit {
-  text: Text;
-  private routeFragment: string;
 
-  constructor(private textsService: TextsService,
-              private activatedRoute: ActivatedRoute) {
+  text: Observable<Text>;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private textStoreFacadeService: TextStoreFacadeService) {
   }
 
   ngOnInit(): void {
-    const self = this;
-    this.activatedRoute.params.forEach((params: Params) => {
-        const textId: number = SeoService.extractId(params.seoTextId);
-        this.textsService.getText(textId).then(text => {
-          self.text = text;
-          self.scrollToAnchor();
-        });
-    });
-    this.activatedRoute.fragment.subscribe(fragment => { this.routeFragment = fragment; });
+    const seoId = this.activatedRoute.snapshot.paramMap.get('seoTextId');
+    this.text = this.textStoreFacadeService.getText(seoId);
+    this.textStoreFacadeService.loadText(seoId);
   }
 
-  // TODO: Clean up this whole anchor mess - Is this really not possible in a better way in angular?
-
   ngAfterViewInit(): void {
-    this.scrollToAnchor();
+    // Scroll after text was rendered
+    this.text.pipe(first(Boolean)).subscribe(() => {
+      setTimeout(() => {
+        this.scrollToAnchor();
+      });
+    });
   }
 
   private scrollToAnchor(): void {
-    setTimeout(() => {
-      if (this.routeFragment) {
-        const anchorElement = document.getElementById(this.routeFragment);
-        if (anchorElement !== null) {
-          anchorElement.scrollIntoView();
-        }
+    const routeFragment = this.activatedRoute.snapshot.fragment;
+    if (routeFragment) {
+      const anchorElement = document.getElementById(routeFragment);
+      if (anchorElement) {
+        anchorElement.scrollIntoView();
       }
-    });
+    }
   }
 }

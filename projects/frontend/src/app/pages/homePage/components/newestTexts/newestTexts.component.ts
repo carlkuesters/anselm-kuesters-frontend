@@ -1,23 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
-import {TextsService} from '../../../../core/services/texts.service';
-import {Text} from '../../../textsPage/classes/text';
+import {DisplayedTextEntry} from '../../../../model/displayed-text-entry';
 
 @Component({
   selector: 'anselm-newest-texts',
   templateUrl: './newestTexts.component.html',
   styleUrls: ['./newestTexts.component.scss']
 })
-export class NewestTextsComponent implements OnInit {
-  texts: Text[];
-
-  constructor(private textsService: TextsService) {
-  }
-
-  ngOnInit(): void {
-    const self = this;
-    this.textsService.getNewestTexts(5).then(texts => {
-      self.texts = texts;
-    });
-  }
+export class NewestTextsComponent {
+  @Input() textEntries: DisplayedTextEntry[];
 }

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {Comment} from '../../../textsPage/classes/comment';
+import {Comment} from '../../../../model/comment';
 
 @Component({
   selector: 'anselm-comment',

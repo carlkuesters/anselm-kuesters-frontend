@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Quote} from './components/quote/classes/quote';
+import {Observable} from 'rxjs';
 
-import {QuotesService} from '../../core/services/quotes.service';
+import {QuoteStoreFacadeService} from '../../core/services/quote-store-facade/quote-store-facade.service';
+import {TextEntriesStoreFacadeService} from '../../core/services/text-entries-store-facade/text-entries-store-facade.service';
+import {DisplayedTextEntry} from '../../model/displayed-text-entry';
+import {Quote} from '../../model/quote';
 
 @Component({
   selector: 'anselm-home-page',
@@ -10,14 +13,18 @@ import {QuotesService} from '../../core/services/quotes.service';
   styleUrls: ['./homePage.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  quote: Quote;
+  newestTextEntries: Observable<DisplayedTextEntry[]>;
+  quote: Observable<Quote>;
 
-  constructor(private quotesService: QuotesService) {
+  constructor(private textEntriesStoreFacadeService: TextEntriesStoreFacadeService,
+              private quoteStoreFacadeService: QuoteStoreFacadeService) {
   }
 
   ngOnInit(): void {
-    this.quotesService.getRandomQuote().then(randomQuote => {
-      this.quote = randomQuote;
-    });
+    this.newestTextEntries = this.textEntriesStoreFacadeService.getNewestDisplayedTextEntries();
+    this.quote = this.quoteStoreFacadeService.getRandomQuote();
+
+    this.textEntriesStoreFacadeService.loadTextEntries();
+    this.quoteStoreFacadeService.loadQuotes();
   }
 }

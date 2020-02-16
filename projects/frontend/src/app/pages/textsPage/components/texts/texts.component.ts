@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges} from '@angular/core';
 
-import {Text} from '../../classes/text';
-import {TextsOfYear} from '../../classes/textsOfYear';
+import {DisplayedTextEntry} from '../../../../model/displayed-text-entry';
+import {TextsOfYear} from '../../model/textsOfYear';
 
 @Component({
   selector: 'anselm-texts',
@@ -9,39 +9,38 @@ import {TextsOfYear} from '../../classes/textsOfYear';
   styleUrls: ['./texts.component.scss']
 })
 export class TextsComponent implements OnChanges {
-  @Input() texts: Text[];
+  @Input() textEntries: DisplayedTextEntry[];
   textsByYear: TextsOfYear[];
 
   ngOnChanges() {
-    if (this.texts) {
-      const textsByYear = [];
-      // Group texts by year
-      this.texts.forEach(text => {
-        const year = new Date(text.date * 1000).getFullYear();
+    if (this.textEntries) {
+      this.textsByYear = [];
+      // Group textEntries by year
+      this.textEntries.forEach(textEntry => {
+        const year = new Date(textEntry.date * 1000).getFullYear();
 
-        let textsOfYear: TextsOfYear = textsByYear.find(textsOfCurrentYear => {
+        let textsOfYear = this.textsByYear.find(textsOfCurrentYear => {
           return textsOfCurrentYear.year === year;
         });
         if (textsOfYear == null) {
           textsOfYear = {
             year,
-            texts: [],
+            textEntries: [],
           };
-          textsByYear.push(textsOfYear);
+          this.textsByYear.push(textsOfYear);
         }
-        textsOfYear.texts.push(text);
+        textsOfYear.textEntries.push(textEntry);
       });
-      // Sort each years group internally by text date
-      textsByYear.forEach(textsOfYear => {
-        textsOfYear.texts.sort((text1, text2) => {
-          return (text2.date - text1.date);
+      // Sort each years group internally by textEntry date
+      this.textsByYear.forEach(textsOfYear => {
+        textsOfYear.textEntries.sort((textEntry1, textEntry2) => {
+          return (textEntry2.date - textEntry1.date);
         });
       });
       // Sort the groups themselves by their year
-      textsByYear.sort((textsOfYear1, textsOfYear2) => {
+      this.textsByYear.sort((textsOfYear1, textsOfYear2) => {
         return (textsOfYear2.year - textsOfYear1.year);
       });
-      this.textsByYear = textsByYear;
     }
   }
 }

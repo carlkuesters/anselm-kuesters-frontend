@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Text} from './classes/text';
+import {Observable} from 'rxjs';
 
-import {TextsService} from '../../core/services/texts.service';
+import {TextEntriesStoreFacadeService} from '../../core/services/text-entries-store-facade/text-entries-store-facade.service';
+import {DisplayedTextEntry} from '../../model/displayed-text-entry';
 
 @Component({
   selector: 'anselm-texts-page',
@@ -10,15 +11,14 @@ import {TextsService} from '../../core/services/texts.service';
   styleUrls: ['./textsPage.component.scss']
 })
 export class TextsPageComponent implements OnInit {
-  texts: Text[];
+  textEntries: Observable<DisplayedTextEntry[]>;
 
-  constructor(private textsService: TextsService) {
+  constructor(private textEntriesStoreFacadeService: TextEntriesStoreFacadeService) {
   }
 
   ngOnInit(): void {
-    const self = this;
-    this.textsService.getTexts().then(texts => {
-      self.texts = texts;
-    });
+    this.textEntries = this.textEntriesStoreFacadeService.getDisplayedTextEntries();
+
+    this.textEntriesStoreFacadeService.loadTextEntries();
   }
 }

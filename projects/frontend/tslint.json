@@ -72,6 +72,10 @@
       "single"
     ],
     "trailing-comma": false,
+    "variable-name": [
+      true,
+      "ban-keywords"
+    ],
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,

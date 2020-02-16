@@ -1,19 +1,31 @@
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 
+import {EffectsModule} from '@ngrx/effects';
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {SharedModule} from '../shared/shared.module';
+import {aboutMeReducer} from '../store/reducers/about-me.reducers';
+import {quoteReducer} from '../store/reducers/quote.reducers';
+import {textReducer} from '../store/reducers/text.reducers';
+import {textEntriesReducer} from '../store/reducers/text-entries.reducers';
+import {AboutMeEffects} from '../store/effects/about-me.effects';
+import {QuoteEffects} from '../store/effects/quote.effects';
+import {TextEffects} from '../store/effects/text.effects';
+import {TextEntriesEffects} from '../store/effects/text-entries.effects';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {PageWrapperComponent} from './components/pageWrapper/pageWrapper.component';
-import {AchievementsService} from './services/achievements.service';
-import {BackendInformationService} from './services/backendInformation.service';
-import {SeoService} from './services/seo.service';
-import {TextsService} from './services/texts.service';
-import {QuotesService} from './services/quotes.service';
-
+import {AboutMeHttpService} from './services/about-me-http/about-me-http.service';
+import {AboutMeStoreFacadeService} from './services/about-me-store-facade/about-me-store-facade.service';
+import {QuoteHttpService} from './services/quote-http/quote-http.service';
+import {QuoteStoreFacadeService} from './services/quote-store-facade/quote-store-facade.service';
+import {TextHttpService} from './services/text-http/text-http.service';
+import {TextEntriesStoreFacadeService} from './services/text-entries-store-facade/text-entries-store-facade.service';
+import {TextStoreFacadeService} from './services/text-store-facade/text-store-facade.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -23,6 +35,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   imports: [
     HttpClientModule,
+
+    StoreModule.forRoot({}),
+    StoreModule.forFeature('aboutMe', aboutMeReducer),
+    StoreModule.forFeature('quote', quoteReducer),
+    StoreModule.forFeature('text', textReducer),
+    StoreModule.forFeature('textEntries', textEntriesReducer),
+    EffectsModule.forRoot([ AboutMeEffects, QuoteEffects, TextEffects, TextEntriesEffects ]),
+    StoreDevtoolsModule.instrument({ maxAge: 10 }),
 
     TranslateModule.forRoot({
       loader: {
@@ -40,11 +60,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PageWrapperComponent,
   ],
   providers: [
-    AchievementsService,
-    BackendInformationService,
-    SeoService,
-    TextsService,
-    QuotesService,
+    AboutMeHttpService,
+    AboutMeStoreFacadeService,
+    QuoteHttpService,
+    QuoteStoreFacadeService,
+    TextEntriesStoreFacadeService,
+    TextHttpService,
+    TextStoreFacadeService,
   ],
   exports: [
     HeaderComponent,

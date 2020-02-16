@@ -9,7 +9,7 @@
 <anselm-grid-row>
   <anselm-grid-column>
     <anselm-text-box>
-      <anselm-newest-texts></anselm-newest-texts>
+      <anselm-newest-texts [textEntries]="newestTextEntries | async"></anselm-newest-texts>
     </anselm-text-box>
   </anselm-grid-column>
   <anselm-grid-column>
@@ -24,7 +24,7 @@
     <anselm-grid-row>
       <anselm-grid-column>
         <anselm-text-box>
-          <anselm-quote *ngIf="quote" [quote]="quote"></anselm-quote>
+          <anselm-quote *ngIf="quote | async" [quote]="quote | async"></anselm-quote>
         </anselm-text-box>
       </anselm-grid-column>
     </anselm-grid-row>

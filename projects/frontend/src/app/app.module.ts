@@ -9,8 +9,8 @@ import {PagesModule} from './pages/pages.module';
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule,
 
+    AppRoutingModule,
     CoreModule,
     PagesModule,
   ],

@@ -38,8 +38,7 @@ function getAllFiles(directoryPath, files = []) {
     let filePath = directoryPath + fileName;
     if (fs.statSync(filePath).isDirectory()) {
       getAllFiles(filePath + '/', files);
-    }
-    else {
+    } else {
       files.push(filePath);
     }
   });
