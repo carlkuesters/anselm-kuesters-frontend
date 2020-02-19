@@ -7,6 +7,7 @@ import {TextPageComponent} from './pages/textPage/textPage.component';
 import {AboutMePageComponent} from './pages/aboutMePage/aboutMePage.component';
 import {ContactPageComponent} from './pages/contactPage/contactPage.component';
 import {InfoPageComponent} from './pages/infoPage/infoPage.component';
+import {TextScrapingPageComponent} from './pages/textScrapingPage/text-scraping-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'about-me', component: AboutMePageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'info', component: InfoPageComponent },
+  { path: 'textscraping', component: TextScrapingPageComponent },
 ];
 
 @NgModule({

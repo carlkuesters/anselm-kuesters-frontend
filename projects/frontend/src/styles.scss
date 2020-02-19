@@ -14,7 +14,7 @@ body {
   background-color: #F5F5F5;
 }
 
-body, input, textarea, button {
+body, input[type=text], textarea, button {
   font-family: 'Open Sans', Tahoma, sans-serif;
   font-size: 16px;
   color: $color-dark-grey;
@@ -87,13 +87,12 @@ blockquote {
   margin: 0;
 }
 
-input, textarea, button {
+input[type=text], textarea, button {
   padding: $baseline;
   border: 1px solid $color-grey;
-  margin-top: $baseline;
 }
 
-input, textarea {
+input[type=text], textarea {
   width: 100%;
 
   &:focus {

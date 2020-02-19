@@ -6,6 +6,7 @@ import {TextPageModule} from './textPage/textPage.module';
 import {AboutMePageModule} from './aboutMePage/aboutMePage.module';
 import {ContactPageModule} from './contactPage/contactPage.module';
 import {InfoPageModule} from './infoPage/infoPage.module';
+import {TextScrapingPageModule} from './textScrapingPage/text-scraping-page.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {InfoPageModule} from './infoPage/infoPage.module';
     InfoPageModule,
     TextPageModule,
     TextsPageModule,
+    TextScrapingPageModule,
   ],
 })
 export class PagesModule { }

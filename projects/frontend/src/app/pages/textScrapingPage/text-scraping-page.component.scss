@@ -1,0 +1,132 @@
+@import '../../../styles/breakpoints';
+@import '../../../styles/colors';
+@import '../../../styles/sizes';
+@import '../../../styles/fonts/font-awesome';
+
+h1 {
+  margin-bottom: 0px;
+  padding: $baseline-2 $baseline-2 $baseline $baseline-2;
+}
+
+p, h2, .section {
+  padding-left: $baseline-2;
+  padding-right: $baseline-2;
+}
+
+p {
+  padding-bottom: $baseline-2;
+}
+
+h2 {
+  margin-bottom: $baseline-2;
+  padding-bottom: $baseline / 2;
+  padding-left: $baseline-2;
+  padding-right: $baseline-2;
+  border-bottom: 1px solid $color-shadow-border;
+  color: $color-grey;
+}
+
+.section + h2 {
+  margin-top: $baseline-2;
+}
+
+.setting {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $baseline / 2;
+
+  @include bp-xs-max {
+    .setting-title, label {
+      margin-bottom: $baseline / 2;
+    }
+  }
+
+  @include bp-sm {
+    flex-direction: row;
+
+    .setting-title {
+      flex-basis: 120px;
+    }
+
+    label {
+      margin-left: $baseline;
+    }
+  }
+}
+
+.word {
+  display: flex;
+  flex-direction: row;
+
+  input[type=text] {
+    flex-grow: 1;
+    margin-right: $baseline;
+
+    @include bp-sm {
+      margin-right: $baseline-2;
+    }
+  }
+}
+
+.chart {
+  height: 400px;
+}
+
+label {
+  display: inline-flex;
+  align-items: baseline;
+
+  &, input[type=checkbox], input[type=radio] {
+    cursor: pointer;
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    position: relative;
+    appearance: none;
+    font-size: inherit;
+    width: 1em;
+    margin: 0;
+    color: inherit;
+    outline: none;
+    font-family: FontAwesome;
+    transition: 300ms ease-out;
+
+    &::after {
+      display: inline-block;
+      text-align: center;
+      width: 1em;
+    }
+
+    &:checked::after {
+      font-weight: 900;
+    }
+    &:active {
+      transform: scale(.6);
+    }
+
+    + span {
+      margin-left: .35em;
+    }
+  }
+
+  input[type=checkbox] {
+    &::after {
+      content: '\f096'; // square
+    }
+
+    &:checked::after {
+      content: '\f14a'; // check-square
+    }
+  }
+
+  input[type=radio] {
+    &::after {
+      content: '\f10c'; // circle
+    }
+
+    &:checked::after {
+      content: '\f058'; // check-circle
+    }
+  }
+}
