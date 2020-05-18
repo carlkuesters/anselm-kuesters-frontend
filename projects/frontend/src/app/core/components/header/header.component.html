@@ -1,9 +1,11 @@
 <header>
   <img src="assets/images/logo_full.png">
+  <input #mobileToggle type="checkbox" id="mobile-toggle">
+  <label for="mobile-toggle"><span></span></label>
   <nav>
-    <a routerLink="/home" routerLinkActive="active" translate="HOME"></a>
-    <a routerLink="/texts" routerLinkActive="active" translate="TEXTS"></a>
-    <a routerLink="/about-me" routerLinkActive="active" translate="ABOUT_ME"></a>
-    <a routerLink="/contact" routerLinkActive="active" translate="CONTACT"></a>
+    <a routerLink="/home" routerLinkActive="active" translate="HOME" (click)="closeMobileNavigation()"></a>
+    <a routerLink="/texts" routerLinkActive="active" translate="TEXTS" (click)="closeMobileNavigation()"></a>
+    <a routerLink="/about-me" routerLinkActive="active" translate="ABOUT_ME" (click)="closeMobileNavigation()"></a>
+    <a routerLink="/contact" routerLinkActive="active" translate="CONTACT" (click)="closeMobileNavigation()"></a>
   </nav>
 </header>

@@ -5,13 +5,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 400px;
+  min-height: 400px;
   background-image: url('../../../../../assets/images/anselm/stadion_800.png');
-  padding-left: 420px;
-  padding-right: $baseline-2;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: $baseline-2;
 
-  @include bp-sm-max {
-    padding-left: $baseline-2;
+  @include bp-xs-max {
+    background-image: url('../../../../../assets/images/anselm/stadion_clipped.png');
+  }
+
+  @include bp-md {
+    padding-left: 420px;
   }
 
   p {
