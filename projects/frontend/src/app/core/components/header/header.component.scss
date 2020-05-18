@@ -11,13 +11,14 @@
     display: none;
 
     & + label {
-      position: fixed;
+      position: absolute;
       top: 18px;
       right: 0;
       padding: 26px 11px;
       z-index: 2;
       cursor: pointer;
       user-select: none;
+      -webkit-tap-highlight-color: transparent;
 
       span {
         position: relative;
@@ -53,6 +54,8 @@
     }
 
     &:checked + label {
+      position: fixed;
+
       span {
         background-color: transparent;
 
