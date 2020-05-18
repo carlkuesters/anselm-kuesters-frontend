@@ -36,9 +36,9 @@
       }
     },
     "HOME": {
-      "ABOUT_ME": "Ich wurde 1992 in Freiburg im Breisgau geboren und wuchs im nahegelegenen Eschbach auf. Seit Oktober 2018 arbeite ich als angestellter Doktorand am Max-Planck-Institut für Europäische Rechtsgeschichte in Frankfurt an meinem Promotionsprojekt.",
+      "ABOUT_ME": "Ich wurde 1992 in Freiburg im Breisgau geboren und wuchs im nahegelegenen Eschbach auf. Seit Oktober 2018 arbeite ich als angestellter Doktorand am Max-Planck-Institut für Europäische Rechtsgeschichte in Frankfurt an meinem <a href=\"https://www.rg.mpg.de/promotionsvorhaben/der-einfluss-des-ordoliberalismus-auf-die-entwicklung-des-europaeischen-wettbewerbsrechts?c=2117073\" target=\"_blank\">Promotionsprojekt</a>.",
       "WELCOME": {
-        "0": "Willkommen auf meiner Website, auf<br/>der ich eine Auswahl eigener ",
+        "0": "Willkommen auf meiner Website, auf der ich eine Auswahl eigener ",
         "1": " präsentiere, die ich im Laufe der letzten Jahre zu verschiedenen Anlässen verfasst habe. Um mein Schreiben weiter zu verbessern, freue ich mich über konstruktive Kommentare zu Schreibstil und Inhalt. Außerdem ist es mir ein besonderes Anliegen, über diese Website ",
         "2": " zu anderen Veröffentlichungsmedien herzustellen.<br/>Viel Vergnügen beim Lesen!"
       }

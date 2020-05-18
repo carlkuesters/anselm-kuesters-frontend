@@ -5,6 +5,10 @@
   header {
     margin-top: $baseline-2;
     margin-bottom: $baseline;
+
+    & > a {
+      -webkit-tap-highlight-color: transparent;
+    }
   }
 
   #mobile-toggle {
