@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://anselm-kuesters.de",
+    "target": "https://anselm-kuesters.de",
     "secure": false,
     "changeOrigin": true
   }
