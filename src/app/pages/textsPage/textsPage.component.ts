@@ -7,8 +7,7 @@ import {DisplayedTextEntry} from '../../model/displayed-text-entry';
 
 @Component({
   selector: 'anselm-texts-page',
-  templateUrl: './textsPage.component.html',
-  styleUrls: ['./textsPage.component.scss']
+  templateUrl: './textsPage.component.html'
 })
 export class TextsPageComponent implements OnInit {
   textEntries: Observable<DisplayedTextEntry[]>;

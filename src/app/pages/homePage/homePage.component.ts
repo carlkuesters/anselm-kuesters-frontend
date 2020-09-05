@@ -9,8 +9,7 @@ import {Quote} from '../../model/quote';
 
 @Component({
   selector: 'anselm-home-page',
-  templateUrl: './homePage.component.html',
-  styleUrls: ['./homePage.component.scss']
+  templateUrl: './homePage.component.html'
 })
 export class HomePageComponent implements OnInit {
   newestTextEntries: Observable<DisplayedTextEntry[]>;

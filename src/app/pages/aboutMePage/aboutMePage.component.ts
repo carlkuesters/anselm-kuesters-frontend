@@ -8,8 +8,7 @@ import {AboutMeStoreFacadeService} from '../../core/services/about-me-store-faca
 
 @Component({
   selector: 'anselm-about-me-page',
-  templateUrl: './aboutMePage.component.html',
-  styleUrls: ['./aboutMePage.component.scss']
+  templateUrl: './aboutMePage.component.html'
 })
 export class AboutMePageComponent implements OnInit {
   events: Observable<AboutMeEvent[]>;
