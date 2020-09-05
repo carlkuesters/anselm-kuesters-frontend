@@ -17,6 +17,7 @@ exports.config = {
     chromeOptions: {
       args: [
         '--headless',
+        '--no-sandbox',
         '--disable-dev-shm-usage'
       ]
     }
