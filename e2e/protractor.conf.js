@@ -16,9 +16,14 @@ exports.config = {
     browserName: 'chrome',
     chromeOptions: {
       args: [
+        '--disable-extensions',
+        'disable-infobars',
         '--headless',
         '--no-sandbox',
-        '--disable-dev-shm-usage'
+        '--disable-dev-shm-usage',
+        '--disable-web-security',
+        '--disable-gpu',
+        '--window-size=800,600'
       ]
     }
   },
