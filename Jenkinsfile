@@ -4,6 +4,9 @@ node {
             stage('Checkout') {
                 checkout scm
             }
+            stage('Install') {
+                sh 'npm run install'
+            }
             stage('Lint') {
                 sh 'npm run lint'
             }
