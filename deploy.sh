@@ -10,6 +10,7 @@ if [ -n "$VERSION" ]; then
 fi
 
 # Build
+npm run install
 npm run build
 
 # Deploy
