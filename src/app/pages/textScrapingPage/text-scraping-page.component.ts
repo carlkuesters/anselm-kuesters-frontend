@@ -18,7 +18,7 @@ import {TextWordAnalysis} from '../../model/text-scraping/text-word-analysis';
 export class TextScrapingPageComponent implements OnInit, AfterViewInit {
 
   formGroup: FormGroup;
-  @ViewChild('chart', { static: false }) chartContainer: ElementRef;
+  @ViewChild('chart') chartContainer: ElementRef;
   chart: LineChart;
   textSources: Observable<TextSource[]>;
   trendlineEnabled: Observable<boolean>;
