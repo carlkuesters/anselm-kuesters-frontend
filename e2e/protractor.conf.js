@@ -18,9 +18,7 @@ exports.config = {
       args: [
         '--headless',
         '--remote-debugging-port=9222',
-        '--no-sandbox',
-        '--disable-gpu',
-        '--window-size=800,600'
+        '--no-sandbox'
       ]
     }
   },
