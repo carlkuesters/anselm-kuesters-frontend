@@ -14,5 +14,6 @@ npm install
 npm run build
 
 # Deploy
-rm -rf "${TARGET}!(api|old)"
+rm -rf "${TARGET}assets"
+rm -f "${TARGET}"*
 mv dist/anselm-kuesters/* "${TARGET}"
