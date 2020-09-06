@@ -17,7 +17,6 @@ exports.config = {
     chromeOptions: {
       args: [
         '--disable-extensions',
-        'disable-infobars',
         '--headless',
         '--no-sandbox',
         '--disable-dev-shm-usage',
