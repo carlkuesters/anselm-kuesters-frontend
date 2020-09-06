@@ -14,7 +14,7 @@ exports.config = {
   ],
   capabilities: {
     browserName: 'chrome',
-    'goog:chromeOptions': {
+    chromeOptions: {
       args: [
         '--disable-extensions',
         'disable-infobars',
