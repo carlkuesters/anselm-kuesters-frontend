@@ -16,14 +16,7 @@ exports.config = {
     browserName: 'chrome',
     chromeOptions: {
       args: [
-        'headless',
-        '--remote-debugging-port=9222',
-        '--headless',
-        '--no-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-web-security',
-        '--disable-gpu',
-        '--window-size=800,600'
+        'headless'
       ]
     }
   },
