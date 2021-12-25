@@ -6,12 +6,12 @@ import * as QuoteActions from '../actions/quote.actions';
 import {QuoteState} from '../state/quote-state.model';
 
 const initialState: QuoteState = {
-  quotes: null,
+  responseQuotes: null,
 };
 
 const reducer = createReducer(
   initialState,
-  on(QuoteActions.quotesLoaded, (state, { quotes }) => ({ ...state, quotes })),
+  on(QuoteActions.quotesLoaded, (state, { responseQuotes }) => ({ ...state, responseQuotes })),
 );
 
 // @ts-ignore

@@ -1,7 +1,7 @@
-export interface DisplayedTextEntry {
+export interface TextEntryView {
   readonly seoId: string;
   readonly title: string;
-  readonly date: number;
+  readonly date: string;
   readonly commentsCount: number;
   readonly publicationsCount: number;
 }

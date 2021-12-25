@@ -1,17 +1,20 @@
 import {createEntityAdapter} from '@ngrx/entity';
 import {createReducer, on} from '@ngrx/store';
 
+import {ApiResponse} from '../../model/api-response';
 import {Text} from '../../model/text';
 import * as TextActions from '../actions/text.actions';
 import {TextState} from '../state/text-state.model';
 
-export const textAdapter = createEntityAdapter<Text>();
+export const textAdapter = createEntityAdapter<ApiResponse<Text>>({
+  selectId: (response) => response.data.id,
+});
 
 const initialState = textAdapter.getInitialState();
 
 const reducer = createReducer(
   initialState,
-  on(TextActions.textLoaded, (state, { text }) => textAdapter.addOne(text, state)),
+  on(TextActions.textLoaded, (state, { responseText }) => textAdapter.addOne(responseText, state)),
 );
 
 // @ts-ignore

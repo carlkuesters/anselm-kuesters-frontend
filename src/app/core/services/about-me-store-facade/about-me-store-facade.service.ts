@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {AboutMeEvent} from '../../../model/aboutMeEvent';
+import {AboutMeEvent} from '../../../model/about-me-event';
 import {Achievement} from '../../../model/achievement';
 import * as AboutMeActions from '../../../store/actions/about-me.actions';
 import {

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {AboutMeEvent} from '../../../../model/aboutMeEvent';
+import {AboutMeEvent} from '../../../../model/about-me-event';
 
 @Component({
   selector: 'anselm-curriculum-vitae',

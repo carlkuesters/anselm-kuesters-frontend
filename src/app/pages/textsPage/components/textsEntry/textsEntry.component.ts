@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {DisplayedTextEntry} from '../../../../model/displayed-text-entry';
+import {TextEntryView} from '../../../../model/text-entry-view';
 
 @Component({
   selector: 'anselm-texts-entry',
@@ -8,5 +8,5 @@ import {DisplayedTextEntry} from '../../../../model/displayed-text-entry';
   styleUrls: ['./textsEntry.component.scss']
 })
 export class TextsEntryComponent {
-  @Input() textEntry: DisplayedTextEntry;
+  @Input() textEntry: TextEntryView;
 }

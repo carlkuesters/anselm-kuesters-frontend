@@ -24,7 +24,7 @@ export class TextEntriesEffects {
     withLatestFrom(this.textEntriesStore.select(getTextEntries)),
     filter(([_, textEntries]) => !textEntries),
     switchMap(() => this.textHttpService.getTextEntries().pipe(
-      map(textEntries => TextEntriesActions.textEntriesLoaded({ textEntries })),
+      map(responseTextEntries => TextEntriesActions.textEntriesLoaded({ responseTextEntries })),
       catchError(() => EMPTY)
     ))
   ));

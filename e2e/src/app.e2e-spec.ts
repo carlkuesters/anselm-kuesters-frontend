@@ -11,7 +11,7 @@ describe('AnselmApp', () => {
 
   it('should display title', () => {
     appPage.navigateTo();
-    expect(appPage.getCopyrightText()).toEqual('Copyright © 2020 Anselm Küsters');
+    expect(appPage.getCopyrightText()).toEqual('Copyright © 2022 Anselm Küsters');
   });
 
   afterEach(async () => {

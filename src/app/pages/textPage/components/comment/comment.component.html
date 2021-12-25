@@ -1,10 +1,10 @@
 <anselm-grid-row>
   <anselm-grid-column class="author">
     <img src="assets/images/standard_user_image.png"/>
-    <time>{{formattedDate}}</time>
+    <time>{{comment.formattedDate}}</time>
   </anselm-grid-column>
   <anselm-grid-column>
     <h2>{{comment.author}}</h2>
-    <p [innerHTML]="comment.text"></p>
+    <p [innerHTML]="comment.content"></p>
   </anselm-grid-column>
 </anselm-grid-row>

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {Observable} from 'rxjs';
 
-import {AboutMeEvent} from '../../model/aboutMeEvent';
+import {AboutMeEvent} from '../../model/about-me-event';
 import {Achievement} from '../../model/achievement';
 import {AboutMeStoreFacadeService} from '../../core/services/about-me-store-facade/about-me-store-facade.service';
 

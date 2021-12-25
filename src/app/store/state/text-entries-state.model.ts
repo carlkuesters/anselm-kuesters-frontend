@@ -1,5 +1,6 @@
-import {TextEntry} from '../../model/textEntry';
+import {ApiResponse} from '../../model/api-response';
+import {TextEntry} from '../../model/text-entry';
 
 export interface TextEntriesState {
-  readonly textEntries: TextEntry[];
+  readonly responseTextEntries: ApiResponse<TextEntry[]>;
 }

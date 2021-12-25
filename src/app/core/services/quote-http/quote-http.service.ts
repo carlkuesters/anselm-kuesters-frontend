@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 
 import {Observable} from 'rxjs';
 
+import {ApiResponse} from '../../../model/api-response';
 import {Quote} from '../../../model/quote';
 
 @Injectable()
@@ -11,7 +12,7 @@ export class QuoteHttpService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getQuotes(): Observable<Quote[]> {
-    return this.httpClient.get<Quote[]>('/api/quotes/index.php');
+  getQuotes(): Observable<ApiResponse<Quote[]>> {
+    return this.httpClient.get<ApiResponse<Quote[]>>('/api/quotes');
   }
 }

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {Publication} from '../../../../model/publication';
+import {PublicationView} from '../../../../model/publication-view';
 
 @Component({
   selector: 'anselm-publications',
@@ -8,5 +8,5 @@ import {Publication} from '../../../../model/publication';
   styleUrls: ['./publications.component.scss']
 })
 export class PublicationsComponent {
-  @Input() publications: Publication[];
+  @Input() publications: PublicationView[];
 }

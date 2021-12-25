@@ -1,6 +1,7 @@
 import {Component, Input, OnChanges} from '@angular/core';
 
-import {DisplayedTextEntry} from '../../../../model/displayed-text-entry';
+import {parseDate} from '../../../../core/util/date/date.util';
+import {TextEntryView} from '../../../../model/text-entry-view';
 import {TextsOfYear} from '../../model/textsOfYear';
 
 @Component({
@@ -9,7 +10,7 @@ import {TextsOfYear} from '../../model/textsOfYear';
   styleUrls: ['./texts.component.scss']
 })
 export class TextsComponent implements OnChanges {
-  @Input() textEntries: DisplayedTextEntry[];
+  @Input() textEntries: TextEntryView[];
   textsByYear: TextsOfYear[];
 
   ngOnChanges() {
@@ -17,7 +18,7 @@ export class TextsComponent implements OnChanges {
       this.textsByYear = [];
       // Group textEntries by year
       this.textEntries.forEach(textEntry => {
-        const year = new Date(textEntry.date * 1000).getFullYear();
+        const year = new Date(parseDate(textEntry.date)).getFullYear();
 
         let textsOfYear = this.textsByYear.find(textsOfCurrentYear => {
           return textsOfCurrentYear.year === year;
@@ -34,7 +35,7 @@ export class TextsComponent implements OnChanges {
       // Sort each years group internally by textEntry date
       this.textsByYear.forEach(textsOfYear => {
         textsOfYear.textEntries.sort((textEntry1, textEntry2) => {
-          return (textEntry2.date - textEntry1.date);
+          return (parseDate(textEntry2.date) - parseDate(textEntry1.date));
         });
       });
       // Sort the groups themselves by their year

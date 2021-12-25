@@ -1,11 +1,11 @@
 <div class="separator"></div>
 <ul>
   <li *ngFor="let event of events"
-      [ngClass]="{'major' : event.major}">
-    <time>{{event.date}}</time>
+      [ngClass]="{'major' : event.attributes.major}">
+    <time>{{event.attributes.dateTitle}}</time>
     <div class="event-information">
-      <span class="event-text">{{event.text}}</span><br/>
-      <span class="event-location">{{event.location}}</span>
+      <span class="event-title">{{event.attributes.title}}</span><br/>
+      <span class="event-location">{{event.attributes.location}}</span>
     </div>
   </li>
 </ul>

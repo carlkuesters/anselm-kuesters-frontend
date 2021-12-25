@@ -25,7 +25,7 @@ export class TextEffects {
     switchMap(({ seoId }) => this.textStore.select(getText, { seoId }).pipe(
         filter(text => !text),
         switchMap(() => this.textHttpService.getText(parseSeoId(seoId)).pipe(
-          map(text => TextActions.textLoaded({ text })),
+          map(responseText => TextActions.textLoaded({ responseText })),
           catchError(() => EMPTY)
         ))
     )),

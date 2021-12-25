@@ -6,12 +6,12 @@ import * as TextActions from '../actions/text-entries.actions';
 import {TextEntriesState} from '../state/text-entries-state.model';
 
 const initialState: TextEntriesState = {
-  textEntries: null,
+  responseTextEntries: null,
 };
 
 const reducer = createReducer(
   initialState,
-  on(TextActions.textEntriesLoaded, (state, { textEntries }) => ({ ...state, textEntries })),
+  on(TextActions.textEntriesLoaded, (state, { responseTextEntries }) => ({ ...state, responseTextEntries })),
 );
 
 // @ts-ignore

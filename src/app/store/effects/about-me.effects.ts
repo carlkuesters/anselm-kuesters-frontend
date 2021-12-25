@@ -24,7 +24,7 @@ export class AboutMeEffects {
     withLatestFrom(this.aboutMeStore.select(getEvents)),
     filter(([_, events]) => !events),
     switchMap(() => this.aboutMeHttpService.getEvents().pipe(
-      map(events => AboutMeActions.eventsLoaded({ events })),
+      map(responseEvents => AboutMeActions.eventsLoaded({ responseEvents })),
       catchError(() => EMPTY)
     ))
   ));
@@ -34,7 +34,7 @@ export class AboutMeEffects {
     withLatestFrom(this.aboutMeStore.select(getAchievements)),
     filter(([_, achievements]) => !achievements),
     switchMap(() => this.aboutMeHttpService.getAchievements().pipe(
-      map(achievements => AboutMeActions.achievementsLoaded({ achievements })),
+      map(responseAchievements => AboutMeActions.achievementsLoaded({ responseAchievements })),
       catchError(() => EMPTY)
     ))
   ));

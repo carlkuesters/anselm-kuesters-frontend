@@ -13,7 +13,7 @@ export class TextScrapingHttpService {
   }
 
   getTextSources(): Observable<TextSource[]> {
-    return this.httpClient.get<TextSource[]>('/api/textscraping/text_sources.php');
+    return this.httpClient.get<TextSource[]>('/api2/textscraping/text_sources.php');
   }
 
   getWordAnalyses(word: string, textSourceIds: number[]): Observable<TextWordAnalysis[]> {
@@ -21,6 +21,6 @@ export class TextScrapingHttpService {
     params = params.append('word', word);
     params = params.append('textSourceIds', textSourceIds.join(','));
 
-    return this.httpClient.get<TextWordAnalysis[]>('/api/textscraping/index.php', { params });
+    return this.httpClient.get<TextWordAnalysis[]>('/api2/textscraping/index.php', { params });
   }
 }

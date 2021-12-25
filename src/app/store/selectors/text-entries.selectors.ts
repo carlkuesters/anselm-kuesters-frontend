@@ -1,23 +1,28 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 
-import {toDisplayedTextEntries} from '../../core/util/text/text.util';
+import {parseDate} from '../../core/util/date/date.util';
+import {mapTextEntriesViews} from '../../core/util/view/view.util';
 import {TextEntriesState} from '../state/text-entries-state.model';
 
 const getTextState = createFeatureSelector<TextEntriesState>('textEntries');
 
+const getResponseTextEntries = createSelector(
+  getTextState, state => state.responseTextEntries,
+);
+
 export const getTextEntries = createSelector(
-  getTextState, state => state.textEntries
+  getResponseTextEntries, response => response ? response.data : null,
 );
 
-export const getDisplayedTextEntries = createSelector(
-  getTextEntries, textEntries => textEntries ? toDisplayedTextEntries(textEntries) : null,
+export const getTextEntriesViews = createSelector(
+  getTextEntries, textEntries => textEntries ? mapTextEntriesViews(textEntries) : null,
 );
 
-export const getNewestDisplayedTextEntries = createSelector(
-  getDisplayedTextEntries, displayedTextEntries => {
+export const getNewestTextEntryView = createSelector(
+  getTextEntriesViews, displayedTextEntries => {
     return displayedTextEntries
       ? displayedTextEntries
-        .sort((displayedTextEntry1, displayedTextEntry2) => displayedTextEntry2.date - displayedTextEntry1.date)
+        .sort((displayedTextEntry1, displayedTextEntry2) => parseDate(displayedTextEntry2.date) - parseDate(displayedTextEntry1.date))
         .slice(0, 5)
       : null;
   },

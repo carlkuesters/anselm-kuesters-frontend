@@ -24,7 +24,7 @@ export class QuoteEffects {
     withLatestFrom(this.quoteStore.select(getQuotes)),
     filter(([_, quotes]) => !quotes),
     switchMap(() => this.quoteHttpService.getQuotes().pipe(
-      map(quotes => QuoteActions.quotesLoaded({ quotes })),
+      map(responseQuotes => QuoteActions.quotesLoaded({ responseQuotes })),
       catchError(() => EMPTY)
     ))
   ));

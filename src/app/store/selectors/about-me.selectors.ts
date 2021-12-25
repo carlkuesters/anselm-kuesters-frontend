@@ -1,25 +1,38 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 
 import {AboutMeState} from '../state/about-me-state.model';
+import {Achievement} from '../../model/achievement';
 
 const getAboutMeState = createFeatureSelector<AboutMeState>('aboutMe');
 
+const getResponseEvents = createSelector(
+  getAboutMeState, state => state.responseEvents,
+);
+
 export const getEvents = createSelector(
-  getAboutMeState, state => state.events,
+  getResponseEvents, response => response ? response.data : null,
+);
+
+const getResponseAchievements = createSelector(
+  getAboutMeState, state => state.responseAchievements,
 );
 
 export const getAchievements = createSelector(
-  getAboutMeState, state => state.achievements,
+  getResponseAchievements, response => response ? response.data : null,
 );
 
 export const getAchievements_FurtherDevelopments = createSelector(
-  getAchievements, achievements => achievements ? achievements.furtherDevelopments : null,
+  getAchievements, achievements => filterAchievements(achievements, 'furtherDevelopments'),
 );
 
 export const getAchievements_Awards = createSelector(
-  getAchievements, achievements => achievements ? achievements.awards : null,
+  getAchievements, achievements => filterAchievements(achievements, 'awards'),
 );
 
 export const getAchievements_InTheMedia = createSelector(
-  getAchievements, achievements => achievements ? achievements.inTheMedia : null,
+  getAchievements, achievements => filterAchievements(achievements, 'inTheMedia'),
 );
+
+function filterAchievements(achievements: Achievement[] | null, name: string): Achievement[] {
+  return (achievements ? achievements.filter(achievement => achievement.attributes.type.data.attributes.name === name) : []);
+}

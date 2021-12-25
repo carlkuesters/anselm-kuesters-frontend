@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {first} from 'rxjs/operators';
 
 import {TextStoreFacadeService} from '../../core/services/text-store-facade/text-store-facade.service';
-import {Text} from '../../model/text';
+import {TextView} from '../../model/text-view';
 
 @Component({
   selector: 'anselm-text-page',
@@ -14,7 +14,7 @@ import {Text} from '../../model/text';
 })
 export class TextPageComponent implements OnInit, AfterViewInit {
 
-  text: Observable<Text>;
+  text: Observable<TextView>;
 
   constructor(private activatedRoute: ActivatedRoute,
               private textStoreFacadeService: TextStoreFacadeService) {
@@ -22,7 +22,7 @@ export class TextPageComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     const seoId = this.activatedRoute.snapshot.paramMap.get('seoTextId');
-    this.text = this.textStoreFacadeService.getText(seoId);
+    this.text = this.textStoreFacadeService.getTextView(seoId);
     this.textStoreFacadeService.loadText(seoId);
   }
 

@@ -1,6 +1,7 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 
 import {parseSeoId} from '../../core/util/seo/seo.util';
+import {mapTextView} from '../../core/util/view/view.util';
 import {textAdapter} from '../reducers/text.reducers';
 import {TextState} from '../state/text-state.model';
 
@@ -13,6 +14,14 @@ const getEntities = createSelector(
   entitySelectors.selectEntities
 );
 
-export const getText = createSelector(
+const getResponseText = createSelector(
   getEntities, (entities, props) => entities[parseSeoId(props.seoId)],
+);
+
+export const getText = createSelector(
+  getResponseText, response => response ? response.data : null,
+);
+
+export const getTextView = createSelector(
+  getText, text => text ? mapTextView(text) : null,
 );

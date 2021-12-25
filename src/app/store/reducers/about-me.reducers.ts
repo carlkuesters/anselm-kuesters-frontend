@@ -6,14 +6,14 @@ import * as AboutMeActions from '../actions/about-me.actions';
 import {AboutMeState} from '../state/about-me-state.model';
 
 const initialState: AboutMeState = {
-  events: null,
-  achievements: null,
+  responseEvents: null,
+  responseAchievements: null,
 };
 
 const reducer = createReducer(
   initialState,
-  on(AboutMeActions.eventsLoaded, (state, { events }) => ({ ...state, events })),
-  on(AboutMeActions.achievementsLoaded, (state, { achievements }) => ({ ...state, achievements })),
+  on(AboutMeActions.eventsLoaded, (state, { responseEvents }) => ({ ...state, responseEvents })),
+  on(AboutMeActions.achievementsLoaded, (state, { responseAchievements }) => ({ ...state, responseAchievements })),
 );
 
 // @ts-ignore

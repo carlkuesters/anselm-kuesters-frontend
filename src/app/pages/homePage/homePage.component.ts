@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 
 import {QuoteStoreFacadeService} from '../../core/services/quote-store-facade/quote-store-facade.service';
 import {TextEntriesStoreFacadeService} from '../../core/services/text-entries-store-facade/text-entries-store-facade.service';
-import {DisplayedTextEntry} from '../../model/displayed-text-entry';
+import {TextEntryView} from '../../model/text-entry-view';
 import {Quote} from '../../model/quote';
 
 @Component({
@@ -12,7 +12,7 @@ import {Quote} from '../../model/quote';
   templateUrl: './homePage.component.html'
 })
 export class HomePageComponent implements OnInit {
-  newestTextEntries: Observable<DisplayedTextEntry[]>;
+  newestTextEntries: Observable<TextEntryView[]>;
   quote: Observable<Quote>;
 
   constructor(private textEntriesStoreFacadeService: TextEntriesStoreFacadeService,
@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.newestTextEntries = this.textEntriesStoreFacadeService.getNewestDisplayedTextEntries();
+    this.newestTextEntries = this.textEntriesStoreFacadeService.getNewestTextEntryView();
     this.quote = this.quoteStoreFacadeService.getRandomQuote();
 
     this.textEntriesStoreFacadeService.loadTextEntries();

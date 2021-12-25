@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {Comment} from '../../../../model/comment';
+import {CommentView} from '../../../../model/comment-view';
 
 @Component({
   selector: 'anselm-comments',
@@ -8,5 +8,5 @@ import {Comment} from '../../../../model/comment';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent {
-  @Input() comments: Comment[];
+  @Input() comments: CommentView[];
 }

@@ -1,6 +1,6 @@
-import {DisplayedTextEntry} from '../../../model/displayed-text-entry';
+import {TextEntryView} from '../../../model/text-entry-view';
 
 export class TextsOfYear {
   year: number;
-  textEntries: DisplayedTextEntry[];
+  textEntries: TextEntryView[];
 }

@@ -4,8 +4,12 @@ import {QuoteState} from '../state/quote-state.model';
 
 const getQuoteState = createFeatureSelector<QuoteState>('quote');
 
+const getResponseQuotes = createSelector(
+  getQuoteState, state => state.responseQuotes,
+);
+
 export const getQuotes = createSelector(
-  getQuoteState, state => state.quotes,
+  getResponseQuotes, response => response ? response.data : null,
 );
 
 export const getRandomQuote = createSelector(

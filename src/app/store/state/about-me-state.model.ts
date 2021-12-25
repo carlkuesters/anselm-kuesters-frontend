@@ -1,7 +1,8 @@
-import {AboutMeEvent} from '../../model/aboutMeEvent';
-import {Achievements} from '../../model/achievements';
+import {AboutMeEvent} from '../../model/about-me-event';
+import {Achievement} from '../../model/achievement';
+import {ApiResponse} from '../../model/api-response';
 
 export interface AboutMeState {
-  readonly events: AboutMeEvent[];
-  readonly achievements: Achievements;
+  readonly responseEvents: ApiResponse<AboutMeEvent[]>;
+  readonly responseAchievements: ApiResponse<Achievement[]>;
 }

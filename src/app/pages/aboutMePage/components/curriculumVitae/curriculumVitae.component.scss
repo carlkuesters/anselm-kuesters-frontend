@@ -49,7 +49,7 @@ li {
     border-radius: 50%;
   }
 
-  .event-text {
+  .event-title {
     letter-spacing: -0.1px;
   }
 
@@ -68,7 +68,7 @@ li {
   }
 
   &.major {
-    time, .event-text {
+    time, .event-title {
       font-weight: 600;
     }
 
