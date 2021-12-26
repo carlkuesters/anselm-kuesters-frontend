@@ -1,6 +1,6 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 
-import {TextScrapingState} from '../state/text-scraping-state.model';
+import {TextScrapingState} from './text-scraping-state.model';
 
 const getTextScrapingState = createFeatureSelector<TextScrapingState>('textScraping');
 

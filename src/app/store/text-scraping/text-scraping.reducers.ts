@@ -2,8 +2,8 @@ import {Action} from 'rxjs/internal/scheduler/Action';
 
 import {createReducer, on} from '@ngrx/store';
 
-import * as TextScrapingActions from '../actions/text-scraping.actions';
-import {TextScrapingState} from '../state/text-scraping-state.model';
+import * as TextScrapingActions from './text-scraping.actions';
+import {TextScrapingState} from './text-scraping-state.model';
 
 const initialState: TextScrapingState = {
   textSources: null,

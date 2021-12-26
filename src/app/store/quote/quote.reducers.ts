@@ -2,8 +2,8 @@ import {Action} from 'rxjs/internal/scheduler/Action';
 
 import {createReducer, on} from '@ngrx/store';
 
-import * as QuoteActions from '../actions/quote.actions';
-import {QuoteState} from '../state/quote-state.model';
+import * as QuoteActions from './quote.actions';
+import {QuoteState} from './quote-state.model';
 
 const initialState: QuoteState = {
   responseQuotes: null,

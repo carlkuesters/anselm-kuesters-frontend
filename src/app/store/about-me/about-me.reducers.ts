@@ -2,8 +2,8 @@ import {Action} from 'rxjs/internal/scheduler/Action';
 
 import {createReducer, on} from '@ngrx/store';
 
-import * as AboutMeActions from '../actions/about-me.actions';
-import {AboutMeState} from '../state/about-me-state.model';
+import * as AboutMeActions from './about-me.actions';
+import {AboutMeState} from './about-me-state.model';
 
 const initialState: AboutMeState = {
   responseEvents: null,

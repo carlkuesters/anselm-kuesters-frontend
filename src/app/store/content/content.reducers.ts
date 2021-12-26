@@ -2,8 +2,8 @@ import {Action} from 'rxjs/internal/scheduler/Action';
 
 import {createReducer, on} from '@ngrx/store';
 
-import * as ContentActions from '../actions/content.actions';
-import {ContentState} from '../state/content-state.model';
+import * as ContentActions from './content.actions';
+import {ContentState} from './content-state.model';
 
 const initialState: ContentState = {
   responseTextEntries: null,

@@ -1,14 +1,20 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
+import {Store} from '@ngrx/store';
 import {combineLatest, Observable} from 'rxjs';
 import {filter} from 'rxjs/operators';
 import LineChart = google.visualization.LineChart;
 import LineChartOptions = google.visualization.LineChartOptions;
 
-import {TextScrapingStoreFacadeService} from '../../core/services/text-scraping-store-facade/text-scraping-store-facade.service';
 import {TextSource} from '../../model/text-scraping/text-source';
 import {TextWordAnalysis} from '../../model/text-scraping/text-word-analysis';
+import * as TextScrapingActions from '../../store/text-scraping/text-scraping.actions';
+import {
+  getTextSources,
+  getTextWordAnalyses,
+  isTrendlineEnabled
+} from '../../store/text-scraping/text-scraping.selectors';
 
 @Component({
   selector: 'anselm-text-scraping-page',
@@ -25,13 +31,13 @@ export class TextScrapingPageComponent implements OnInit, AfterViewInit {
   textWorldAnalyses: Observable<TextWordAnalysis[]>;
 
   constructor(private formBuilder: FormBuilder,
-              private textScrapingStoreFacadeService: TextScrapingStoreFacadeService) {
+              private store: Store) {
   }
 
   ngOnInit(): void {
-    this.textSources = this.textScrapingStoreFacadeService.getTextSources();
-    this.trendlineEnabled = this.textScrapingStoreFacadeService.isTrendlineEnabled();
-    this.textWorldAnalyses = this.textScrapingStoreFacadeService.getTextWordAnalyses();
+    this.textSources = this.store.select(getTextSources);
+    this.trendlineEnabled = this.store.select(isTrendlineEnabled);
+    this.textWorldAnalyses = this.store.select(getTextWordAnalyses);
 
     this.textSources.pipe(filter(textSources => Boolean(textSources))).subscribe(textSources => {
       this.formGroup = this.formBuilder.group({
@@ -42,18 +48,18 @@ export class TextScrapingPageComponent implements OnInit, AfterViewInit {
         const textSourceControlName = 'textSource_' + textSource.id;
         this.formGroup.addControl(textSourceControlName, this.formBuilder.control(true));
         this.formGroup.get(textSourceControlName).valueChanges.subscribe(checked => {
-          this.textScrapingStoreFacadeService.configureTextSource(textSource.id, checked);
+          this.store.dispatch(TextScrapingActions.configureTextSource({ textSourceId: textSource.id, enabled: checked }));
         });
       });
       this.formGroup.get('word').valueChanges.subscribe(word => {
-        this.textScrapingStoreFacadeService.setWord(word);
+        this.store.dispatch(TextScrapingActions.setWord({ word }));
       });
       this.formGroup.get('trendline').valueChanges.subscribe(checked => {
-        this.textScrapingStoreFacadeService.configureTrendline(checked);
+        this.store.dispatch(TextScrapingActions.configureTrendline({ enabled: checked }));
       });
     });
 
-    this.textScrapingStoreFacadeService.loadTextSources();
+    this.store.dispatch(TextScrapingActions.loadTextSources());
   }
 
   ngAfterViewInit(): void {
@@ -71,7 +77,7 @@ export class TextScrapingPageComponent implements OnInit, AfterViewInit {
   }
 
   checkCurrentWord(): void {
-    this.textScrapingStoreFacadeService.loadTextWordAnalysis();
+    this.store.dispatch(TextScrapingActions.loadTextWordAnalysis());
   }
 
   private drawChart(wordAnalyses: TextWordAnalysis[], trendlineEnabled: boolean): void {

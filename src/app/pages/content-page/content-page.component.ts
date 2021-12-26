@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
+import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {ContentStoreFacadeService} from '../../core/services/content-store-facade/content-store-facade.service';
 import {ContentView} from '../../model/content-view';
+import * as ContentActions from '../../store/content/content.actions';
+import {getContentViews} from '../../store/content/content.selectors';
 
 @Component({
   selector: 'anselm-content-page',
@@ -12,12 +14,12 @@ import {ContentView} from '../../model/content-view';
 export class ContentPageComponent implements OnInit {
   contentViews: Observable<ContentView[]>;
 
-  constructor(private contentStoreFacadeService: ContentStoreFacadeService) {
+  constructor(private store: Store) {
   }
 
   ngOnInit(): void {
-    this.contentViews = this.contentStoreFacadeService.getContentViews();
+    this.contentViews = this.store.select(getContentViews);
 
-    this.contentStoreFacadeService.loadContent();
+    this.store.dispatch(ContentActions.loadContent());
   }
 }

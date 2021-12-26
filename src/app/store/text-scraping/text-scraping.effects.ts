@@ -5,14 +5,14 @@ import {Store} from '@ngrx/store';
 import {EMPTY, of} from 'rxjs';
 import {map, catchError, switchMap, withLatestFrom, filter} from 'rxjs/operators';
 
-import * as TextScrapingActions from '../actions/text-scraping.actions';
-import {TextScrapingState} from '../state/text-scraping-state.model';
 import {TextScrapingHttpService} from '../../core/services/text-scraping-http/text-scraping-http.service';
+import * as TextScrapingActions from './text-scraping.actions';
 import {
   getEnabledTextSourceIds,
   getTextSources,
   getWord
-} from '../selectors/text-scraping.selectors';
+} from './text-scraping.selectors';
+import {TextScrapingState} from './text-scraping-state.model';
 
 @Injectable()
 export class TextScrapingEffects {

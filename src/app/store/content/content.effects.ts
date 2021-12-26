@@ -7,9 +7,9 @@ import {map, catchError, switchMap, withLatestFrom, filter} from 'rxjs/operators
 
 import {LinkHttpService} from '../../core/services/link-http/link-http.service';
 import {TextHttpService} from '../../core/services/text-http/text-http.service';
-import * as ContentActions from '../actions/content.actions';
-import {getLinks, getTextEntries} from '../selectors/content.selectors';
-import {ContentState} from '../state/content-state.model';
+import * as ContentActions from './content.actions';
+import {getLinks, getTextEntries} from './content.selectors';
+import {ContentState} from './content-state.model';
 
 @Injectable()
 export class ContentEffects {

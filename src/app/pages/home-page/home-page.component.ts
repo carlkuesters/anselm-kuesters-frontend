@@ -1,11 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 
+import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {QuoteStoreFacadeService} from '../../core/services/quote-store-facade/quote-store-facade.service';
-import {ContentStoreFacadeService} from '../../core/services/content-store-facade/content-store-facade.service';
 import {ContentView} from '../../model/content-view';
 import {Quote} from '../../model/quote';
+import * as ContentActions from '../../store/content/content.actions';
+import {getNewestTextEntryViews} from '../../store/content/content.selectors';
+import * as QuoteActions from '../../store/quote/quote.actions';
+import {getRandomQuote} from '../../store/quote/quote.selectors';
 
 @Component({
   selector: 'anselm-home-page',
@@ -15,15 +18,14 @@ export class HomePageComponent implements OnInit {
   newestTextEntries: Observable<ContentView[]>;
   quote: Observable<Quote>;
 
-  constructor(private contentStoreFacadeService: ContentStoreFacadeService,
-              private quoteStoreFacadeService: QuoteStoreFacadeService) {
+  constructor(private store: Store) {
   }
 
   ngOnInit(): void {
-    this.newestTextEntries = this.contentStoreFacadeService.getNewestTextEntryView();
-    this.quote = this.quoteStoreFacadeService.getRandomQuote();
+    this.newestTextEntries = this.store.select(getNewestTextEntryViews);
+    this.quote = this.store.select(getRandomQuote);
 
-    this.contentStoreFacadeService.loadContent();
-    this.quoteStoreFacadeService.loadQuotes();
+    this.store.dispatch(ContentActions.loadContent());
+    this.store.dispatch(QuoteActions.loadQuotes());
   }
 }

@@ -6,9 +6,9 @@ import {EMPTY} from 'rxjs';
 import {map, catchError, switchMap, withLatestFrom, filter} from 'rxjs/operators';
 
 import {QuoteHttpService} from '../../core/services/quote-http/quote-http.service';
-import * as QuoteActions from '../actions/quote.actions';
-import {getQuotes} from '../selectors/quote.selectors';
-import {QuoteState} from '../state/quote-state.model';
+import * as QuoteActions from './quote.actions';
+import {getQuotes} from './quote.selectors';
+import {QuoteState} from './quote-state.model';
 
 @Injectable()
 export class QuoteEffects {

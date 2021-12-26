@@ -2,7 +2,7 @@ import {createFeatureSelector, createSelector} from '@ngrx/store';
 
 import {parseDate} from '../../core/util/date/date.util';
 import {mapLinksViews, mapTextEntriesViews} from '../../core/util/view/view.util';
-import {ContentState} from '../state/content-state.model';
+import {ContentState} from './content-state.model';
 
 const getTextState = createFeatureSelector<ContentState>('content');
 
@@ -18,7 +18,7 @@ const getTextEntriesViews = createSelector(
   getTextEntries, textEntries => textEntries ? mapTextEntriesViews(textEntries) : [],
 );
 
-export const getNewestTextEntryView = createSelector(
+export const getNewestTextEntryViews = createSelector(
   getTextEntriesViews, displayedTextEntries => {
     return displayedTextEntries
         .sort((displayedTextEntry1, displayedTextEntry2) => parseDate(displayedTextEntry2.date) - parseDate(displayedTextEntry1.date))

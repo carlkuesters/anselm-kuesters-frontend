@@ -7,9 +7,9 @@ import {map, catchError, switchMap, filter} from 'rxjs/operators';
 
 import {parseSeoId} from '../../core/util/seo/seo.util';
 import {TextHttpService} from '../../core/services/text-http/text-http.service';
-import * as TextActions from '../actions/text.actions';
-import {getText} from '../selectors/text.selectors';
-import {TextState} from '../state/text-state.model';
+import * as TextActions from './text.actions';
+import {getText} from './text.selectors';
+import {TextState} from './text-state.model';
 
 @Injectable()
 export class TextEffects {

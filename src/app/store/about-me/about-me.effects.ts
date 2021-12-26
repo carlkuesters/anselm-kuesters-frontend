@@ -6,9 +6,9 @@ import {EMPTY} from 'rxjs';
 import {map, catchError, switchMap, withLatestFrom, filter} from 'rxjs/operators';
 
 import {AboutMeHttpService} from '../../core/services/about-me-http/about-me-http.service';
-import * as AboutMeActions from '../actions/about-me.actions';
-import {getAchievements, getEvents} from '../selectors/about-me.selectors';
-import {AboutMeState} from '../state/about-me-state.model';
+import * as AboutMeActions from './about-me.actions';
+import {getAchievements, getEvents} from './about-me.selectors';
+import {AboutMeState} from './about-me-state.model';
 
 @Injectable()
 export class AboutMeEffects {

@@ -1,6 +1,6 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 
-import {QuoteState} from '../state/quote-state.model';
+import {QuoteState} from './quote-state.model';
 
 const getQuoteState = createFeatureSelector<QuoteState>('quote');
 

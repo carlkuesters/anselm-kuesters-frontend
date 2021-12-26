@@ -1,11 +1,13 @@
 import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
+import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {first} from 'rxjs/operators';
 
-import {TextStoreFacadeService} from '../../core/services/text-store-facade/text-store-facade.service';
 import {TextView} from '../../model/text-view';
+import * as TextActions from '../../store/text/text.actions';
+import {getTextView} from '../../store/text/text.selectors';
 
 @Component({
   selector: 'anselm-text-page',
@@ -17,13 +19,13 @@ export class TextPageComponent implements OnInit, AfterViewInit {
   text: Observable<TextView>;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private textStoreFacadeService: TextStoreFacadeService) {
+              private store: Store) {
   }
 
   ngOnInit(): void {
     const seoId = this.activatedRoute.snapshot.paramMap.get('seoTextId');
-    this.text = this.textStoreFacadeService.getTextView(seoId);
-    this.textStoreFacadeService.loadText(seoId);
+    this.text = this.store.select(getTextView, seoId);
+    this.store.dispatch(TextActions.loadText({ seoId }));
   }
 
   ngAfterViewInit(): void {

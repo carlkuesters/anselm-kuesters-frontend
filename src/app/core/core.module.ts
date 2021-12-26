@@ -8,29 +8,24 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {SharedModule} from '../shared/shared.module';
-import {AboutMeEffects} from '../store/effects/about-me.effects';
-import {QuoteEffects} from '../store/effects/quote.effects';
-import {TextEffects} from '../store/effects/text.effects';
-import {ContentEffects} from '../store/effects/content.effects';
-import {TextScrapingEffects} from '../store/effects/text-scraping.effects';
-import {aboutMeReducer} from '../store/reducers/about-me.reducers';
-import {contentReducer} from '../store/reducers/content.reducers';
-import {quoteReducer} from '../store/reducers/quote.reducers';
-import {textReducer} from '../store/reducers/text.reducers';
-import {textScrapingReducer} from '../store/reducers/text-scraping.reducers';
+import {AboutMeEffects} from '../store/about-me/about-me.effects';
+import {aboutMeReducer} from '../store/about-me/about-me.reducers';
+import {ContentEffects} from '../store/content/content.effects';
+import {contentReducer} from '../store/content/content.reducers';
+import {QuoteEffects} from '../store/quote/quote.effects';
+import {quoteReducer} from '../store/quote/quote.reducers';
+import {TextEffects} from '../store/text/text.effects';
+import {textReducer} from '../store/text/text.reducers';
+import {TextScrapingEffects} from '../store/text-scraping/text-scraping.effects';
+import {textScrapingReducer} from '../store/text-scraping/text-scraping.reducers';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {PageWrapperComponent} from './components/pageWrapper/pageWrapper.component';
 import {AboutMeHttpService} from './services/about-me-http/about-me-http.service';
-import {AboutMeStoreFacadeService} from './services/about-me-store-facade/about-me-store-facade.service';
 import {QuoteHttpService} from './services/quote-http/quote-http.service';
-import {QuoteStoreFacadeService} from './services/quote-store-facade/quote-store-facade.service';
 import {TextHttpService} from './services/text-http/text-http.service';
-import {ContentStoreFacadeService} from './services/content-store-facade/content-store-facade.service';
 import {LinkHttpService} from './services/link-http/link-http.service';
-import {TextStoreFacadeService} from './services/text-store-facade/text-store-facade.service';
 import {TextScrapingHttpService} from './services/text-scraping-http/text-scraping-http.service';
-import {TextScrapingStoreFacadeService} from './services/text-scraping-store-facade/text-scraping-store-facade.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -67,15 +62,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   providers: [
     AboutMeHttpService,
-    AboutMeStoreFacadeService,
-    ContentStoreFacadeService,
     LinkHttpService,
     QuoteHttpService,
-    QuoteStoreFacadeService,
     TextHttpService,
     TextScrapingHttpService,
-    TextScrapingStoreFacadeService,
-    TextStoreFacadeService,
   ],
   exports: [
     HeaderComponent,

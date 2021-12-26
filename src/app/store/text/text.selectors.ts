@@ -2,8 +2,8 @@ import {createFeatureSelector, createSelector} from '@ngrx/store';
 
 import {parseSeoId} from '../../core/util/seo/seo.util';
 import {mapTextView} from '../../core/util/view/view.util';
-import {textAdapter} from '../reducers/text.reducers';
-import {TextState} from '../state/text-state.model';
+import {textAdapter} from './text.reducers';
+import {TextState} from './text-state.model';
 
 const getTextState = createFeatureSelector<TextState>('text');
 
