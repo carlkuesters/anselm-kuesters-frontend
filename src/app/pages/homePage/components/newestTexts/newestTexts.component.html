@@ -1,6 +1,6 @@
 <h1 translate="MY_NEWEST_TEXTS"></h1>
 <ul>
   <li *ngFor="let textEntry of textEntries">
-    <a routerLink="/texts/{{textEntry.seoId}}">{{textEntry.title}}</a>
+    <a [routerLink]="textEntry.link">{{textEntry.title}}</a>
   </li>
 </ul>

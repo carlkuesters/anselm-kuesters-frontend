@@ -5,11 +5,11 @@ import {ContentView} from '../../../../model/content-view';
 import {ContentsOfYear} from '../../model/contents-of-year';
 
 @Component({
-  selector: 'anselm-texts',
-  templateUrl: './texts.component.html',
-  styleUrls: ['./texts.component.scss']
+  selector: 'anselm-contents',
+  templateUrl: './contents.component.html',
+  styleUrls: ['./contents.component.scss']
 })
-export class TextsComponent implements OnChanges {
+export class ContentsComponent implements OnChanges {
   @Input() contents: ContentView[];
   contentsByYear: ContentsOfYear[];
 

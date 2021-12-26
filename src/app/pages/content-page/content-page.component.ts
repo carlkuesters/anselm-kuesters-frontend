@@ -6,10 +6,10 @@ import {ContentStoreFacadeService} from '../../core/services/content-store-facad
 import {ContentView} from '../../model/content-view';
 
 @Component({
-  selector: 'anselm-texts-page',
-  templateUrl: './textsPage.component.html'
+  selector: 'anselm-content-page',
+  templateUrl: './content-page.component.html'
 })
-export class TextsPageComponent implements OnInit {
+export class ContentPageComponent implements OnInit {
   contentViews: Observable<ContentView[]>;
 
   constructor(private contentStoreFacadeService: ContentStoreFacadeService) {

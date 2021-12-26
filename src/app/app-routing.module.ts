@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {HomePageComponent} from './pages/homePage/homePage.component';
-import {TextsPageComponent} from './pages/textsPage/textsPage.component';
+import {ContentPageComponent} from './pages/content-page/content-page.component';
 import {TextPageComponent} from './pages/textPage/textPage.component';
 import {AboutMePageComponent} from './pages/aboutMePage/aboutMePage.component';
 import {ContactPageComponent} from './pages/contactPage/contactPage.component';
@@ -12,10 +12,10 @@ import {TextScrapingPageComponent} from './pages/textScrapingPage/text-scraping-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
-  { path: 'texts', component: TextsPageComponent },
-  { path: 'texts/:seoTextId', component: TextPageComponent },
-  { path: 'about-me', component: AboutMePageComponent },
-  { path: 'contact', component: ContactPageComponent },
+  { path: 'inhalte', component: ContentPageComponent },
+  { path: 'text/:seoTextId', component: TextPageComponent },
+  { path: 'ueber-mich', component: AboutMePageComponent },
+  { path: 'kontakt', component: ContactPageComponent },
   { path: 'info', component: InfoPageComponent },
   { path: 'textscraping', component: TextScrapingPageComponent },
 ];

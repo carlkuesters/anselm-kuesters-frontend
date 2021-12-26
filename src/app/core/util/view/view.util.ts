@@ -17,7 +17,7 @@ export function mapTextEntriesViews(textEntries: TextEntry[]): ContentView[] {
 function mapTextEntryView(textEntry: TextEntry): ContentView {
   return {
     routeOrUrl: true,
-    link: '/texts/' + generateSeoId(textEntry.id, textEntry.attributes.title),
+    link: '/text/' + generateSeoId(textEntry.id, textEntry.attributes.title),
     icon: 'file-text-o',
     title: textEntry.attributes.title,
     date: textEntry.attributes.date,
