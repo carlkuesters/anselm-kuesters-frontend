@@ -24,7 +24,7 @@ export class TextPageComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     const seoId = this.activatedRoute.snapshot.paramMap.get('seoTextId');
-    this.text = this.store.select(getTextView, seoId);
+    this.text = this.store.select(getTextView, { seoId });
     this.store.dispatch(TextActions.loadText({ seoId }));
   }
 

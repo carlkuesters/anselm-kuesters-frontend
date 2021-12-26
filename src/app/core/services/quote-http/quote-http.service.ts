@@ -6,7 +6,9 @@ import {Observable} from 'rxjs';
 import {ApiResponse} from '../../../model/api-response';
 import {Quote} from '../../../model/quote';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class QuoteHttpService {
 
   constructor(private httpClient: HttpClient) {

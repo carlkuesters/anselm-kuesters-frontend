@@ -6,10 +6,10 @@ import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 
 import {BoxComponent} from './components/box/box.component';
-import {ImageBoxComponent} from './components/imageBox/imageBox.component';
-import {TextBoxComponent} from './components/textBox/textBox.component';
-import {GridColumnComponent} from './components/gridColumn/gridColumn.component';
-import {GridRowComponent} from './components/gridRow/gridRow.component';
+import {GridColumnComponent} from './components/grid-column/grid-column.component';
+import {GridRowComponent} from './components/grid-row/grid-row.component';
+import {ImageBoxComponent} from './components/image-box/image-box.component';
+import {TextBoxComponent} from './components/text-box/text-box.component';
 
 @NgModule({
   imports: [

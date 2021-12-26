@@ -7,7 +7,9 @@ import {AboutMeEvent} from '../../../model/about-me-event';
 import {Achievement} from '../../../model/achievement';
 import {ApiResponse} from '../../../model/api-response';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AboutMeHttpService {
 
   constructor(private httpClient: HttpClient) {

@@ -6,7 +6,9 @@ import {Observable} from 'rxjs';
 import {TextSource} from '../../../model/text-scraping/text-source';
 import {TextWordAnalysis} from '../../../model/text-scraping/text-word-analysis';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TextScrapingHttpService {
 
   constructor(private httpClient: HttpClient) {

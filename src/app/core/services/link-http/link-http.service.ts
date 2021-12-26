@@ -6,7 +6,9 @@ import {Observable} from 'rxjs';
 import {ApiResponse} from '../../../model/api-response';
 import {Link} from '../../../model/link';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LinkHttpService {
 
   constructor(private httpClient: HttpClient) {

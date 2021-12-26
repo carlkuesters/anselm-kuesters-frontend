@@ -20,12 +20,7 @@ import {TextScrapingEffects} from '../store/text-scraping/text-scraping.effects'
 import {textScrapingReducer} from '../store/text-scraping/text-scraping.reducers';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {PageWrapperComponent} from './components/pageWrapper/pageWrapper.component';
-import {AboutMeHttpService} from './services/about-me-http/about-me-http.service';
-import {QuoteHttpService} from './services/quote-http/quote-http.service';
-import {TextHttpService} from './services/text-http/text-http.service';
-import {LinkHttpService} from './services/link-http/link-http.service';
-import {TextScrapingHttpService} from './services/text-scraping-http/text-scraping-http.service';
+import {PageWrapperComponent} from './components/page-wrapper/page-wrapper.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -43,7 +38,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     StoreModule.forFeature('text', textReducer),
     StoreModule.forFeature('textScraping', textScrapingReducer),
     EffectsModule.forRoot([ AboutMeEffects, QuoteEffects, TextEffects, ContentEffects, TextScrapingEffects ]),
-    StoreDevtoolsModule.instrument({ maxAge: 10 }),
+    StoreDevtoolsModule.instrument({ maxAge: 50 }),
 
     TranslateModule.forRoot({
       loader: {
@@ -60,13 +55,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FooterComponent,
     PageWrapperComponent,
   ],
-  providers: [
-    AboutMeHttpService,
-    LinkHttpService,
-    QuoteHttpService,
-    TextHttpService,
-    TextScrapingHttpService,
-  ],
+  providers: [],
   exports: [
     HeaderComponent,
     FooterComponent,

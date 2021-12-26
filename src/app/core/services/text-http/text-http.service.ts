@@ -8,7 +8,9 @@ import {ApiResponse} from '../../../model/api-response';
 import {Text} from '../../../model/text';
 import {TextEntry} from '../../../model/text-entry';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TextHttpService {
 
   constructor(private httpClient: HttpClient) {

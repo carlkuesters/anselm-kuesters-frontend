@@ -2,8 +2,8 @@ import {Component, Input, OnInit, ElementRef, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'anselm-grid-column',
-  templateUrl: './gridColumn.component.html',
-  styleUrls: ['./gridColumn.component.scss']
+  templateUrl: './grid-column.component.html',
+  styleUrls: ['./grid-column.component.scss']
 })
 export class GridColumnComponent implements OnInit {
   @Input() width = 1;
