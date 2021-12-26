@@ -1,0 +1,42 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/sizes';
+@import '../../../../styles/fonts/font-awesome';
+
+:host {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+h2 i {
+  margin-right: $baseline / 2;
+}
+
+a {
+  color: $color-dark-grey;
+}
+
+.texts-entry-title {
+  flex-grow: 1;
+  display: inline-block;
+}
+
+.texts-entry-info {
+  flex-grow: 0;
+  width: 120px;
+  margin-left: $baseline;
+  text-align: right;
+
+  a:not(:last-child) {
+    margin-right: $baseline;
+  }
+
+  .fa {
+    margin-right: $baseline / 4;
+  }
+
+  // TODO: Center vertically correctly
+  .fa-comment-o {
+    font-size: 18px;
+  }
+}

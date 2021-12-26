@@ -1,0 +1,9 @@
+<h1 translate="PUBLICATIONS"></h1>
+<ul>
+  <li *ngFor="let publication of publications">
+    <a href="{{publication.url}}" target="_blank">
+      <span class="publication-location">{{publication.location}}</span>
+      <span>{{publication.title}}</span>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,21 @@
+@import '../../../../styles/variables';
+
+h1 {
+  margin: 0;
+  padding: $baseline-2;
+}
+
+ul {
+  padding: 0;
+
+  & > li {
+    flex-direction: column;
+    margin: 0;
+    padding: $baseline-2;
+    border-top: 1px solid $color-shadow-border;
+  }
+}
+
+li:before {
+  display: none;
+}

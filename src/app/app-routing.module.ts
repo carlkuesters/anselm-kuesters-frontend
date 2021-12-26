@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {HomePageComponent} from './pages/homePage/homePage.component';
+import {HomePageComponent} from './pages/home-page/home-page.component';
 import {ContentPageComponent} from './pages/content-page/content-page.component';
-import {TextPageComponent} from './pages/textPage/textPage.component';
-import {AboutMePageComponent} from './pages/aboutMePage/aboutMePage.component';
-import {ContactPageComponent} from './pages/contactPage/contactPage.component';
-import {InfoPageComponent} from './pages/infoPage/infoPage.component';
-import {TextScrapingPageComponent} from './pages/textScrapingPage/text-scraping-page.component';
+import {TextPageComponent} from './pages/text-page/text-page.component';
+import {AboutMePageComponent} from './pages/about-me-page/about-me-page.component';
+import {ContactPageComponent} from './pages/contact-page/contact-page.component';
+import {InfoPageComponent} from './pages/info-page/info-page.component';
+import {TextScrapingPageComponent} from './pages/text-scraping-page/text-scraping-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

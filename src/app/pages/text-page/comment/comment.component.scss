@@ -1,0 +1,22 @@
+@import '../../../../styles/variables';
+
+$authorImageSize: 50px;
+
+.author {
+  flex: 0 0 $authorImageSize;
+
+  img {
+    width: $authorImageSize;
+    height: $authorImageSize;
+    margin-bottom: $baseline / 2;
+  }
+
+  time {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+h2 {
+  margin-bottom: $baseline;
+}

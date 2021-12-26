@@ -1,0 +1,28 @@
+@import '../../../../styles/breakpoints';
+@import '../../../../styles/variables';
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+  background-image: url('../../../../assets/images/anselm/mountains_800.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: $baseline-2;
+
+  @include bp-xs-max {
+    background-image: url('../../../../assets/images/anselm/mountains_clipped.png');
+  }
+
+  @include bp-md {
+    padding-left: 420px;
+  }
+
+  p {
+    color: $color-white;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    line-height: 27px;
+  }
+}
