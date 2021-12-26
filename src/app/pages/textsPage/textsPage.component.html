@@ -7,10 +7,10 @@
     </anselm-text-box>
   </anselm-grid-column>
 </anselm-grid-row>
-<anselm-grid-row>
+<anselm-grid-row *ngIf="(contentViews | async).length > 0">
   <anselm-grid-column>
     <anselm-box>
-      <anselm-texts *ngIf="textEntries | async" [textEntries]="textEntries | async"></anselm-texts>
+      <anselm-texts [contents]="contentViews | async"></anselm-texts>
     </anselm-box>
   </anselm-grid-column>
 </anselm-grid-row>

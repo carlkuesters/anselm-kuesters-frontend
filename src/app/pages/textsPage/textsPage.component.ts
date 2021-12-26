@@ -2,22 +2,22 @@ import {Component, OnInit} from '@angular/core';
 
 import {Observable} from 'rxjs';
 
-import {TextEntriesStoreFacadeService} from '../../core/services/text-entries-store-facade/text-entries-store-facade.service';
-import {TextEntryView} from '../../model/text-entry-view';
+import {ContentStoreFacadeService} from '../../core/services/content-store-facade/content-store-facade.service';
+import {ContentView} from '../../model/content-view';
 
 @Component({
   selector: 'anselm-texts-page',
   templateUrl: './textsPage.component.html'
 })
 export class TextsPageComponent implements OnInit {
-  textEntries: Observable<TextEntryView[]>;
+  contentViews: Observable<ContentView[]>;
 
-  constructor(private textEntriesStoreFacadeService: TextEntriesStoreFacadeService) {
+  constructor(private contentStoreFacadeService: ContentStoreFacadeService) {
   }
 
   ngOnInit(): void {
-    this.textEntries = this.textEntriesStoreFacadeService.getTextEntriesViews();
+    this.contentViews = this.contentStoreFacadeService.getContentViews();
 
-    this.textEntriesStoreFacadeService.loadTextEntries();
+    this.contentStoreFacadeService.loadContent();
   }
 }

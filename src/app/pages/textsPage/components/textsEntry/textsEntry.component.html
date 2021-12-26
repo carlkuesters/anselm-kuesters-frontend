@@ -1,13 +1,17 @@
-<a routerLink="/texts/{{textEntry.seoId}}" class="texts-entry-title">
-  <h2>{{textEntry.title}}</h2>
+<!--TODO: Solve with [routerLink]="null" after upgrading to Angular 13-->
+<a *ngIf="content.routeOrUrl" [routerLink]="content.link" class="texts-entry-title">
+  <h2><i class="fa fa-{{content.icon}}"></i>{{content.title}}</h2>
+</a>
+<a *ngIf="!content.routeOrUrl" [href]="content.link" target="_blank" class="texts-entry-title">
+  <h2><i class="fa fa-{{content.icon}}"></i>{{content.title}}</h2>
 </a>
 <div class="texts-entry-info">
-  <a *ngIf="textEntry.commentsCount > 0" routerLink="/texts/{{textEntry.seoId}}" fragment="comments">
+  <a *ngIf="content.commentsCount > 0" [routerLink]="content.link" fragment="comments">
     <i class="fa fa-comment-o"></i>
-    <span>{{textEntry.commentsCount}}</span>
+    <span>{{content.commentsCount}}</span>
   </a>
-  <a *ngIf="textEntry.publicationsCount > 0" routerLink="/texts/{{textEntry.seoId}}" fragment="publications">
+  <a *ngIf="content.publicationsCount > 0" [routerLink]="content.link" fragment="publications">
     <i class="fa fa-link"></i>
-    <span>{{textEntry.publicationsCount}}</span>
+    <span>{{content.publicationsCount}}</span>
   </a>
 </div>

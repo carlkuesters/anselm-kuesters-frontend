@@ -3,8 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 
 import {QuoteStoreFacadeService} from '../../core/services/quote-store-facade/quote-store-facade.service';
-import {TextEntriesStoreFacadeService} from '../../core/services/text-entries-store-facade/text-entries-store-facade.service';
-import {TextEntryView} from '../../model/text-entry-view';
+import {ContentStoreFacadeService} from '../../core/services/content-store-facade/content-store-facade.service';
+import {ContentView} from '../../model/content-view';
 import {Quote} from '../../model/quote';
 
 @Component({
@@ -12,18 +12,18 @@ import {Quote} from '../../model/quote';
   templateUrl: './homePage.component.html'
 })
 export class HomePageComponent implements OnInit {
-  newestTextEntries: Observable<TextEntryView[]>;
+  newestTextEntries: Observable<ContentView[]>;
   quote: Observable<Quote>;
 
-  constructor(private textEntriesStoreFacadeService: TextEntriesStoreFacadeService,
+  constructor(private contentStoreFacadeService: ContentStoreFacadeService,
               private quoteStoreFacadeService: QuoteStoreFacadeService) {
   }
 
   ngOnInit(): void {
-    this.newestTextEntries = this.textEntriesStoreFacadeService.getNewestTextEntryView();
+    this.newestTextEntries = this.contentStoreFacadeService.getNewestTextEntryView();
     this.quote = this.quoteStoreFacadeService.getRandomQuote();
 
-    this.textEntriesStoreFacadeService.loadTextEntries();
+    this.contentStoreFacadeService.loadContent();
     this.quoteStoreFacadeService.loadQuotes();
   }
 }

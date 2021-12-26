@@ -11,12 +11,12 @@ import {SharedModule} from '../shared/shared.module';
 import {AboutMeEffects} from '../store/effects/about-me.effects';
 import {QuoteEffects} from '../store/effects/quote.effects';
 import {TextEffects} from '../store/effects/text.effects';
-import {TextEntriesEffects} from '../store/effects/text-entries.effects';
+import {ContentEffects} from '../store/effects/content.effects';
 import {TextScrapingEffects} from '../store/effects/text-scraping.effects';
 import {aboutMeReducer} from '../store/reducers/about-me.reducers';
+import {contentReducer} from '../store/reducers/content.reducers';
 import {quoteReducer} from '../store/reducers/quote.reducers';
 import {textReducer} from '../store/reducers/text.reducers';
-import {textEntriesReducer} from '../store/reducers/text-entries.reducers';
 import {textScrapingReducer} from '../store/reducers/text-scraping.reducers';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
@@ -26,7 +26,8 @@ import {AboutMeStoreFacadeService} from './services/about-me-store-facade/about-
 import {QuoteHttpService} from './services/quote-http/quote-http.service';
 import {QuoteStoreFacadeService} from './services/quote-store-facade/quote-store-facade.service';
 import {TextHttpService} from './services/text-http/text-http.service';
-import {TextEntriesStoreFacadeService} from './services/text-entries-store-facade/text-entries-store-facade.service';
+import {ContentStoreFacadeService} from './services/content-store-facade/content-store-facade.service';
+import {LinkHttpService} from './services/link-http/link-http.service';
 import {TextStoreFacadeService} from './services/text-store-facade/text-store-facade.service';
 import {TextScrapingHttpService} from './services/text-scraping-http/text-scraping-http.service';
 import {TextScrapingStoreFacadeService} from './services/text-scraping-store-facade/text-scraping-store-facade.service';
@@ -42,11 +43,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
     StoreModule.forRoot({}),
     StoreModule.forFeature('aboutMe', aboutMeReducer),
+    StoreModule.forFeature('content', contentReducer),
     StoreModule.forFeature('quote', quoteReducer),
     StoreModule.forFeature('text', textReducer),
-    StoreModule.forFeature('textEntries', textEntriesReducer),
     StoreModule.forFeature('textScraping', textScrapingReducer),
-    EffectsModule.forRoot([ AboutMeEffects, QuoteEffects, TextEffects, TextEntriesEffects, TextScrapingEffects ]),
+    EffectsModule.forRoot([ AboutMeEffects, QuoteEffects, TextEffects, ContentEffects, TextScrapingEffects ]),
     StoreDevtoolsModule.instrument({ maxAge: 10 }),
 
     TranslateModule.forRoot({
@@ -67,9 +68,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   providers: [
     AboutMeHttpService,
     AboutMeStoreFacadeService,
+    ContentStoreFacadeService,
+    LinkHttpService,
     QuoteHttpService,
     QuoteStoreFacadeService,
-    TextEntriesStoreFacadeService,
     TextHttpService,
     TextScrapingHttpService,
     TextScrapingStoreFacadeService,

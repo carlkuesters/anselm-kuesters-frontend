@@ -1,8 +1,8 @@
 import {Component, Input, OnChanges} from '@angular/core';
 
 import {parseDate} from '../../../../core/util/date/date.util';
-import {TextEntryView} from '../../../../model/text-entry-view';
-import {TextsOfYear} from '../../model/textsOfYear';
+import {ContentView} from '../../../../model/content-view';
+import {ContentsOfYear} from '../../model/contents-of-year';
 
 @Component({
   selector: 'anselm-texts',
@@ -10,37 +10,37 @@ import {TextsOfYear} from '../../model/textsOfYear';
   styleUrls: ['./texts.component.scss']
 })
 export class TextsComponent implements OnChanges {
-  @Input() textEntries: TextEntryView[];
-  textsByYear: TextsOfYear[];
+  @Input() contents: ContentView[];
+  contentsByYear: ContentsOfYear[];
 
   ngOnChanges() {
-    if (this.textEntries) {
-      this.textsByYear = [];
-      // Group textEntries by year
-      this.textEntries.forEach(textEntry => {
-        const year = new Date(parseDate(textEntry.date)).getFullYear();
+    if (this.contents) {
+      this.contentsByYear = [];
+      // Group contentViews by year
+      this.contents.forEach(content => {
+        const year = new Date(parseDate(content.date)).getFullYear();
 
-        let textsOfYear = this.textsByYear.find(textsOfCurrentYear => {
-          return textsOfCurrentYear.year === year;
+        let contentsOfYear = this.contentsByYear.find(contentsOfCurrentYear => {
+          return contentsOfCurrentYear.year === year;
         });
-        if (textsOfYear == null) {
-          textsOfYear = {
+        if (contentsOfYear == null) {
+          contentsOfYear = {
             year,
-            textEntries: [],
+            contents: [],
           };
-          this.textsByYear.push(textsOfYear);
+          this.contentsByYear.push(contentsOfYear);
         }
-        textsOfYear.textEntries.push(textEntry);
+        contentsOfYear.contents.push(content);
       });
-      // Sort each years group internally by textEntry date
-      this.textsByYear.forEach(textsOfYear => {
-        textsOfYear.textEntries.sort((textEntry1, textEntry2) => {
-          return (parseDate(textEntry2.date) - parseDate(textEntry1.date));
+      // Sort each years group internally by content date
+      this.contentsByYear.forEach(contentsOfYear => {
+        contentsOfYear.contents.sort((content1, content2) => {
+          return (parseDate(content2.date) - parseDate(content1.date));
         });
       });
       // Sort the groups themselves by their year
-      this.textsByYear.sort((textsOfYear1, textsOfYear2) => {
-        return (textsOfYear2.year - textsOfYear1.year);
+      this.contentsByYear.sort((contentsOfYear1, contentsOfYear2) => {
+        return (contentsOfYear2.year - contentsOfYear1.year);
       });
     }
   }

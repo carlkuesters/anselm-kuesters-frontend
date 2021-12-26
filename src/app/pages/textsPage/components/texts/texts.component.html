@@ -1,9 +1,9 @@
 <ul>
-  <li *ngFor="let textsOfYear of textsByYear">
-    <div class="texts-separator">{{textsOfYear.year}}</div>
+  <li *ngFor="let contentsOfYear of contentsByYear">
+    <div class="texts-separator">{{contentsOfYear.year}}</div>
     <ul>
-      <li *ngFor="let textEntry of textsOfYear.textEntries">
-        <anselm-texts-entry [textEntry]="textEntry"></anselm-texts-entry>
+      <li *ngFor="let content of contentsOfYear.contents">
+        <anselm-texts-entry [content]="content"></anselm-texts-entry>
       </li>
     </ul>
   </li>
