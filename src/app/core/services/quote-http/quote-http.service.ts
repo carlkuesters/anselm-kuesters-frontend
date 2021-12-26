@@ -3,8 +3,8 @@ import {Injectable} from '@angular/core';
 
 import {Observable} from 'rxjs';
 
-import {ApiResponse} from '../../../model/api-response';
-import {Quote} from '../../../model/quote';
+import {ApiResponse} from '../../../model/api-response.interface';
+import {Quote} from '../../../model/quote.interface';
 
 @Injectable({
   providedIn: 'root'

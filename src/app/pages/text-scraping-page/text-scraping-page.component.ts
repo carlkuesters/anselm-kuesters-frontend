@@ -7,8 +7,8 @@ import {filter} from 'rxjs/operators';
 import LineChart = google.visualization.LineChart;
 import LineChartOptions = google.visualization.LineChartOptions;
 
-import {TextSource} from '../../model/text-scraping/text-source';
-import {TextWordAnalysis} from '../../model/text-scraping/text-word-analysis';
+import {TextSource} from '../../model/text-scraping/text-source.interface';
+import {TextWordAnalysis} from '../../model/text-scraping/text-word-analysis.interface';
 import * as TextScrapingActions from '../../store/text-scraping/text-scraping.actions';
 import {
   getTextSources,

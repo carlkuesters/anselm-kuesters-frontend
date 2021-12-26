@@ -1,5 +1,5 @@
-import {CommentView} from './comment-view';
-import {PublicationView} from './publication-view';
+import {CommentView} from './comment-view.interface';
+import {PublicationView} from './publication-view.interface';
 
 export interface TextView {
   readonly title: string;

@@ -4,9 +4,9 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {stringify} from 'qs';
 
-import {ApiResponse} from '../../../model/api-response';
-import {Text} from '../../../model/text';
-import {TextEntry} from '../../../model/text-entry';
+import {ApiResponse} from '../../../model/api-response.interface';
+import {Text} from '../../../model/text.interface';
+import {TextEntry} from '../../../model/text-entry.interface';
 
 @Injectable({
   providedIn: 'root'

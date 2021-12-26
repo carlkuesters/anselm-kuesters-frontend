@@ -3,8 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {ContentView} from '../../model/content-view';
-import {Quote} from '../../model/quote';
+import {ContentView} from '../../model/content-view.interface';
+import {Quote} from '../../model/quote.interface';
 import * as ContentActions from '../../store/content/content.actions';
 import {getNewestTextEntryViews} from '../../store/content/content.selectors';
 import * as QuoteActions from '../../store/quote/quote.actions';

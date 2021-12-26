@@ -5,7 +5,7 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {first} from 'rxjs/operators';
 
-import {TextView} from '../../model/text-view';
+import {TextView} from '../../model/text-view.interface';
 import * as TextActions from '../../store/text/text.actions';
 import {getTextView} from '../../store/text/text.selectors';
 

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {PublicationView} from '../../../model/publication-view';
+import {PublicationView} from '../../../model/publication-view.interface';
 
 @Component({
   selector: 'anselm-publications',

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {CommentView} from '../../../model/comment-view';
+import {CommentView} from '../../../model/comment-view.interface';
 
 @Component({
   selector: 'anselm-comment',

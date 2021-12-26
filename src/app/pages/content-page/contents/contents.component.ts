@@ -1,8 +1,8 @@
 import {Component, Input, OnChanges} from '@angular/core';
 
 import {parseDate} from '../../../core/util/date/date.util';
-import {ContentView} from '../../../model/content-view';
-import {ContentsOfYear} from '../../../model/contents-of-year';
+import {ContentView} from '../../../model/content-view.interface';
+import {ContentsOfYear} from '../../../model/contents-of-year.interface';
 
 @Component({
   selector: 'anselm-contents',

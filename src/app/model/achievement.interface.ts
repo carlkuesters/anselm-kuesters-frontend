@@ -1,5 +1,5 @@
-import {AchievementType} from './achievement-type';
-import {Relation} from './relation';
+import {AchievementType} from './achievement-type.interface';
+import {Relation} from './relation.interface';
 
 export interface Achievement {
   readonly id: number;

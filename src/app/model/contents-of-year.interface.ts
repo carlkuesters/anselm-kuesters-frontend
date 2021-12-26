@@ -1,4 +1,4 @@
-import {ContentView} from './content-view';
+import {ContentView} from './content-view.interface';
 
 export class ContentsOfYear {
   year: number;

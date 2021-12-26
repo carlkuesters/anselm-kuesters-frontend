@@ -1,8 +1,8 @@
 import {createAction, props} from '@ngrx/store';
 
-import {ApiResponse} from '../../model/api-response';
-import {Link} from '../../model/link';
-import {TextEntry} from '../../model/text-entry';
+import {ApiResponse} from '../../model/api-response.interface';
+import {Link} from '../../model/link.interface';
+import {TextEntry} from '../../model/text-entry.interface';
 
 export const loadContent = createAction('[Content] Load content');
 export const loadTextEntries = createAction('[Content] Load text entries');

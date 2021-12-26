@@ -1,7 +1,7 @@
 import {createAction, props} from '@ngrx/store';
 
-import {TextSource} from '../../model/text-scraping/text-source';
-import {TextWordAnalysis} from '../../model/text-scraping/text-word-analysis';
+import {TextSource} from '../../model/text-scraping/text-source.interface';
+import {TextWordAnalysis} from '../../model/text-scraping/text-word-analysis.interface';
 
 // tslint:disable:max-line-length
 export const loadTextSources = createAction('[Textscraping] Load text sources');

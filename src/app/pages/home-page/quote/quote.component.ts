@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {Quote} from '../../../model/quote';
+import {Quote} from '../../../model/quote.interface';
 
 @Component({
   selector: 'anselm-quote',

@@ -3,8 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {AboutMeEvent} from '../../model/about-me-event';
-import {Achievement} from '../../model/achievement';
+import {AboutMeEvent} from '../../model/about-me-event.interface';
+import {Achievement} from '../../model/achievement.interface';
 import * as AboutMeActions from '../../store/about-me/about-me.actions';
 import {
   getAchievements_Awards,

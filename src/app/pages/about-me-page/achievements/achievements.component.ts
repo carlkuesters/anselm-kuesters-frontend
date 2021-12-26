@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {Achievement} from '../../../model/achievement';
+import {Achievement} from '../../../model/achievement.interface';
 
 @Component({
   selector: 'anselm-achievements',

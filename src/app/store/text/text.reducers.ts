@@ -1,8 +1,8 @@
 import {createEntityAdapter} from '@ngrx/entity';
 import {createReducer, on} from '@ngrx/store';
 
-import {ApiResponse} from '../../model/api-response';
-import {Text} from '../../model/text';
+import {ApiResponse} from '../../model/api-response.interface';
+import {Text} from '../../model/text.interface';
 import * as TextActions from './text.actions';
 import {TextState} from './text-state.model';
 

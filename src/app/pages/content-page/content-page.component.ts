@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {ContentView} from '../../model/content-view';
+import {ContentView} from '../../model/content-view.interface';
 import * as ContentActions from '../../store/content/content.actions';
 import {getContentViews} from '../../store/content/content.selectors';
 

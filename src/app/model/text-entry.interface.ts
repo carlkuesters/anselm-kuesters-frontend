@@ -1,4 +1,4 @@
-import {Relation} from './relation';
+import {Relation} from './relation.interface';
 
 export interface TextEntry {
   readonly id: number;

@@ -1,6 +1,6 @@
-import {Comment} from './comment';
-import {Publication} from './publication';
-import {Relation} from './relation';
+import {Comment} from './comment.interface';
+import {Publication} from './publication.interface';
+import {Relation} from './relation.interface';
 
 export interface Text {
   readonly id: number;

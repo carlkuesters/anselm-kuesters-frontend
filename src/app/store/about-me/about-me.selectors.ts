@@ -1,6 +1,6 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 
-import {Achievement} from '../../model/achievement';
+import {Achievement} from '../../model/achievement.interface';
 import {AboutMeState} from './about-me-state.model';
 
 const getAboutMeState = createFeatureSelector<AboutMeState>('aboutMe');
