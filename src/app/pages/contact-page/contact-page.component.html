@@ -1,12 +1,12 @@
-<anselm-grid-row>
+<anselm-grid-row *ngIf="contactPage | async as contactPage">
   <anselm-grid-column>
     <anselm-image-box imagePath="assets/images/anselm/river.png"></anselm-image-box>
   </anselm-grid-column>
   <anselm-grid-column>
     <anselm-text-box>
-      <h1 translate="CONTACT_INFORMATION"></h1>
-      <p translate="PAGE.CONTACT.CONTENT"></p>
-      <anselm-contact-form></anselm-contact-form>
+      <h1>{{ contactPage.attributes.title }}</h1>
+      <div [innerHTML]="contactPage.attributes.description | markdown"></div>
+      <anselm-contact-form [email]="contactPage.attributes.email"></anselm-contact-form>
     </anselm-text-box>
   </anselm-grid-column>
 </anselm-grid-row>

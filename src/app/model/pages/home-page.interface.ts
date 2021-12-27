@@ -1,6 +1,8 @@
 export class HomePage {
   readonly attributes: {
-    readonly bannerText: string;
+    readonly bannerTextStart: string;
+    readonly bannerTextMiddle: string;
+    readonly bannerTextEnd: string;
     readonly aboutMe: string;
   };
 }

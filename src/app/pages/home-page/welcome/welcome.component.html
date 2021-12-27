@@ -1,10 +1,9 @@
 <div class="welcome">
   <p>
-    <!--TODO: Is this possible in a cleaner way?-->
-    <span [innerHTML]="'PAGE.HOME.WELCOME.0' | translate"></span>
+    <span [innerHTML]="textStart | markdown"></span>
     <a routerLink="/inhalte" translate="TEXTS"></a>
-    <span [innerHTML]="'PAGE.HOME.WELCOME.1' | translate"></span>
+    <span [innerHTML]="textMiddle | markdown"></span>
     <a routerLink="/kontakt" translate="CONTACT"></a>
-    <span [innerHTML]="'PAGE.HOME.WELCOME.2' | translate"></span>
+    <span [innerHTML]="textEnd | markdown"></span>
   </p>
 </div>

@@ -5,6 +5,6 @@
   </anselm-grid-column>
   <anselm-grid-column>
     <h2>{{comment.author}}</h2>
-    <p [innerHTML]="comment.content"></p>
+    <p [innerHTML]="comment.content | markdown"></p>
   </anselm-grid-column>
 </anselm-grid-row>

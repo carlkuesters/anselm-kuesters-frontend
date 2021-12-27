@@ -6,5 +6,5 @@
 </form>
 <div class="info">
   <div translate="PAGE.CONTACT.MESSAGE.DISABLED"></div>
-  <span translate="EMAIL"></span>: <a href="mailto:info@anselm-kuesters.de">info@anselm-kuesters.de</a>
+  <span translate="EMAIL"></span>: <a [href]="'mailto:' + email">{{ email }}</a>
 </div>

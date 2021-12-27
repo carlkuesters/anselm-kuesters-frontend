@@ -1,32 +1,38 @@
-<anselm-grid-row>
-  <anselm-grid-column>
-    <anselm-box>
-      <anselm-welcome></anselm-welcome>
-    </anselm-box>
-  </anselm-grid-column>
-</anselm-grid-row>
+<ng-container *ngIf="homePage | async as homePage">
+    <anselm-grid-row>
+    <anselm-grid-column>
+      <anselm-box>
+        <anselm-welcome
+          [textStart]="homePage.attributes.bannerTextStart"
+          [textMiddle]="homePage.attributes.bannerTextMiddle"
+          [textEnd]="homePage.attributes.bannerTextEnd"
+        ></anselm-welcome>
+      </anselm-box>
+    </anselm-grid-column>
+  </anselm-grid-row>
 
-<anselm-grid-row>
-  <anselm-grid-column>
-    <anselm-text-box>
-      <anselm-newest-texts [textEntries]="newestTextEntries | async"></anselm-newest-texts>
-    </anselm-text-box>
-  </anselm-grid-column>
-  <anselm-grid-column>
-    <anselm-grid-row>
-      <anselm-grid-column>
-        <anselm-text-box>
-          <h1 translate="ABOUT_ME"></h1>
-          <p [innerHTML]="'PAGE.HOME.ABOUT_ME' | translate"></p>
-        </anselm-text-box>
-      </anselm-grid-column>
-    </anselm-grid-row>
-    <anselm-grid-row>
-      <anselm-grid-column>
-        <anselm-text-box>
-          <anselm-quote *ngIf="quote | async" [quote]="quote | async"></anselm-quote>
-        </anselm-text-box>
-      </anselm-grid-column>
-    </anselm-grid-row>
-  </anselm-grid-column>
-</anselm-grid-row>
+  <anselm-grid-row>
+    <anselm-grid-column>
+      <anselm-text-box>
+        <anselm-newest-texts [textEntries]="newestTextEntries | async"></anselm-newest-texts>
+      </anselm-text-box>
+    </anselm-grid-column>
+    <anselm-grid-column>
+      <anselm-grid-row>
+        <anselm-grid-column>
+          <anselm-text-box>
+            <h1 translate="ABOUT_ME"></h1>
+            <p [innerHTML]="homePage.attributes.aboutMe | markdown"></p>
+          </anselm-text-box>
+        </anselm-grid-column>
+      </anselm-grid-row>
+      <anselm-grid-row>
+        <anselm-grid-column>
+          <anselm-text-box>
+            <anselm-quote *ngIf="quote | async" [quote]="quote | async"></anselm-quote>
+          </anselm-text-box>
+        </anselm-grid-column>
+      </anselm-grid-row>
+    </anselm-grid-column>
+  </anselm-grid-row>
+</ng-container>

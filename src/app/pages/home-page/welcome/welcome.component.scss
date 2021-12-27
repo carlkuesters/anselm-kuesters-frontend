@@ -18,11 +18,11 @@
   @include bp-md {
     padding-left: 420px;
   }
+}
 
-  p {
-    color: $color-white;
-    font-size: 18px;
-    letter-spacing: 0.3px;
-    line-height: 27px;
-  }
+p {
+  color: $color-white;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  line-height: 27px;
 }

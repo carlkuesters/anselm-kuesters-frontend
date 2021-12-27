@@ -2,7 +2,7 @@
   <anselm-grid-column>
     <anselm-text-box>
       <h1>{{text.title}}</h1>
-      <p [innerHTML]="text.text"></p>
+      <p [innerHTML]="text.text | markdown"></p>
     </anselm-text-box>
   </anselm-grid-column>
 </anselm-grid-row>

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
+
+  @Input() email: string;
+
   contactForm: FormGroup;
 
   constructor(formBuilder: FormBuilder) {

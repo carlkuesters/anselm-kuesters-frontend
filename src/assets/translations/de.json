@@ -1,10 +1,8 @@
 {
   "ABOUT_ME": "Über mich",
-  "ADMINISTRATION": "Administration",
   "AWARDS": "Auszeichnungen",
   "COMMENTS": "Kommentare",
   "CONTACT": "Kontakt",
-  "CONTACT_INFORMATION": "Kontakt-Informationen",
   "CONTENT": "Inhalte",
   "COPYRIGHT": "Copyright",
   "EMAIL": "E-Mail",
@@ -14,7 +12,6 @@
   "IN_THE_MEDIA": "In den Medien",
   "MESSAGE": "Nachricht",
   "MY_NEWEST_TEXTS": "Meine neuesten Texte",
-  "MY_TEXTS": "Meine Texte",
   "NAME": "Name",
   "PUBLICATIONS": "Veröffentlichungen",
   "SEND": "Senden",
@@ -24,24 +21,9 @@
   "TRENDLINE": "Trend line",
   "WORD": "Word",
   "PAGE": {
-    "ABOUT_ME": {
-      "CONTENT": {
-        "0": "Ich habe mich schon immer für das geschriebene Wort begeistert. Bereits in meiner frühen Kindheit begann ich, regelmäßig Kurzgeschichten zu schreiben, was 2008 zu einem ersten Preis bei dem Schreibwettbewerb des Literaturbüros Freiburg führte. Mein Interesse für Zeitgeschichte schlug sich in der Wahl des Faches Geschichte als Leistungskurs in der Oberstufe nieder. Als ich im Sommer 2011 mein Abitur erlangte, wurden meine Leidenschaften mit dem Erhalt des Scheffel-Preises in Deutsch sowie einem Förderpreis in Geschichte belohnt.<br/><br/>Entsprechend entschied ich mich zum Wintersemester 2011/12, Geschichte und Germanistik (Bachelor of Arts) zu studieren und wählte hierfür die Ruprecht-Karls-Universität in Heidelberg. Zu Beginn des dritten Semesters schrieb ich mich zudem am Alfred-Weber Institut für Economics ein (Bachelor of Science).<br/><br/>Seit Januar 2015 besitze ich meinen ersten Hochschulabschluss in Geschichte/Germanistik. Meine Abschlussarbeit, die ich bei Prof. Edgar Wolfrum im Fachbereich Zeitgeschichte geschrieben habe, beschäftigt sich mit dem Verhalten der Weinheimer Firma Freudenberg vor dem Hintergrund der wirtschaftspolitischen Rahmenbedingungen der NS-Diktatur.",
-        "1": "Von Februar bis Juni 2015 verbrachte ich ein Auslandssemester an der Universität Kopenhagen und erlangte im Anschluss, zum Wintersemester 2015/16, einen zweiten Studienabschluss in Economics. Ziel meiner Bachelorarbeit „Assimilation Processes experienced by Immigrants in Germany“ am Lehrstuhl von Prof. Christina Gathmann war, die zugrundeliegenden ökonomischen Mechanismen verschiedener Spielarten der Assimilation zu modellieren und dann mithilfe eines breiten Datensets empirisch zu testen.<br/><br/>Zwischen Oktober 2016 und Juni 2018 studierte ich im zweijährigen Masterstudiengang „Economic and Social History“ (Master of Philosophy) an der Universität Oxford. Der interdisziplinäre Studiengang erlaubt es mir, meine Leidenschaften für Geschichte, Sprache und polit-ökonomisches Zeitgeschehen zu kombinieren. In meiner Masterarbeit beschäftigte ich mich mit der Macht des geschriebenen Wortes und der Persistenz intellektueller Traditionen im Kontext der Euro-Krise.<br/><br/>Seit Oktober 2018 arbeite ich als angestellter Doktorand am Max-Planck-Institut für Europäische Rechtsgeschichte in Frankfurt an meinem Promotionsprojekt zur Geschichte des europäischen Wettbewerbsrechts."
-      }
-    },
     "CONTACT": {
-      "CONTENT": "Falls Sie Fragen oder Interesse an einer Kooperation haben, senden Sie mir gerne eine Nachricht über das bereitgestellte Kontaktformular. Über Meinungen zu meinen Texten freue ich mich jederzeit.",
       "MESSAGE": {
         "DISABLED": "Das Kontaktformular ist derzeit deaktiviert."
-      }
-    },
-    "HOME": {
-      "ABOUT_ME": "Ich wurde 1992 in Freiburg im Breisgau geboren und wuchs im nahegelegenen Eschbach auf. Seit Oktober 2018 arbeite ich als angestellter Doktorand am Max-Planck-Institut für Europäische Rechtsgeschichte in Frankfurt an meinem <a href=\"https://www.rg.mpg.de/promotionsvorhaben/der-einfluss-des-ordoliberalismus-auf-die-entwicklung-des-europaeischen-wettbewerbsrechts?c=2117073\" target=\"_blank\">Promotionsprojekt</a>.",
-      "WELCOME": {
-        "0": "Willkommen auf meiner Website, auf der ich eine Auswahl eigener ",
-        "1": " präsentiere, die ich im Laufe der letzten Jahre zu verschiedenen Anlässen verfasst habe. Um mein Schreiben weiter zu verbessern, freue ich mich über konstruktive Kommentare zu Schreibstil und Inhalt. Außerdem ist es mir ein besonderes Anliegen, über diese Website ",
-        "2": " zu anderen Veröffentlichungsmedien herzustellen.<br/>Viel Vergnügen beim Lesen!"
       }
     },
     "INFO": {
@@ -68,10 +50,6 @@
           "CONTENT": "Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt."
         }
       }
-    },
-    "TEXTS": {
-      "CONTENT": "Auf dieser Seite finden Sie eine chronologische Auswahl meiner Texte, die ich seit 2008 zu verschiedenen Anlässen oder einfach in der Freizeit geschrieben wurden. Entsprechend kann man die Entwicklung meines Schreibstils als auch meiner Interessenschwerpunkte gut nachvollziehen. Momentan interessiere ich mich vor allem für die mediale und akademische Aufarbeitung von Wirtschaftskrisen, Wirtschaftsgeschichte und -politik im Allgemeinen sowie die Effekte von technologischen Entwicklungen auf moderne Gesellschaften.<br/>Die Textform wechselt zwischen Essay und Kurzgeschichte, die Sprache ist zumeist Deutsch. Wurde der Text bereits außerhalb der Website publiziert, ist dies gekennzeichnet und, wenn möglich, verlinkt. Über konstruktive Kommentare jeglicher Art würde ich mich sehr freuen!<br/>Viel Spaß beim Lesen!",
-      "DISCLAIMER": "Ich behalte mir jegliche Veröffentlichungsrechte vor, sofern die Texte noch nicht bei einem Verlag publiziert wurden. In diesem Fall liegen die Rechte bei der veröffentlichenden Institution."
     },
     "TEXTSCRAPING": {
       "CONTENT": "Feel free to play around with the tool below.",

@@ -5,7 +5,7 @@ h1 {
   padding: $baseline-2;
 }
 
-p, h2 {
+p, h2, div {
   padding-left: $baseline-2;
   padding-right: $baseline-2;
 }
@@ -17,6 +17,6 @@ h2 {
   color: $color-grey;
 }
 
-p {
+p, div {
   padding-bottom: $baseline-2;
 }

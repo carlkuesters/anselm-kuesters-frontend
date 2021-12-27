@@ -1,9 +1,8 @@
-<anselm-grid-row>
+<anselm-grid-row *ngIf="contentPage | async as contentPage">
   <anselm-grid-column>
     <anselm-text-box>
-      <h1 translate="MY_TEXTS"></h1>
-      <p [innerHTML]="'PAGE.TEXTS.CONTENT' | translate"></p>
-      <p translate="PAGE.TEXTS.DISCLAIMER"></p>
+      <h1>{{ contentPage.attributes.title }}</h1>
+      <div [innerHTML]="contentPage.attributes.description | markdown"></div>
     </anselm-text-box>
   </anselm-grid-column>
 </anselm-grid-row>

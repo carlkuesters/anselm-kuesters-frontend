@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'anselm-welcome',
@@ -6,4 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent {
+  @Input() textStart: string;
+  @Input() textMiddle: string;
+  @Input() textEnd: string;
 }
