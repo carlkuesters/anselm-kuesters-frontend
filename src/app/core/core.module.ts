@@ -12,6 +12,8 @@ import {AboutMeEffects} from '../store/about-me/about-me.effects';
 import {aboutMeReducer} from '../store/about-me/about-me.reducers';
 import {ContentEffects} from '../store/content/content.effects';
 import {contentReducer} from '../store/content/content.reducers';
+import {PageEffects} from '../store/page/page.effects';
+import {pageReducer} from '../store/page/page.reducers';
 import {QuoteEffects} from '../store/quote/quote.effects';
 import {quoteReducer} from '../store/quote/quote.reducers';
 import {TextEffects} from '../store/text/text.effects';
@@ -34,10 +36,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     StoreModule.forRoot({}),
     StoreModule.forFeature('aboutMe', aboutMeReducer),
     StoreModule.forFeature('content', contentReducer),
+    StoreModule.forFeature('page', pageReducer),
     StoreModule.forFeature('quote', quoteReducer),
     StoreModule.forFeature('text', textReducer),
     StoreModule.forFeature('textScraping', textScrapingReducer),
-    EffectsModule.forRoot([ AboutMeEffects, QuoteEffects, TextEffects, ContentEffects, TextScrapingEffects ]),
+    EffectsModule.forRoot([ AboutMeEffects, ContentEffects, PageEffects, QuoteEffects, TextEffects, TextScrapingEffects ]),
     StoreDevtoolsModule.instrument({ maxAge: 50 }),
 
     TranslateModule.forRoot({

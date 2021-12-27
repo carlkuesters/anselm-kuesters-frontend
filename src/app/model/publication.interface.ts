@@ -1,5 +1,4 @@
 export interface Publication {
-  readonly id: number;
   readonly attributes: {
     readonly location: string;
     readonly title: string;

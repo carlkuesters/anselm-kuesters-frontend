@@ -4,7 +4,6 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
 import {ContentView} from '../../model/content-view.interface';
-import * as ContentActions from '../../store/content/content.actions';
 import {getContentViews} from '../../store/content/content.selectors';
 
 @Component({
@@ -19,7 +18,5 @@ export class ContentPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.contentViews = this.store.select(getContentViews);
-
-    this.store.dispatch(ContentActions.loadContent());
   }
 }

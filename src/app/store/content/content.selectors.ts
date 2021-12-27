@@ -4,10 +4,10 @@ import {parseDate} from '../../core/util/date/date.util';
 import {mapLinksViews, mapTextEntriesViews} from '../../core/util/view/view.util';
 import {ContentState} from './content-state.model';
 
-const getTextState = createFeatureSelector<ContentState>('content');
+const getContentState = createFeatureSelector<ContentState>('content');
 
 const getResponseTextEntries = createSelector(
-  getTextState, state => state.responseTextEntries,
+  getContentState, state => state.responseTextEntries,
 );
 
 export const getTextEntries = createSelector(
@@ -27,7 +27,7 @@ export const getNewestTextEntryViews = createSelector(
 );
 
 const getResponseLinks = createSelector(
-  getTextState, state => state.responseLinks,
+  getContentState, state => state.responseLinks,
 );
 
 export const getLinks = createSelector(

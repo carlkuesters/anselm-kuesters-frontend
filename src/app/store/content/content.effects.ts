@@ -3,12 +3,11 @@ import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
 import {EMPTY} from 'rxjs';
-import {map, catchError, switchMap, withLatestFrom, filter} from 'rxjs/operators';
+import {map, catchError, switchMap} from 'rxjs/operators';
 
 import {LinkHttpService} from '../../core/services/link-http/link-http.service';
 import {TextHttpService} from '../../core/services/text-http/text-http.service';
 import * as ContentActions from './content.actions';
-import {getLinks, getTextEntries} from './content.selectors';
 import {ContentState} from './content-state.model';
 
 @Injectable()
@@ -21,18 +20,8 @@ export class ContentEffects {
     private linkHttpService: LinkHttpService,
   ) {}
 
-  loadContent = createEffect(() => this.actions.pipe(
-    ofType(ContentActions.loadContent),
-    switchMap(() => [
-      ContentActions.loadTextEntries(),
-      ContentActions.loadLinks(),
-    ]),
-  ));
-
   loadTextEntries = createEffect(() => this.actions.pipe(
-    ofType(ContentActions.loadTextEntries),
-    withLatestFrom(this.contentStore.select(getTextEntries)),
-    filter(([_, textEntries]) => !textEntries),
+    ofType(ContentActions.loadContent),
     switchMap(() => this.textHttpService.getTextEntries().pipe(
       map(responseTextEntries => ContentActions.textEntriesLoaded({ responseTextEntries })),
       catchError(() => EMPTY)
@@ -40,9 +29,7 @@ export class ContentEffects {
   ));
 
   loadLinks = createEffect(() => this.actions.pipe(
-    ofType(ContentActions.loadLinks),
-    withLatestFrom(this.contentStore.select(getLinks)),
-    filter(([_, links]) => !links),
+    ofType(ContentActions.loadContent),
     switchMap(() => this.linkHttpService.getLinks().pipe(
       map(responseLinks => ContentActions.linksLoaded({ responseLinks })),
       catchError(() => EMPTY)

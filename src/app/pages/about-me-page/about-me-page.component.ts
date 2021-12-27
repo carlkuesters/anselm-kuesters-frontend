@@ -5,7 +5,6 @@ import {Observable} from 'rxjs';
 
 import {AboutMeEvent} from '../../model/about-me-event.interface';
 import {Achievement} from '../../model/achievement.interface';
-import * as AboutMeActions from '../../store/about-me/about-me.actions';
 import {
   getAchievements_Awards,
   getAchievements_FurtherDevelopments,
@@ -31,8 +30,5 @@ export class AboutMePageComponent implements OnInit {
     this.furtherDevelopments = this.store.select(getAchievements_FurtherDevelopments);
     this.awards = this.store.select(getAchievements_Awards);
     this.inTheMedia = this.store.select(getAchievements_InTheMedia);
-
-    this.store.dispatch(AboutMeActions.loadEvents());
-    this.store.dispatch(AboutMeActions.loadAchievements());
   }
 }

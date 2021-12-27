@@ -1,4 +1,5 @@
 @import './styles/breakpoints';
+@import './styles/colors';
 @import './styles/variables';
 
 html {
@@ -11,7 +12,7 @@ html {
 
 body {
   margin: $baseline;
-  background-color: #F5F5F5;
+  background-color: $color-background;
 }
 
 body, input[type=text], textarea, button {
