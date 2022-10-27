@@ -59,7 +59,7 @@
     "TEXTSCRAPING": {
       "CONTENT": "Feel free to play around with the tool below.",
       "DISCLAIMER": {
-        "DESCRIPTION": "To use this functionality, you have to explicitly allow this page to download a Google Charts file (<a href=\"https://www.gstatic.com/charts/loader.js\">https://www.gstatic.com/charts/loader.js</a>) to visualize the results.",
+        "DESCRIPTION": "To use this functionality, you have to explicitly allow this page to download a Google Charts file (<a href=\"https://www.gstatic.com/charts/loader.js\" target=\"_blank\">https://www.gstatic.com/charts/loader.js</a>) to visualize the results.",
         "TITLE": "Data Privacy Disclaimer"
       },
       "SECTION_TITLE": {
