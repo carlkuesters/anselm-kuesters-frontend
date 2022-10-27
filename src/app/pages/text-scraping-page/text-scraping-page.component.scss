@@ -4,7 +4,7 @@
 @import '../../../styles/fonts/font-awesome';
 
 h1 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   padding: $baseline-2 $baseline-2 $baseline $baseline-2;
 }
 
@@ -26,8 +26,19 @@ h2 {
   color: $color-grey;
 }
 
-.section + h2 {
-  margin-top: $baseline-2;
+.section {
+  & + h2 {
+    margin-top: $baseline-2;
+  }
+
+  p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.allow {
+  margin-bottom: $baseline-2;
 }
 
 .setting {

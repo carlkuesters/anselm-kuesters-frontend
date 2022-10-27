@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import {Store} from '@ngrx/store';
@@ -13,6 +13,7 @@ import * as TextScrapingActions from '../../store/text-scraping/text-scraping.ac
 import {
   getTextSources,
   getTextWordAnalyses,
+  isGoogleChartsAllowed,
   isTrendlineEnabled
 } from '../../store/text-scraping/text-scraping.selectors';
 
@@ -21,20 +22,22 @@ import {
   templateUrl: './text-scraping-page.component.html',
   styleUrls: ['./text-scraping-page.component.scss']
 })
-export class TextScrapingPageComponent implements OnInit, AfterViewInit {
+export class TextScrapingPageComponent implements OnInit {
 
-  formGroup: FormGroup;
-  @ViewChild('chart') chartContainer: ElementRef;
-  chart: LineChart;
+  googleChartsAllowed: Observable<boolean>;
   textSources: Observable<TextSource[]>;
   trendlineEnabled: Observable<boolean>;
   textWorldAnalyses: Observable<TextWordAnalysis[]>;
+  formGroup: FormGroup;
+  @ViewChildren('chart') chartContainers: QueryList<ElementRef>;
+  chart: LineChart;
 
   constructor(private formBuilder: FormBuilder,
               private store: Store) {
   }
 
   ngOnInit(): void {
+    this.googleChartsAllowed = this.store.select(isGoogleChartsAllowed);
     this.textSources = this.store.select(getTextSources);
     this.trendlineEnabled = this.store.select(isTrendlineEnabled);
     this.textWorldAnalyses = this.store.select(getTextWordAnalyses);
@@ -59,20 +62,40 @@ export class TextScrapingPageComponent implements OnInit, AfterViewInit {
       });
     });
 
-    this.store.dispatch(TextScrapingActions.loadTextSources());
   }
 
-  ngAfterViewInit(): void {
-    google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(() => {
-      this.chart = new google.visualization.LineChart(this.chartContainer.nativeElement);
-
-      combineLatest([
-        this.textWorldAnalyses.pipe(filter(textWorldAnalyses => Boolean(textWorldAnalyses))),
-        this.trendlineEnabled,
-      ]).subscribe(([textWorldAnalyses, trendlineEnabled]) => {
-        this.drawChart(textWorldAnalyses, trendlineEnabled);
+  loadGoogleChartsAndInitialize(): void {
+    this.store.dispatch(TextScrapingActions.allowGoogleCharts());
+    this.loadGoogleCharts().then(() => {
+      google.charts.setOnLoadCallback(() => {
+        this.store.dispatch(TextScrapingActions.loadTextSources());
+        this.chartContainers.changes.subscribe(() => {
+          if (this.chartContainers.length > 0) {
+            this.chart = new google.visualization.LineChart(this.chartContainers.first.nativeElement);
+            combineLatest([
+              this.textWorldAnalyses.pipe(filter(textWorldAnalyses => Boolean(textWorldAnalyses))),
+              this.trendlineEnabled,
+            ]).subscribe(([textWorldAnalyses, trendlineEnabled]) => {
+              this.drawChart(textWorldAnalyses, trendlineEnabled);
+            });
+          }
+        });
       });
+    });
+  }
+
+  private loadGoogleCharts(): Promise<void> {
+    return new Promise(resolve => {
+      const script = document.createElement('script')
+      script.type = 'text/javascript'
+      script.onload = () => {
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(() => {
+          resolve();
+        });
+      }
+      script.src = 'https://www.gstatic.com/charts/loader.js';
+      document.body.appendChild(script);
     });
   }
 

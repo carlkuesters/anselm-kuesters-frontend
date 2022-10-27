@@ -4,7 +4,7 @@
       <h1 translate="IMPRESSUM"></h1>
       <h2 translate="PAGE.INFO.DISCLAIMER"></h2>
       <div [innerHTML]="infoPage.attributes.responsiblePerson | markdown"></div>
-      <ng-container *ngFor="let index of [0,1,2,3,4]">
+      <ng-container *ngFor="let index of [0,1,2,3,4,5]">
         <h2 [innerHTML]="'PAGE.INFO.IMPRESSUM.' + index + '.TITLE' | translate"></h2>
         <p [innerHTML]="'PAGE.INFO.IMPRESSUM.' + index + '.CONTENT' | translate"></p>
       </ng-container>

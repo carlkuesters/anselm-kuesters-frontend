@@ -2,34 +2,43 @@
   <anselm-grid-column>
     <anselm-box>
       <h1 translate="TEXTSCRAPING"></h1>
-      <p>{{ 'PAGE.TEXTSCRAPING.CONTENT' | translate }}</p>
-      <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="checkCurrentWord()">
-        <h2>Settings</h2>
+      <p translate="PAGE.TEXTSCRAPING.CONTENT"></p>
+      <ng-container *ngIf="(googleChartsAllowed | async) === false">
+        <h2 translate="PAGE.TEXTSCRAPING.DISCLAIMER.TITLE"></h2>
         <div class="section">
-          <div class="setting">
-            <span class="setting-title">{{ 'TEXT_SOURCES' | translate }}:</span>
-            <label *ngFor="let textSource of (textSources | async)">
-              <input type="checkbox" [formControlName]="'textSource_' + textSource.id">
-              <span>{{ textSource.title }}</span>
-            </label>
-          </div>
-          <div class="setting">
-            <span class="setting-title">{{ 'Visualization' | translate }}:</span>
-            <label>
-              <input type="checkbox" formControlName="trendline">
-              <span translate="TRENDLINE"></span>
-            </label>
-          </div>
+          <p [innerHTML]="'PAGE.TEXTSCRAPING.DISCLAIMER.DESCRIPTION' | translate"></p>
+          <button translate="ALLOW" (click)="loadGoogleChartsAndInitialize()" class="allow"></button>
         </div>
-        <h2 translate="PAGE.TEXTSCRAPING.SECTION_TITLE.TEXT_WORD_ANALYSIS"></h2>
-        <div class="section">
-          <div class="word">
-            <input type="text" formControlName="word" [placeholder]="'WORD' | translate">
-            <button translate="Check"></button>
+      </ng-container>
+      <ng-container *ngIf="googleChartsAllowed | async">
+        <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="checkCurrentWord()">
+          <h2>Settings</h2>
+          <div class="section">
+            <div class="setting">
+              <span class="setting-title">{{ 'TEXT_SOURCES' | translate }}:</span>
+              <label *ngFor="let textSource of (textSources | async)">
+                <input type="checkbox" [formControlName]="'textSource_' + textSource.id">
+                <span>{{ textSource.title }}</span>
+              </label>
+            </div>
+            <div class="setting">
+              <span class="setting-title">{{ 'Visualization' | translate }}:</span>
+              <label>
+                <input type="checkbox" formControlName="trendline">
+                <span translate="TRENDLINE"></span>
+              </label>
+            </div>
           </div>
-          <div #chart class="chart"></div>
-        </div>
-      </form>
+          <h2 translate="PAGE.TEXTSCRAPING.SECTION_TITLE.TEXT_WORD_ANALYSIS"></h2>
+          <div class="section">
+            <div class="word">
+              <input type="text" formControlName="word" [placeholder]="'WORD' | translate">
+              <button translate="Check"></button>
+            </div>
+            <div #chart class="chart"></div>
+          </div>
+        </form>
+      </ng-container>
     </anselm-box>
   </anselm-grid-column>
 </anselm-grid-row>

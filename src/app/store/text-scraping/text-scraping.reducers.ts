@@ -6,6 +6,7 @@ import * as TextScrapingActions from './text-scraping.actions';
 import {TextScrapingState} from './text-scraping-state.model';
 
 const initialState: TextScrapingState = {
+  googleChartsAllowed: false,
   textSources: null,
   enabledTextSourceIds: null,
   trendlineEnabled: false,
@@ -15,6 +16,7 @@ const initialState: TextScrapingState = {
 
 const reducer = createReducer(
   initialState,
+  on(TextScrapingActions.allowGoogleCharts, (state) => ({ ...state, googleChartsAllowed: true })),
   on(TextScrapingActions.textSourcesLoaded, (state, { textSources }) => ({ ...state,
     textSources,
     enabledTextSourceIds: textSources.map(textSource => textSource.id)

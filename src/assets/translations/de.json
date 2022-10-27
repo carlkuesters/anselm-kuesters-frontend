@@ -1,5 +1,6 @@
 {
   "ABOUT_ME": "Über mich",
+  "ALLOW": "Allow",
   "AWARDS": "Auszeichnungen",
   "COMMENTS": "Kommentare",
   "CONTACT": "Kontakt",
@@ -46,6 +47,10 @@
           "CONTENT": "Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten (Emailadressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist - soweit technisch möglich und zumutbar - auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet."
         },
         "4": {
+          "TITLE": "Lizenzen",
+          "CONTENT": "Diese Seite verwendet die Schriftart \"Open Sans\", welche unter der SIL Open Font License (OFL) steht. Das zugehörige Dokument inklusive Copyright Info und Lizenz ist unter folgenden <a href=\"assets/fonts/open-sans-v34-latin/OFL.txt\">Link</a> verfügbar."
+        },
+        "5": {
           "TITLE": "Rechtswirksamkeit",
           "CONTENT": "Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt."
         }
@@ -53,6 +58,10 @@
     },
     "TEXTSCRAPING": {
       "CONTENT": "Feel free to play around with the tool below.",
+      "DISCLAIMER": {
+        "DESCRIPTION": "To use this functionality, you have to explicitly allow this page to download a Google Charts file (<a href=\"https://www.gstatic.com/charts/loader.js\">https://www.gstatic.com/charts/loader.js</a>) to visualize the results.",
+        "TITLE": "Data Privacy Disclaimer"
+      },
       "SECTION_TITLE": {
         "TEXT_WORD_ANALYSIS": "Appearance of a specific word over time"
       }

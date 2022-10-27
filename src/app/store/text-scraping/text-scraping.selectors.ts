@@ -4,6 +4,10 @@ import {TextScrapingState} from './text-scraping-state.model';
 
 const getTextScrapingState = createFeatureSelector<TextScrapingState>('textScraping');
 
+export const isGoogleChartsAllowed = createSelector(
+  getTextScrapingState, state => state.googleChartsAllowed
+);
+
 export const getTextSources = createSelector(
   getTextScrapingState, state => state.textSources
 );

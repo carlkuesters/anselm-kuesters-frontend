@@ -4,6 +4,7 @@ import {TextSource} from '../../model/text-scraping/text-source.interface';
 import {TextWordAnalysis} from '../../model/text-scraping/text-word-analysis.interface';
 
 // tslint:disable:max-line-length
+export const allowGoogleCharts = createAction('[Textscraping] Allow Google Charts');
 export const loadTextSources = createAction('[Textscraping] Load text sources');
 export const textSourcesLoaded = createAction('[Textscraping] Text sources loaded', props<{ textSources: TextSource[] }>());
 export const configureTextSource = createAction('[Textscraping] Configure text source', props<{ textSourceId: number, enabled: boolean }>());
