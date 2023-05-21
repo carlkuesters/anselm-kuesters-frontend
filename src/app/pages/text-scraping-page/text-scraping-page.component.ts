@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, QueryList, ViewChildren} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 
 import {Store} from '@ngrx/store';
 import {combineLatest, Observable} from 'rxjs';
@@ -28,11 +28,11 @@ export class TextScrapingPageComponent implements OnInit {
   textSources: Observable<TextSource[]>;
   trendlineEnabled: Observable<boolean>;
   textWorldAnalyses: Observable<TextWordAnalysis[]>;
-  formGroup: FormGroup;
+  formGroup: UntypedFormGroup;
   @ViewChildren('chart') chartContainers: QueryList<ElementRef>;
   chart: LineChart;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
               private store: Store) {
   }
 

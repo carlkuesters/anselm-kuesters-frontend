@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'anselm-contact-form',
@@ -10,9 +10,9 @@ export class ContactFormComponent {
 
   @Input() email: string;
 
-  contactForm: FormGroup;
+  contactForm: UntypedFormGroup;
 
-  constructor(formBuilder: FormBuilder) {
+  constructor(formBuilder: UntypedFormBuilder) {
     this.contactForm = formBuilder.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
