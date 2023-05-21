@@ -18,7 +18,7 @@ function mapTextEntryView(textEntry: TextEntry): ContentView {
   return {
     routeOrUrl: true,
     link: '/text/' + generateSeoId(textEntry.id, textEntry.attributes.title),
-    icon: 'file-text-o',
+    icon: 'fa fa-file-lines',
     title: textEntry.attributes.title,
     date: textEntry.attributes.date,
     commentsCount: textEntry.attributes.comments.data.length,
@@ -34,7 +34,7 @@ function mapLinkView(link: Link): ContentView {
   return {
     routeOrUrl: false,
     link: link.attributes.url,
-    icon: (link.attributes.url.startsWith('https://www.youtube.com/') ? 'youtube' : 'link'),
+    icon: (link.attributes.url.startsWith('https://www.youtube.com/') ? 'fa-brands fa-youtube' : 'fa fa-link'),
     title: link.attributes.title,
     date: link.attributes.date,
     commentsCount: 0,

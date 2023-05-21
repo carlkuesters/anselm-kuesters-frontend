@@ -24,8 +24,8 @@ h1 {
 
 .achievement-header {
   display: block;
-  margin-bottom: $baseline / 2;
-  padding-bottom: $baseline / 2;
+  margin-bottom: calc(#{$baseline} / 2);
+  padding-bottom: calc(#{$baseline} / 2);
   border-bottom: 1px solid $color-shadow-border;
   color: $color-grey;
 }

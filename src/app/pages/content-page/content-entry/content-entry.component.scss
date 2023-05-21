@@ -9,7 +9,7 @@
 }
 
 h2 i {
-  margin-right: $baseline / 2;
+  margin-right: calc(#{$baseline} / 2);
 }
 
 a {
@@ -32,7 +32,7 @@ a {
   }
 
   .fa {
-    margin-right: $baseline / 4;
+    margin-right: calc(#{$baseline} / 4);
   }
 
   // TODO: Center vertically correctly

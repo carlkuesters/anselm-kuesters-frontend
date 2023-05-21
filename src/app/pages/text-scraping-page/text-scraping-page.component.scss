@@ -19,7 +19,7 @@ p {
 
 h2 {
   margin-bottom: $baseline-2;
-  padding-bottom: $baseline / 2;
+  padding-bottom: calc(#{$baseline} / 2);
   padding-left: $baseline-2;
   padding-right: $baseline-2;
   border-bottom: 1px solid $color-shadow-border;
@@ -44,11 +44,11 @@ h2 {
 .setting {
   display: flex;
   flex-direction: column;
-  margin-bottom: $baseline / 2;
+  margin-bottom: calc(#{$baseline} / 2);
 
   @include bp-xs-max {
     .setting-title, label {
-      margin-bottom: $baseline / 2;
+      margin-bottom: calc(#{$baseline} / 2);
     }
   }
 
@@ -100,7 +100,7 @@ label {
     margin: 0;
     color: inherit;
     outline: none;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 6 Free';
     transition: 300ms ease-out;
 
     &::after {
@@ -123,7 +123,7 @@ label {
 
   input[type=checkbox] {
     &::after {
-      content: '\f096'; // square
+      content: '\f0c8'; // square
     }
 
     &:checked::after {
@@ -133,7 +133,7 @@ label {
 
   input[type=radio] {
     &::after {
-      content: '\f10c'; // circle
+      content: '\f111'; // circle
     }
 
     &:checked::after {

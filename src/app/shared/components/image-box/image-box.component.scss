@@ -8,7 +8,7 @@
 .image-box {
 
   &.hasPadding {
-    padding: $baseline / 2;
+    padding: calc(#{$baseline} / 2);
   }
 
   img {

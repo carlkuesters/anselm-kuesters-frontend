@@ -8,7 +8,7 @@ $authorImageSize: 50px;
   img {
     width: $authorImageSize;
     height: $authorImageSize;
-    margin-bottom: $baseline / 2;
+    margin-bottom: calc(#{$baseline} / 2);
   }
 
   time {

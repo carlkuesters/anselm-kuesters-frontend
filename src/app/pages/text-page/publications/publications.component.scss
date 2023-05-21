@@ -2,5 +2,5 @@
 
 .publication-location {
   font-weight: bold;
-  margin-right: $baseline / 2;
+  margin-right: calc(#{$baseline} / 2);
 }

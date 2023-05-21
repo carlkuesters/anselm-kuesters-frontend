@@ -1,13 +1,13 @@
 <!--TODO: Solve with [routerLink]="null" after upgrading to Angular 13-->
 <a *ngIf="content.routeOrUrl" [routerLink]="content.link" class="texts-entry-title">
-  <h2><i class="fa fa-{{content.icon}}"></i>{{content.title}}</h2>
+  <h2><i class="{{content.icon}}"></i>{{content.title}}</h2>
 </a>
 <a *ngIf="!content.routeOrUrl" [href]="content.link" target="_blank" class="texts-entry-title">
-  <h2><i class="fa fa-{{content.icon}}"></i>{{content.title}}</h2>
+  <h2><i class="{{content.icon}}"></i>{{content.title}}</h2>
 </a>
 <div class="texts-entry-info">
   <a *ngIf="content.commentsCount > 0" [routerLink]="content.link" fragment="comments">
-    <i class="fa fa-comment-o"></i>
+    <i class="fa fa-comment"></i>
     <span>{{content.commentsCount}}</span>
   </a>
   <a *ngIf="content.publicationsCount > 0" [routerLink]="content.link" fragment="publications">

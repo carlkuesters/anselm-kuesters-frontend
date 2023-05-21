@@ -2,7 +2,7 @@
 
 .texts-separator {
   margin-bottom: $baseline;
-  padding-bottom: $baseline / 2;
+  padding-bottom: calc(#{$baseline} / 2);
   padding-left: $baseline-2;
   border-bottom: 1px solid $color-shadow-border;
   color: $color-grey;
