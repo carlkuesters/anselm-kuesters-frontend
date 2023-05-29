@@ -6,17 +6,22 @@
   flex-direction: column;
   justify-content: center;
   min-height: 400px;
-  background-image: url('../../../../assets/images/anselm/mountains_800.png');
+  background-image: url('../../../../assets/images/anselm/hands.png');
   background-position: center;
   background-repeat: no-repeat;
   padding: $baseline-2;
 
   @include bp-xs-max {
-    background-image: url('../../../../assets/images/anselm/mountains_clipped.png');
+    background-image: url('../../../../assets/images/anselm/hands_clipped.png');
+  }
+
+  @include bp-sm {
+    justify-content: flex-end;
   }
 
   @include bp-md {
-    padding-left: 420px;
+    padding-left: 520px;
+    justify-content: center;
   }
 }
 
