@@ -8,7 +8,7 @@
     "build": "ng build",
     "lint": "ng lint",
     "test": "ng test --watch=false",
-    "e2e": "concurrently \"npm start -- --host 127.0.0.1\" \"wait-on http://127.0.0.1:4200 && npm run cypress:run\" --kill-others --success first",
+    "e2e": "start-server-and-test 'ng serve --host 127.0.0.1' http://127.0.0.1:4200 cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
@@ -52,7 +52,6 @@
     "@types/qs": "^6.9.7",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
     "@typescript-eslint/parser": "^5.59.2",
-    "concurrently": "^8.2.2",
     "cypress": "^12.11.0",
     "eslint": "^8.39.0",
     "jasmine-core": "^4.6.0",
@@ -62,8 +61,8 @@
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-jasmine": "^5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
+    "start-server-and-test": "^2.0.4",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4",
-    "wait-on": "^7.2.0"
+    "typescript": "^5.0.4"
   }
 }
