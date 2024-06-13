@@ -8,7 +8,7 @@
     "build": "ng build",
     "lint": "ng lint",
     "test": "ng test --watch=false",
-    "e2e": "concurrently \"npm start\" \"wait-on http://localhost:4200 && npm run cypress:run\" --kill-others --success first",
+    "e2e": "concurrently \"npm start -- --host 127.0.0.1\" \"wait-on http://127.0.0.1:4200 && npm run cypress:run\" --kill-others --success first",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
