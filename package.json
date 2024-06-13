@@ -8,7 +8,7 @@
     "build": "ng build",
     "lint": "ng lint",
     "test": "ng test --watch=false",
-    "e2e": "start-server-and-test start http://localhost:4200 cypress:run",
+    "e2e": "npm start && wait-on http://localhost:4200 && npm run cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
@@ -61,8 +61,8 @@
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-jasmine": "^5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
-    "start-server-and-test": "^2.0.4",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "wait-on": "^7.2.0"
   }
 }
