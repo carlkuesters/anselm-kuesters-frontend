@@ -8,7 +8,7 @@
     "build": "ng build",
     "lint": "ng lint",
     "test": "ng test --watch=false",
-    "e2e": "npm start && wait-on http://localhost:4200 && npm run cypress:run",
+    "e2e": "concurrently \"npm start\" \"wait-on http://localhost:4200 && npm run cypress:run\" --kill-others --success first",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
@@ -52,6 +52,7 @@
     "@types/qs": "^6.9.7",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
     "@typescript-eslint/parser": "^5.59.2",
+    "concurrently": "^8.2.2",
     "cypress": "^12.11.0",
     "eslint": "^8.39.0",
     "jasmine-core": "^4.6.0",
