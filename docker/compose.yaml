@@ -1,0 +1,10 @@
+name: anselm-kuesters-frontend
+services:
+  app:
+    build:
+      dockerfile: app.Dockerfile
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    ports:
+      - "127.0.0.1:1339:443"
+    restart: always

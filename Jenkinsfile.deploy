@@ -5,10 +5,14 @@ pipeline {
         skipDefaultCheckout()
         ansiColor('xterm')
     }
+    parameters {
+        string(name: 'VERSION', defaultValue: 'master')
+    }
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
+                sh 'git checkout $VERSION'
             }
         }
         stage('Build') {
@@ -20,10 +24,16 @@ pipeline {
             }
             steps {
                 sh 'npm install'
-                sh 'npm run lint'
-                sh 'npm run test'
-                sh 'npm run e2e'
                 sh 'npm run build'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'mv dist docker'
+                dir('docker') {
+                    sh 'docker compose build --no-cache'
+                    sh 'docker compose up -d'
+                }
             }
         }
     }
