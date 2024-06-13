@@ -1,0 +1,8 @@
+name: anselm-kuesters-frontend
+services:
+  app:
+    build:
+      dockerfile: app.Dockerfile
+    ports:
+      - "127.0.0.1:1339:80"
+    restart: always
