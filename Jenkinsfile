@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm run lint'
-                sh 'npm run test'
+                sh 'npm run test -- --browsers=ChromeHeadlessInDocker'
                 sh 'npm run e2e'
                 sh 'npm run build'
             }
