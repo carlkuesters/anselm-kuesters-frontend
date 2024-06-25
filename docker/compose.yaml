@@ -4,5 +4,5 @@ services:
     build:
       dockerfile: app.Dockerfile
     ports:
-      - "127.0.0.1:1339:80"
+      - "127.0.0.1:1340:80"
     restart: always
